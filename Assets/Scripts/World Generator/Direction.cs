@@ -2,7 +2,7 @@ using UnityEngine;
 
 public enum Direction
 {
-    Up, Down, Left, Right, None
+    Forward, Back, Left, Right, Up, Down, None
 }
 
 public static class DirectionExtensions
@@ -11,10 +11,10 @@ public static class DirectionExtensions
     {
         switch (direction)
         {
-            case Direction.Up:
+            case Direction.Forward:
                 vector.z += 10;
                 break;
-            case Direction.Down:
+            case Direction.Back:
                 vector.z -= 10;
                 break;
             case Direction.Left:
@@ -23,26 +23,15 @@ public static class DirectionExtensions
             case Direction.Right:
                 vector.x += 10;
                 break;
+            case Direction.Up:
+                vector.y += 10;
+                break;
+            case Direction.Down:
+                vector.y -= 10;
+                break;
             default:
                 break;
         }
         return vector;
-    }
-
-    public static bool IsDirectionHorizontal(Direction direction)
-    {
-        switch (direction)
-        {
-            case Direction.Up:
-                return false;
-            case Direction.Down:
-                return false;
-            case Direction.Left:
-                return true;
-            case Direction.Right:
-                return true;
-            default:
-                return false;
-        }
     }
 }

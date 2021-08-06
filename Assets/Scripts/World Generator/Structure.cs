@@ -3,7 +3,7 @@ using UnityEngine;
 
 public enum StructureType
 {
-    Room, HorizontalConnector, VerticalConnector, CrossConnector
+    Room, HorizontalConnector, VerticalConnector, CrossConnector, Staircase
 }
 
 public class Structure
