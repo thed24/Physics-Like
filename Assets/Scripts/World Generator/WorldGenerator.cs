@@ -15,8 +15,8 @@ public class WorldGenerator : MonoBehaviour
         for (var i = 0; i < floorAmount; i++)
         {
             var nextOrigin = currentStaircase.GetStructureOrigin();
-            nextOrigin = DirectionExtensions.ModifyVectorBasedOnDirection(nextOrigin, Direction.Forward);
-            nextOrigin = DirectionExtensions.ModifyVectorBasedOnDirection(nextOrigin, Direction.Up);
+            nextOrigin = DirectionExtensions.ModifyVectorBasedOnDirection(nextOrigin, Direction.Forward, currentStaircase.GetStructureSize());
+            nextOrigin = DirectionExtensions.ModifyVectorBasedOnDirection(nextOrigin, Direction.Up, currentStaircase.GetStructureSize());
 
             currentStaircase = CreateFloorAndGetStaircase(nextOrigin);
         }
@@ -47,7 +47,7 @@ public class WorldGenerator : MonoBehaviour
                 nextStructure = StructureBuilder.CreateStructureBasedOnType(StructureType.Staircase);
             }
 
-            nextStructure.SetStructureOrigin(DirectionExtensions.ModifyVectorBasedOnDirection(currentRoom.GetStructureOrigin(), nextDirection));
+            nextStructure.SetStructureOrigin(DirectionExtensions.ModifyVectorBasedOnDirection(currentRoom.GetStructureOrigin(), nextDirection, currentRoom.GetStructureSize()));
 
             if (structureMap.Any(s => s.GetStructureOrigin() == nextStructure.GetStructureOrigin()) && nextStructure.GetStructureType() != StructureType.Staircase){
                 nextStructure.DeleteStructure();

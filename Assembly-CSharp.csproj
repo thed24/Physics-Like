@@ -36,12 +36,14 @@
     <ImplicitlyExpandDesignTimeFacades>false</ImplicitlyExpandDesignTimeFacades>
   </PropertyGroup>
   <ItemGroup>
+     <Compile Include="Assets\Scripts\World Generator\Structure.cs" />
      <Compile Include="Assets\Scripts\World Generator\Direction.cs" />
-     <Compile Include="Assets\Scripts\Character\CharacterController.cs" />
+     <Compile Include="Assets\Scripts\World Generator\WorldGenerator.cs" />
+     <Compile Include="Assets\Scripts\World Generator V2\WorldGeneratorV2.cs" />
      <Compile Include="Assets\Scripts\World Generator\StructureBuilder.cs" />
      <Compile Include="Assets\Scripts\Character\MouseCameraController.cs" />
-     <Compile Include="Assets\Scripts\World Generator\WorldGenerator.cs" />
-     <Compile Include="Assets\Scripts\World Generator\Structure.cs" />
+     <Compile Include="Assets\Scripts\Character\CharacterController.cs" />
+     <Compile Include="Assets\Scripts\World Generator V2\DelaunayUtilities.cs" />
     <Reference Include="UnityEngine">
         <HintPath>M:/UnityHub/2021.2.0b4/Editor/Data/Managed/UnityEngine/UnityEngine.dll</HintPath>
     </Reference>

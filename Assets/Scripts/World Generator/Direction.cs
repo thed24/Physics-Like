@@ -7,27 +7,27 @@ public enum Direction
 
 public static class DirectionExtensions
 {
-    public static Vector3 ModifyVectorBasedOnDirection(Vector3 vector, Direction direction)
+    public static Vector3 ModifyVectorBasedOnDirection(Vector3 vector, Direction direction, Vector3 amount)
     {
         switch (direction)
         {
             case Direction.Forward:
-                vector.z += 10;
+                vector.z += amount.z;
                 break;
             case Direction.Back:
-                vector.z -= 10;
+                vector.z -= amount.z;
                 break;
             case Direction.Left:
-                vector.x -= 10;
+                vector.x -= amount.x;
                 break;
             case Direction.Right:
-                vector.x += 10;
+                vector.x += amount.x;
                 break;
             case Direction.Up:
-                vector.y += 10;
+                vector.y += amount.y;
                 break;
             case Direction.Down:
-                vector.y -= 10;
+                vector.y -= amount.y;
                 break;
             default:
                 break;

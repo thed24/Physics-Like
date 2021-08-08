@@ -31,6 +31,10 @@ public class Structure
         return structureObject.transform.localPosition;
     }
 
+    public Vector3 GetStructureSize(){
+        return structureObject.transform.localScale;
+    }
+
     public void SetStructureOrigin(Vector3 position){
         structureObject.transform.localPosition = position;
     }
