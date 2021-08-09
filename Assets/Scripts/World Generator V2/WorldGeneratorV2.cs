@@ -17,10 +17,12 @@ public class WorldGeneratorV2 : MonoBehaviour
             liveObjects.Add(newObject);
         }
 
-        var triangles = DelaunayUtilities.Triangulate(liveObjects.Select(o => new Vertex(o.transform.localPosition.x, o.transform.localPosition.z)).ToList());
-        var edges = DelaunayUtilities.GetEdgesFrom(triangles);
+        var triangles = GraphUtilities.Triangulate(liveObjects.Select(o => new Vertex(o.transform.localPosition.x, o.transform.localPosition.z)).ToList());
+        var edges = GraphUtilities.GetEdgesFrom(triangles);
+        var vertices = edges.Select(e => e.v0).Union(edges.Select(e => e.v1)).ToList();
+        var minimumSpanningTree = GraphUtilities.BuildMinimumSpanningTreeFrom(edges, vertices);
 
-        VisualizeEdges(edges);
+        VisualizeEdges(minimumSpanningTree);
     }
 
     void Update(){
@@ -30,7 +32,6 @@ public class WorldGeneratorV2 : MonoBehaviour
     private void VisualizeEdges(List<Edge> edges){
         foreach (var edge in edges)
         {
-            //For creating line renderer object
             var lineRenderer = new GameObject("Line").AddComponent<LineRenderer>();
             lineRenderer.startColor = Color.black;
             lineRenderer.endColor = Color.black;
@@ -38,10 +39,8 @@ public class WorldGeneratorV2 : MonoBehaviour
             lineRenderer.endWidth = 1f;
             lineRenderer.positionCount = 2;
             lineRenderer.useWorldSpace = true;    
-
-            //For drawing line in the world space, provide the x,y,z values
-            lineRenderer.SetPosition(0, new Vector3((float) edge.v0.x, 10, (float) edge.v0.y)); //x, y and z position of the starting point of the line
-            lineRenderer.SetPosition(1, new Vector3((float) edge.v1.x, 10, (float) edge.v1.y)); //x, y and z position of the end point of the line
+            lineRenderer.SetPosition(0, new Vector3((float) edge.v0.x, 25, (float) edge.v0.y));
+            lineRenderer.SetPosition(1, new Vector3((float) edge.v1.x, 25, (float) edge.v1.y));
         }
     }
 }
