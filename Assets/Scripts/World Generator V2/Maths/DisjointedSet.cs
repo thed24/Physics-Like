@@ -1,7 +1,7 @@
 using System;
 using System.Collections.Generic;
 
-class DisjointSetNode<T> : IComparable, IComparable<DisjointSetNode<T>>
+class DisjointSetNode<T> : IComparable<DisjointSetNode<T>>
 {
     public T Element { get; set; }
     public DisjointSetNode<T> Parent { get; set; }
@@ -17,20 +17,15 @@ class DisjointSetNode<T> : IComparable, IComparable<DisjointSetNode<T>>
     {
         return Rank.CompareTo(other.Rank);
     }
-
-    public int CompareTo(object obj)
-    {
-        return this.CompareTo((DisjointSetNode<T>)obj);
-    }
 }
 
 public class DisjointedSet<T>
 {
     private Dictionary<T, DisjointSetNode<T>> disjointSets = new Dictionary<T, DisjointSetNode<T>>();
 
-    public T Find(T e)
+    public T Find(T element)
     {
-        DisjointSetNode<T> node = Find(GetNode(e));
+        DisjointSetNode<T> node = Find(GetNode(element));
 
         if (node == node.Parent)
         {
@@ -42,10 +37,6 @@ public class DisjointedSet<T>
         return node.Parent.Element;
     }
 
-    public int Count(){
-        return disjointSets.Count - 1;
-    }
-
     private DisjointSetNode<T> Find(DisjointSetNode<T> node)
     {
         if (node == node.Parent)
@@ -54,46 +45,46 @@ public class DisjointedSet<T>
         return Find(node.Parent);
     }
 
-    public void Union(T e1, T e2)
+    public void Union(T firstElement, T secondElement)
     {
-        DisjointSetNode<T> e1Root = Find(GetNode(e1));
-        DisjointSetNode<T> e2Root = Find(GetNode(e2));
+        DisjointSetNode<T> firstElementsRoot = Find(GetNode(firstElement));
+        DisjointSetNode<T> secondElementsRoot = Find(GetNode(secondElement));
 
-        if (e1Root == e2Root)
+        if (firstElementsRoot == secondElementsRoot)
         {
             return;
         }
 
-        int comparison = e1Root.CompareTo(e2Root);
+        int comparison = firstElementsRoot.CompareTo(secondElementsRoot);
         if (comparison < 0)
         {
-            e1Root.Parent = e2Root;
+            firstElementsRoot.Parent = secondElementsRoot;
         }
         else if (comparison > 0)
         {
-            e2Root.Parent = e1Root;
+            secondElementsRoot.Parent = firstElementsRoot;
         }
         else
         {
-            e2Root.Parent = e1Root;
-            e1Root.Rank++;
+            secondElementsRoot.Parent = firstElementsRoot;
+            firstElementsRoot.Rank++;
         }
     }
 
-    public void MakeSet(T e)
+    public void MakeSet(T element)
     {
-        var node = new DisjointSetNode<T>(e);
-        disjointSets.Add(e, node);
+        var node = new DisjointSetNode<T>(element);
+        disjointSets.Add(element, node);
     }
 
-    private DisjointSetNode<T> GetNode(T e)
+    private DisjointSetNode<T> GetNode(T element)
     {
-        DisjointSetNode<T> node = disjointSets[e];
+        DisjointSetNode<T> node = disjointSets[element];
 
         if (node == null)
         {
-            node = new DisjointSetNode<T>(e);
-            disjointSets.Add(e, node);
+            node = new DisjointSetNode<T>(element);
+            disjointSets.Add(element, node);
         }
 
         return node;
