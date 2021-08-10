@@ -1,3 +1,4 @@
+using System.Diagnostics;
 using System;
 using System.Collections.Generic;
 using System.Linq;
@@ -6,9 +7,10 @@ class GraphUtilities
 {
     private static List<Triangle> AddVertexToTriangles(Vertex vertex, List<Triangle> triangles)
     {
-        triangles = triangles.Where(triangle => triangle.IsInCircumcircle(vertex)).ToList();
+        var badTriangles = triangles.Where(triangle => triangle.IsInCircumcircle(vertex)).ToList();
+        triangles = triangles.Where(triangle => !triangle.IsInCircumcircle(vertex)).ToList();
 
-        var edges = GetEdgesFrom(triangles);
+        var edges = GetEdgesFrom(badTriangles);
         edges = RemoveDuplicateEdgesFrom(edges);
 
         foreach (var edge in edges)
@@ -19,10 +21,10 @@ class GraphUtilities
 
     private static Triangle CreateSuperTriangle(List<Vertex> verticies)
     {
-        var minx = 0d;
-        var miny = 0d;
-        var maxx = 0d;
-        var maxy = 0d;
+        var minx = (double) int.MaxValue;
+        var miny = (double) int.MaxValue;
+        var maxx = (double) int.MinValue;
+        var maxy = (double) int.MinValue;
 
         foreach (var vertex in verticies)
         {
@@ -94,6 +96,7 @@ class GraphUtilities
     public static List<Edge> BuildMinimumSpanningTreeFrom(List<Edge> edges, List<Vertex> vertices)
     {
         var result = new List<Edge>();
+
         var set = new DisjointedSet<Vertex>();
 
         foreach (var vertex in vertices)

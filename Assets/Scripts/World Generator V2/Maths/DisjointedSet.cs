@@ -1,6 +1,7 @@
 using System;
 using System.Collections.Generic;
-class DisjointSetNode<T> : IComparable<DisjointSetNode<T>>
+
+class DisjointSetNode<T> : IComparable, IComparable<DisjointSetNode<T>>
 {
     public T Element { get; set; }
     public DisjointSetNode<T> Parent { get; set; }
@@ -15,6 +16,11 @@ class DisjointSetNode<T> : IComparable<DisjointSetNode<T>>
     public int CompareTo(DisjointSetNode<T> other)
     {
         return Rank.CompareTo(other.Rank);
+    }
+
+    public int CompareTo(object obj)
+    {
+        return this.CompareTo((DisjointSetNode<T>)obj);
     }
 }
 
@@ -34,6 +40,10 @@ public class DisjointedSet<T>
         node.Parent = Find(node.Parent);
 
         return node.Parent.Element;
+    }
+
+    public int Count(){
+        return disjointSets.Count - 1;
     }
 
     private DisjointSetNode<T> Find(DisjointSetNode<T> node)
