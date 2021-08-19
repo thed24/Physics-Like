@@ -1,30 +1,18 @@
-using System.Collections.Generic;
 using UnityEngine;
 
 public enum StructureType
 {
-    Room, HorizontalConnector, VerticalConnector, CrossConnector, Staircase
+    Room, HorizontalConnector, VerticalConnector, Staircase, None
 }
 
 public class Structure
 {
     private StructureType structureType;
-    private Dictionary<Direction, Structure> connectedStructures = new Dictionary<Direction, Structure>();
     private GameObject structureObject;
     public Structure(StructureType structureType, GameObject gameObject)
     {
         this.structureType = structureType;
         this.structureObject = gameObject;
-    }
-
-    public void ConnectStructure(Direction direction, Structure structure)
-    {
-        connectedStructures.Add(direction, structure);
-    }
-
-    public Structure GetConnectedStructure(Direction direction)
-    {
-        return connectedStructures[direction];
     }
 
     public Vector3 GetStructureOrigin(){
@@ -37,6 +25,11 @@ public class Structure
 
     public void SetStructureOrigin(Vector3 position){
         structureObject.transform.localPosition = position;
+    }
+
+    internal void SetStructureSize(Vector3 scale)
+    {
+        structureObject.transform.localScale = scale;
     }
 
     public void DeleteStructure(){

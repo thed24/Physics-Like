@@ -1,3 +1,4 @@
+using System;
 public class Vertex
 {
     public double x { get; set; }
@@ -22,6 +23,22 @@ public class Vertex
     {
         if (ReferenceEquals(null, obj)) return false;
         return obj is Vertex && Equals((Vertex)obj);
+    }
+
+    public static bool operator < (Vertex first, Vertex second){
+        return Math.Abs(first.x + first.y) < Math.Abs(second.x + second.y);
+    }
+
+    public static bool operator > (Vertex first, Vertex second){
+        return Math.Abs(first.x + first.y) > Math.Abs(second.x + second.y);
+    }
+
+    public static bool operator <= (Vertex first, Vertex second){
+        return Math.Abs(first.x + first.y) <= Math.Abs(second.x + second.y);
+    }
+
+    public static bool operator >= (Vertex first, Vertex second){
+        return Math.Abs(first.x + first.y) >= Math.Abs(second.x + second.y);
     }
 
     public override int GetHashCode()

@@ -139,7 +139,7 @@ GameObject:
   - component: {fileID: 569404477}
   m_Layer: 0
   m_Name: Player
-  m_TagString: Untagged
+  m_TagString: Player
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -460,7 +460,6 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 1135141573}
-  - component: {fileID: 1135141572}
   - component: {fileID: 1135141574}
   m_Layer: 0
   m_Name: World Generator
@@ -469,20 +468,6 @@ GameObject:
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
   m_IsActive: 1
---- !u!114 &1135141572
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 1135141571}
-  m_Enabled: 0
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 170b2c466200004478360d140f92b59b, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  structureAmount: 25
-  floorAmount: 4
 --- !u!4 &1135141573
 Transform:
   m_ObjectHideFlags: 0
@@ -507,10 +492,11 @@ MonoBehaviour:
   m_GameObject: {fileID: 1135141571}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 326ffa81dc9b7ff49b644cc7cec20073, type: 3}
+  m_Script: {fileID: 11500000, guid: 170b2c466200004478360d140f92b59b, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  structureAmount: 100
+  worldSize: {x: 128, y: 128}
+  amountOfStructuresInWorld: 16
 --- !u!1001 &7544231442196129636
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -520,6 +506,10 @@ PrefabInstance:
     m_Modifications:
     - target: {fileID: 7544231442719345491, guid: 9daaa8631a54fb243aabd412aa37b431, type: 3}
       propertyPath: m_Name
+      value: Player
+      objectReference: {fileID: 0}
+    - target: {fileID: 7544231442719345491, guid: 9daaa8631a54fb243aabd412aa37b431, type: 3}
+      propertyPath: m_TagString
       value: Player
       objectReference: {fileID: 0}
     - target: {fileID: 7544231442719345503, guid: 9daaa8631a54fb243aabd412aa37b431, type: 3}

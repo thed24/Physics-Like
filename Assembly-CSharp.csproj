@@ -36,18 +36,18 @@
     <ImplicitlyExpandDesignTimeFacades>false</ImplicitlyExpandDesignTimeFacades>
   </PropertyGroup>
   <ItemGroup>
-     <Compile Include="Assets\Scripts\World Generator\Structure.cs" />
-     <Compile Include="Assets\Scripts\World Generator\Direction.cs" />
+     <Compile Include="Assets\Scripts\World Generator\Maths\Vertex.cs" />
+     <Compile Include="Assets\Scripts\World Generator\Maths\Triangle.cs" />
+     <Compile Include="Assets\Scripts\World Generator\Maths\Edge.cs" />
      <Compile Include="Assets\Scripts\World Generator\WorldGenerator.cs" />
-     <Compile Include="Assets\Scripts\World Generator V2\WorldGeneratorV2.cs" />
-     <Compile Include="Assets\Scripts\World Generator\StructureBuilder.cs" />
+     <Compile Include="Assets\Scripts\World Generator\Maths\DisjointedSet.cs" />
      <Compile Include="Assets\Scripts\Character\MouseCameraController.cs" />
      <Compile Include="Assets\Scripts\Character\CharacterController.cs" />
-     <Compile Include="Assets\Scripts\World Generator V2\Maths\Triangle.cs" />
-     <Compile Include="Assets\Scripts\World Generator V2\Maths\DisjointedSet.cs" />
-     <Compile Include="Assets\Scripts\World Generator V2\Maths\Edge.cs" />
-     <Compile Include="Assets\Scripts\World Generator V2\Maths\GraphUtilities.cs" />
-     <Compile Include="Assets\Scripts\World Generator V2\Maths\Vertex.cs" />
+     <Compile Include="Assets\Scripts\World Generator\Structure\Grid.cs" />
+     <Compile Include="Assets\Scripts\World Generator\Maths\GraphUtilities.cs" />
+     <Compile Include="Assets\Scripts\World Generator\Structure\Structure.cs" />
+     <Compile Include="Assets\Scripts\World Generator\Structure\PathFinder.cs" />
+     <Compile Include="Assets\Scripts\World Generator\Structure\StructureBuilder.cs" />
     <Reference Include="UnityEngine">
         <HintPath>F:/UnityHub/2021.2.0b4/Editor/Data/Managed/UnityEngine/UnityEngine.dll</HintPath>
     </Reference>
