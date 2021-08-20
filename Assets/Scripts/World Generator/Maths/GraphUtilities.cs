@@ -2,7 +2,7 @@ using System;
 using System.Collections.Generic;
 using System.Linq;
 
-class GraphUtilities
+public class GraphUtilities
 {
     private static List<Triangle> AddVertexToTriangles(Vertex vertex, List<Triangle> triangles)
     {
@@ -82,7 +82,7 @@ class GraphUtilities
     }
     public static List<Triangle> Triangulate(List<Vertex> vertices)
     {
-        var superTriangle = GraphUtilities.CreateSuperTriangle(vertices);
+        var superTriangle = CreateSuperTriangle(vertices);
 
         var triangles = new List<Triangle> { superTriangle };
 
@@ -111,6 +111,7 @@ class GraphUtilities
                 set.Union(edge.v0, edge.v1);
             }
         }
+
         return result;
     }
 }

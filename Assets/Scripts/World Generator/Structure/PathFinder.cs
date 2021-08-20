@@ -23,6 +23,11 @@ public class Node
         Walkable = walkable;
     }
 
+    public override string ToString()
+    {
+        return $"{Position.x}, {Position.y}, {Walkable}";
+    }
+
     public override bool Equals(object obj)
     { 
         if (obj == null || GetType() != obj.GetType())
@@ -83,7 +88,7 @@ public static class PathFinder
 
         while (temp != startingNode && temp is not null)
         {
-            if (temp.Walkable)
+            if (temp.Walkable && temp.Position != end)
                 Path.Push(temp);
             temp = temp.Parent;
         };

@@ -12,7 +12,13 @@ public class Structure
     public Structure(StructureType structureType, GameObject gameObject)
     {
         this.structureType = structureType;
-        this.structureObject = gameObject;
+        structureObject = gameObject;
+    }
+
+    public Structure()
+    {
+        structureObject = null;
+        structureType = StructureType.None;
     }
 
     public Vector3 GetStructureOrigin(){

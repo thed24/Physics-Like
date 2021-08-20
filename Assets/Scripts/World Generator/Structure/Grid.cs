@@ -1,9 +1,9 @@
 using System.Collections.Generic;
 using UnityEngine;
 
-public class Grid<T>
+public class Grid<T> where T : new()
 {
-    T[] data;
+    readonly T[] data;
 
     public Vector2Int Size { get; private set; }
     public Vector2Int Offset { get; set; }
@@ -14,6 +14,14 @@ public class Grid<T>
         Offset = offset;
 
         data = new T[size.x * size.y];
+
+        for (var i = 0; i < size.y; i++)
+        {
+            for (var j = 0; j < size.x; j++)
+            {
+                this[i, j] = new T();
+            }
+        }
     }
 
     public int GetIndex(Vector2Int pos)

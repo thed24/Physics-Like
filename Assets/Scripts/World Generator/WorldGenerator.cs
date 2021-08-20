@@ -30,14 +30,6 @@ public class WorldGenerator : MonoBehaviour
         var playerSpawned = false;
         worldGrid = new Grid<Structure>(worldSize, Vector2Int.zero);
 
-        for (var i = 0; i < worldSize.y; i++)
-        {
-            for (var j = 0; j < worldSize.x; j++)
-            {
-                worldGrid[i, j] = new Structure(StructureType.None, null);
-            }
-        }
-
         for (var i = 0; i < amountOfStructuresInWorld; i++)
         {
             var structure = StructureBuilder.CreateStructureBasedOnType(StructureType.Room, new Vector3(1, 1, 1), new Vector3(Random.Range(0, worldSize.x), 0, Random.Range(0, worldSize.y)));
