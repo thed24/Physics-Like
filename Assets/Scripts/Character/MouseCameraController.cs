@@ -10,10 +10,9 @@ public class MouseCameraController : MonoBehaviour {
     private Vector2 mouseLook;
     private Vector2 smoothV;
 
-	void Start () {
+    void Start () {
         character = this.transform.parent.gameObject;
-	}
-	
+    }
 	void Update () {
         var md = new Vector2(Input.GetAxisRaw("Mouse X"), Input.GetAxisRaw("Mouse Y"));
         md = Vector2.Scale(md, new Vector2(sensitivity * smoothing, sensitivity * smoothing));

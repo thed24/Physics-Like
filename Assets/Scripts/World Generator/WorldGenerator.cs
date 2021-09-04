@@ -1,3 +1,4 @@
+using System.Collections.Generic;
 using System.Linq;
 using UnityEngine;
 
@@ -10,10 +11,9 @@ public class WorldGenerator : MonoBehaviour
 
     void Start()
     {
-        GenerateRoomsWithPlayer();
+        var roomPoints = GenerateRoomsWithPlayer();
 
-        var rooms = worldGrid.GetAll().Where(room => room is Floor).ToList();
-        var triangles = GraphUtilities.Triangulate(rooms.Select(room => new Vertex(room.Position.x, room.Position.z)).ToList());
+        var triangles = GraphUtilities.Triangulate(roomPoints.Select(room => new Vertex(room.x, room.z)).ToList());
         var edges = GraphUtilities.GetEdgesFrom(triangles);
         var vertices = edges.Select(edge => edge.v0).Concat(edges.Select(edge => edge.v1)).Distinct().ToList();
         var minimumSpanningTree = GraphUtilities.BuildMinimumSpanningTreeFrom(edges, vertices);
@@ -28,8 +28,9 @@ public class WorldGenerator : MonoBehaviour
 
     }
 
-    private void GenerateRoomsWithPlayer()
+    private List<Vector3> GenerateRoomsWithPlayer()
     {
+        var listOfPoints = new List<Vector3>();
         var playerSpawned = false;
         worldGrid = new Grid<Structure>(worldSize);
 
@@ -37,6 +38,7 @@ public class WorldGenerator : MonoBehaviour
         {
             var position = new Vector3(Random.Range(0, worldSize.x), 0, Random.Range(0, worldSize.y));
             var scale = new Vector3(Random.Range(5, 15), 0, Random.Range(5, 15));
+            listOfPoints.Add(position);
 
             if (playerSpawned == false)
             {
@@ -47,6 +49,8 @@ public class WorldGenerator : MonoBehaviour
 
             ProjectFloorOntoGridWithCeiling(position, scale);
         }
+
+        return listOfPoints;
     }
 
     private void GenerateHallwayFrom(Edge edge)

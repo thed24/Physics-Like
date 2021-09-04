@@ -9,7 +9,7 @@ public class CharacterController : MonoBehaviour {
     UnityEngine.CharacterController controller;
 
     void Start () {
-        Cursor.lockState = CursorLockMode.Locked;	
+        Cursor.lockState = CursorLockMode.Locked;
         controller = GetComponent<UnityEngine.CharacterController>();	
 	}
 	

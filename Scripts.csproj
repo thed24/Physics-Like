@@ -64,14 +64,15 @@
     <Compile Include="Assets\Scripts\World Generator\Maths\Edge.cs" />
     <Compile Include="Assets\Scripts\World Generator\Structure\Direction.cs" />
     <Compile Include="Assets\Scripts\World Generator\WorldGenerator.cs" />
+    <Compile Include="Assets\Scripts\World Generator\Structure\Types\Floor.cs" />
     <Compile Include="Assets\Scripts\World Generator\Maths\DisjointedSet.cs" />
     <Compile Include="Assets\Scripts\Character\MouseCameraController.cs" />
     <Compile Include="Assets\Scripts\Character\CharacterController.cs" />
+    <Compile Include="Assets\Scripts\World Generator\Structure\Types\Structure.cs" />
     <Compile Include="Assets\Scripts\World Generator\Structure\Grid.cs" />
     <Compile Include="Assets\Scripts\World Generator\Maths\GraphUtilities.cs" />
+    <Compile Include="Assets\Scripts\UnityExtensions.cs" />
     <Compile Include="Assets\Scripts\World Generator\Structure\PathFinder.cs" />
-    <Compile Include="Assets\Scripts\World Generator\Structure\Types\Floor.cs" />
-    <Compile Include="Assets\Scripts\World Generator\Structure\Types\Structure.cs" />
   </ItemGroup>
   <ItemGroup>
     <None Include="Assets\Scripts\Scripts.asmdef" />
