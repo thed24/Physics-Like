@@ -2,6 +2,9 @@ using System.Collections.Generic;
 using System.Linq;
 using UnityEngine;
 
+[RequireComponent(typeof(MeshFilter))]
+[RequireComponent(typeof(MeshCollider))]
+[RequireComponent(typeof(MeshRenderer))]
 public class WorldGenerator : MonoBehaviour
 {
     private Grid<Structure> worldGrid;
@@ -21,6 +24,7 @@ public class WorldGenerator : MonoBehaviour
         minimumSpanningTreeEnriched.ForEach(edge => GenerateHallwayFrom(edge));
 
         worldGrid.GetAll().ForEach(f => GenerateWalls(f as Floor));
+        UnityExtensions.CombineChildMeshesOf(gameObject, structureMaterial);
     }
 
     void Update()
@@ -82,8 +86,8 @@ public class WorldGenerator : MonoBehaviour
             {
                 if (i > 0 && j > 0 && i < worldSize.x && j < worldSize.y)
                 {
-                    worldGrid[i, j] = new Floor(new Vector3(1, 1, 1), new Vector3(i, 0, j), structureMaterial);
-                    worldGrid[i, j] = new Floor(new Vector3(1, 1, 1), new Vector3(i, 7, j), structureMaterial);
+                    worldGrid[i, j] = new Floor(new Vector3(1, 1, 1), transform, new Vector3(i, 0, j), structureMaterial);
+                    worldGrid[i, j] = new Floor(new Vector3(1, 1, 1), transform, new Vector3(i, 7, j), structureMaterial);
                 }
             }
         }

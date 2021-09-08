@@ -1,4 +1,3 @@
-using System;
 using UnityEngine;
 
 public abstract class Structure
@@ -14,12 +13,19 @@ public abstract class Structure
         get { return structureObject.transform.position; }
         set { structureObject.transform.position = value; }
     }
-    public Structure(GameObject gameObject, Vector3? size = null, Vector3? position = null, Material material = null)
+    public T GetComponentFor<T>() => structureObject.GetComponent<T>();
+    public Structure(GameObject gameObject, Transform parent, Vector3? size = null, Vector3? position = null, Material material = null)
     {
         structureObject = gameObject;
+        structureObject.transform.parent = parent;
+        structureObject.tag = GetType().ToString();
         structureObject.GetComponent<MeshRenderer>().material = material is not null ? material : structureObject.GetComponent<MeshRenderer>().material;
         structureObject.transform.position = position.HasValue ? position.Value : structureObject.transform.position;
         structureObject.transform.localScale = size.HasValue ? size.Value : structureObject.transform.localScale;
+    }
+    public void Remove()
+    {
+        Object.Destroy(structureObject);
     }
     public Structure()
     {

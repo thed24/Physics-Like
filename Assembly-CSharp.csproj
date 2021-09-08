@@ -22,7 +22,7 @@
     <DebugType>full</DebugType>
     <Optimize>false</Optimize>
     <OutputPath>Temp\Bin\Debug\</OutputPath>
-    <DefineConstants>UNITY_2021_2_0;UNITY_2021_2;UNITY_2021;UNITY_5_3_OR_NEWER;UNITY_5_4_OR_NEWER;UNITY_5_5_OR_NEWER;UNITY_5_6_OR_NEWER;UNITY_2017_1_OR_NEWER;UNITY_2017_2_OR_NEWER;UNITY_2017_3_OR_NEWER;UNITY_2017_4_OR_NEWER;UNITY_2018_1_OR_NEWER;UNITY_2018_2_OR_NEWER;UNITY_2018_3_OR_NEWER;UNITY_2018_4_OR_NEWER;UNITY_2019_1_OR_NEWER;UNITY_2019_2_OR_NEWER;UNITY_2019_3_OR_NEWER;UNITY_2019_4_OR_NEWER;UNITY_2020_1_OR_NEWER;UNITY_2020_2_OR_NEWER;UNITY_2020_3_OR_NEWER;UNITY_2021_1_OR_NEWER;UNITY_2021_2_OR_NEWER;PLATFORM_ARCH_64;UNITY_64;UNITY_INCLUDE_TESTS;USE_SEARCH_ENGINE_API;USE_SEARCH_TABLE;USE_SEARCH_MODULE;USE_PROPERTY_DATABASE;SCENE_TEMPLATE_MODULE;ENABLE_AR;ENABLE_AUDIO;ENABLE_CACHING;ENABLE_CLOTH;ENABLE_EVENT_QUEUE;ENABLE_MICROPHONE;ENABLE_MULTIPLE_DISPLAYS;ENABLE_PHYSICS;ENABLE_TEXTURE_STREAMING;ENABLE_VIRTUALTEXTURING;ENABLE_UNET;ENABLE_LZMA;ENABLE_UNITYEVENTS;ENABLE_VR;ENABLE_WEBCAM;ENABLE_UNITYWEBREQUEST;ENABLE_WWW;ENABLE_CLOUD_SERVICES;ENABLE_CLOUD_SERVICES_COLLAB;ENABLE_CLOUD_SERVICES_COLLAB_SOFTLOCKS;ENABLE_CLOUD_SERVICES_ADS;ENABLE_CLOUD_SERVICES_USE_WEBREQUEST;ENABLE_CLOUD_SERVICES_CRASH_REPORTING;ENABLE_CLOUD_SERVICES_PURCHASING;ENABLE_CLOUD_SERVICES_ANALYTICS;ENABLE_CLOUD_SERVICES_UNET;ENABLE_CLOUD_SERVICES_BUILD;ENABLE_CLOUD_LICENSE;ENABLE_EDITOR_HUB_LICENSE;ENABLE_WEBSOCKET_CLIENT;ENABLE_DIRECTOR_AUDIO;ENABLE_DIRECTOR_TEXTURE;ENABLE_MANAGED_JOBS;ENABLE_MANAGED_TRANSFORM_JOBS;ENABLE_MANAGED_ANIMATION_JOBS;ENABLE_MANAGED_AUDIO_JOBS;INCLUDE_DYNAMIC_GI;ENABLE_SCRIPTING_GC_WBARRIERS;PLATFORM_SUPPORTS_MONO;RENDER_SOFTWARE_CURSOR;ENABLE_VIDEO;PLATFORM_STANDALONE;TEXTCORE_1_0_OR_NEWER;PLATFORM_STANDALONE_WIN;UNITY_STANDALONE_WIN;UNITY_STANDALONE;ENABLE_RUNTIME_GI;ENABLE_MOVIES;ENABLE_NETWORK;ENABLE_NVIDIA;ENABLE_CRUNCH_TEXTURE_COMPRESSION;ENABLE_OUT_OF_PROCESS_CRASH_HANDLER;ENABLE_CLUSTER_SYNC;ENABLE_CLUSTERINPUT;PLATFORM_UPDATES_TIME_OUTSIDE_OF_PLAYER_LOOP;GFXDEVICE_WAITFOREVENT_MESSAGEPUMP;ENABLE_WEBSOCKET_HOST;ENABLE_MONO;NET_STANDARD_2_0;ENABLE_PROFILER;DEBUG;TRACE;UNITY_ASSERTIONS;UNITY_EDITOR;UNITY_EDITOR_64;UNITY_EDITOR_WIN;ENABLE_UNITY_COLLECTIONS_CHECKS;ENABLE_BURST_AOT;UNITY_TEAM_LICENSE;ENABLE_CUSTOM_RENDER_TEXTURE;ENABLE_DIRECTOR;ENABLE_LOCALIZATION;ENABLE_SPRITES;ENABLE_TERRAIN;ENABLE_TILEMAP;ENABLE_TIMELINE;ENABLE_INPUT_SYSTEM;ENABLE_LEGACY_INPUT_MANAGER;STARTER_ASSETS_PACKAGES_CHECKED;CSHARP_7_OR_LATER;CSHARP_7_3_OR_NEWER</DefineConstants>
+    <DefineConstants>UNITY_2021_2_0;UNITY_2021_2;UNITY_2021;UNITY_5_3_OR_NEWER;UNITY_5_4_OR_NEWER;UNITY_5_5_OR_NEWER;UNITY_5_6_OR_NEWER;UNITY_2017_1_OR_NEWER;UNITY_2017_2_OR_NEWER;UNITY_2017_3_OR_NEWER;UNITY_2017_4_OR_NEWER;UNITY_2018_1_OR_NEWER;UNITY_2018_2_OR_NEWER;UNITY_2018_3_OR_NEWER;UNITY_2018_4_OR_NEWER;UNITY_2019_1_OR_NEWER;UNITY_2019_2_OR_NEWER;UNITY_2019_3_OR_NEWER;UNITY_2019_4_OR_NEWER;UNITY_2020_1_OR_NEWER;UNITY_2020_2_OR_NEWER;UNITY_2020_3_OR_NEWER;UNITY_2021_1_OR_NEWER;UNITY_2021_2_OR_NEWER;PLATFORM_ARCH_64;UNITY_64;UNITY_INCLUDE_TESTS;USE_SEARCH_ENGINE_API;USE_SEARCH_TABLE;USE_SEARCH_MODULE;USE_PROPERTY_DATABASE;SCENE_TEMPLATE_MODULE;ENABLE_AR;ENABLE_AUDIO;ENABLE_CACHING;ENABLE_CLOTH;ENABLE_EVENT_QUEUE;ENABLE_MICROPHONE;ENABLE_MULTIPLE_DISPLAYS;ENABLE_PHYSICS;ENABLE_TEXTURE_STREAMING;ENABLE_VIRTUALTEXTURING;ENABLE_UNET;ENABLE_LZMA;ENABLE_UNITYEVENTS;ENABLE_VR;ENABLE_WEBCAM;ENABLE_UNITYWEBREQUEST;ENABLE_WWW;ENABLE_CLOUD_SERVICES;ENABLE_CLOUD_SERVICES_COLLAB;ENABLE_CLOUD_SERVICES_COLLAB_SOFTLOCKS;ENABLE_CLOUD_SERVICES_ADS;ENABLE_CLOUD_SERVICES_USE_WEBREQUEST;ENABLE_CLOUD_SERVICES_CRASH_REPORTING;ENABLE_CLOUD_SERVICES_PURCHASING;ENABLE_CLOUD_SERVICES_ANALYTICS;ENABLE_CLOUD_SERVICES_UNET;ENABLE_CLOUD_SERVICES_BUILD;ENABLE_CLOUD_LICENSE;ENABLE_EDITOR_HUB_LICENSE;ENABLE_WEBSOCKET_CLIENT;ENABLE_DIRECTOR_AUDIO;ENABLE_DIRECTOR_TEXTURE;ENABLE_MANAGED_JOBS;ENABLE_MANAGED_TRANSFORM_JOBS;ENABLE_MANAGED_ANIMATION_JOBS;ENABLE_MANAGED_AUDIO_JOBS;INCLUDE_DYNAMIC_GI;ENABLE_SCRIPTING_GC_WBARRIERS;PLATFORM_SUPPORTS_MONO;RENDER_SOFTWARE_CURSOR;ENABLE_VIDEO;PLATFORM_STANDALONE;TEXTCORE_1_0_OR_NEWER;PLATFORM_STANDALONE_WIN;UNITY_STANDALONE_WIN;UNITY_STANDALONE;ENABLE_RUNTIME_GI;ENABLE_MOVIES;ENABLE_NETWORK;ENABLE_NVIDIA;ENABLE_CRUNCH_TEXTURE_COMPRESSION;ENABLE_OUT_OF_PROCESS_CRASH_HANDLER;ENABLE_CLUSTER_SYNC;ENABLE_CLUSTERINPUT;PLATFORM_UPDATES_TIME_OUTSIDE_OF_PLAYER_LOOP;GFXDEVICE_WAITFOREVENT_MESSAGEPUMP;ENABLE_WEBSOCKET_HOST;ENABLE_MONO;NET_STANDARD_2_0;ENABLE_PROFILER;DEBUG;TRACE;UNITY_ASSERTIONS;UNITY_EDITOR;UNITY_EDITOR_64;UNITY_EDITOR_WIN;ENABLE_UNITY_COLLECTIONS_CHECKS;ENABLE_BURST_AOT;UNITY_TEAM_LICENSE;ENABLE_CUSTOM_RENDER_TEXTURE;ENABLE_DIRECTOR;ENABLE_LOCALIZATION;ENABLE_SPRITES;ENABLE_TERRAIN;ENABLE_TILEMAP;ENABLE_TIMELINE;ENABLE_INPUT_SYSTEM;ENABLE_LEGACY_INPUT_MANAGER;STARTER_ASSETS_PACKAGES_CHECKED;ODIN_INSPECTOR;ODIN_INSPECTOR_3;CSHARP_7_OR_LATER;CSHARP_7_3_OR_NEWER</DefineConstants>
     <ErrorReport>prompt</ErrorReport>
     <WarningLevel>4</WarningLevel>
     <NoWarn>0169</NoWarn>
@@ -59,18 +59,274 @@
     <Analyzer Include="C:\Program Files\Microsoft Visual Studio\2022\Preview\Common7\IDE\Extensions\Microsoft\Visual Studio Tools for Unity\Analyzers\Microsoft.Unity.Analyzers.dll" />
   </ItemGroup>
   <ItemGroup>
-    <Compile Include="Assets\Scripts\World Generator\Maths\Vertex.cs" />
-    <Compile Include="Assets\Scripts\World Generator\Maths\Triangle.cs" />
-    <Compile Include="Assets\Scripts\World Generator\Maths\Edge.cs" />
-    <Compile Include="Assets\Scripts\World Generator\WorldGenerator.cs" />
-    <Compile Include="Assets\Scripts\World Generator\Maths\DisjointedSet.cs" />
-    <Compile Include="Assets\Scripts\Character\MouseCameraController.cs" />
-    <Compile Include="Assets\Scripts\Character\CharacterController.cs" />
-    <Compile Include="Assets\Scripts\World Generator\Structure\Grid.cs" />
-    <Compile Include="Assets\Scripts\World Generator\Maths\GraphUtilities.cs" />
-    <Compile Include="Assets\Scripts\World Generator\Structure\Structure.cs" />
-    <Compile Include="Assets\Scripts\World Generator\Structure\PathFinder.cs" />
-    <Compile Include="Assets\Scripts\World Generator\Structure\StructureBuilder.cs" />
+    <Compile Include="Assets\Blink\Tools\RPGBuilder\Scripts\UIElements\RaceSlotHolder.cs" />
+    <Compile Include="Assets\Blink\Tools\RPGBuilder\Scripts\UIElements\SpellbookSlot.cs" />
+    <Compile Include="Assets\Blink\Tools\RPGBuilder\Scripts\UIElements\BossUISlotHolder.cs" />
+    <Compile Include="Assets\Blink\Tools\RPGBuilder\Scripts\World\ObjectActionTrigger.cs" />
+    <Compile Include="Assets\Blink\Tools\RPGBuilder\Scripts\Character\RPGBThirdPersonCharacterControllerEssentials.cs" />
+    <Compile Include="Assets\Blink\Tools\RPGBuilder\Scripts\Managers\SocketingPanelDisplayManager.cs" />
+    <Compile Include="Assets\Blink\Tools\RPGBuilder\Scripts\World\CraftingStation.cs" />
+    <Compile Include="Assets\Blink\Tools\RPGBuilder\Scripts\World\Region.cs" />
+    <Compile Include="Assets\Blink\Tools\RPGBuilder\Scripts\Managers\QuestInteractionDisplayManager.cs" />
+    <Compile Include="Assets\Blink\Tools\RPGBuilder\ThirdPartyAssets\GabrielAguiarProductions\Scripts\UniqueProjectiles\CameraShakeSimpleScript.cs" />
+    <Compile Include="Assets\Blink\Tools\RPGBuilder\Scripts\UIElements\QuestStateSlotHolder.cs" />
+    <Compile Include="Assets\Blink\Tools\RPGBuilder\Scripts\RPGData\RPGNpc.cs" />
+    <Compile Include="Assets\Blink\Tools\RPGBuilder\Scripts\LogicMono\ObjectActionDestroyTrigger.cs" />
+    <Compile Include="Assets\Blink\Tools\RPGBuilder\Scripts\RPGData\RPGSkill.cs" />
+    <Compile Include="Assets\Blink\Tools\RPGBuilder\Scripts\UIElements\CraftingRecipeSlotHolder.cs" />
+    <Compile Include="Assets\Blink\Tools\RPGBuilder\Scripts\RPGData\RPGCraftingStation.cs" />
+    <Compile Include="Assets\Blink\Tools\RPGBuilder\Scripts\UIElements\LootBagHolder.cs" />
+    <Compile Include="Assets\Blink\Tools\RPGBuilder\Scripts\Utility\PolytopeCharacterCustomizer.cs" />
+    <Compile Include="Assets\Blink\Tools\RPGBuilder\Scripts\Managers\SpellbookDisplayManager.cs" />
+    <Compile Include="Assets\Blink\Tools\RPGBuilder\Scripts\Managers\CraftingPanelDisplayManager.cs" />
+    <Compile Include="Assets\Blink\Tools\RPGBuilder\Scripts\UIElements\InventoryBagSlot.cs" />
+    <Compile Include="Assets\Blink\Tools\RPGBuilder\Scripts\RPGData\RPGTask.cs" />
+    <Compile Include="Assets\Blink\Tools\RPGBuilder\Scripts\UIElements\QuestItemSlotHolder.cs" />
+    <Compile Include="Assets\Blink\Tools\RPGBuilder\Scripts\RPGData\RPGItemDATA.cs" />
+    <Compile Include="Assets\Blink\Tools\RPGBuilder\Scripts\UIElements\ScreenSpaceStateDisplay.cs" />
+    <Compile Include="Assets\Blink\Tools\RPGBuilder\Scripts\RPGData\RPGRace.cs" />
+    <Compile Include="Assets\Blink\Tools\RPGBuilder\Scripts\RPGData\RPGTreePoint.cs" />
+    <Compile Include="Assets\Blink\Tools\RPGBuilder\Scripts\Managers\DevUIManager.cs" />
+    <Compile Include="Assets\Blink\Tools\RPGBuilder\Scripts\LogicMono\ProjectileSlowZone.cs" />
+    <Compile Include="Assets\Blink\Tools\RPGBuilder\Scripts\RPGData\RPGSpecies.cs" />
+    <Compile Include="Assets\Blink\Tools\RPGBuilder\Scripts\Managers\ScreenTextDisplayManager.cs" />
+    <Compile Include="Assets\Blink\Tools\RPGBuilder\Scripts\RPGData\RPGBGameActions.cs" />
+    <Compile Include="Assets\Blink\Tools\RPGBuilder\Scripts\UIElements\ClassSlotHolder.cs" />
+    <Compile Include="Assets\Blink\Tools\RPGBuilder\Scripts\RPGData\RPGWeaponTemplate.cs" />
+    <Compile Include="Assets\Blink\Tools\RPGBuilder\Scripts\RPGData\RPGGameModifier.cs" />
+    <Compile Include="Assets\Blink\Tools\RPGBuilder\Scripts\Managers\ActionBarManager.cs" />
+    <Compile Include="Assets\Blink\Tools\RPGBuilder\Scripts\Managers\DialogueDisplayManager.cs" />
+    <Compile Include="Assets\Blink\Tools\RPGBuilder\Scripts\Managers\ShapeshiftingSlotsDisplayManager.cs" />
+    <Compile Include="Assets\Blink\Tools\RPGBuilder\Scripts\RPGData\RPGClass.cs" />
+    <Compile Include="Assets\Blink\Tools\RPGBuilder\ThirdPartyAssets\NaughtyCharacter\Scripts\Helpers\FpsCounter.cs" />
+    <Compile Include="Assets\Blink\Tools\RPGBuilder\Scripts\RPGData\RPGMerchantTable.cs" />
+    <Compile Include="Assets\Blink\Tools\RPGBuilder\Scripts\RPGData\RPGAbility.cs" />
+    <Compile Include="Assets\Blink\Tools\RPGBuilder\Scripts\DataHandling\RPGBuilderUtilities.cs" />
+    <Compile Include="Assets\Blink\Tools\RPGBuilder\Scripts\UIElements\DevStatSlotHolder.cs" />
+    <Compile Include="Assets\Blink\Tools\RPGBuilder\Scripts\RPGData\RPGGearSet.cs" />
+    <Compile Include="Assets\Blink\Tools\RPGBuilder\Scripts\Nodes\RPGDialogueTextNode.cs" />
+    <Compile Include="Assets\Blink\Tools\RPGBuilder\Scripts\RPGData\RPGGameScene.cs" />
+    <Compile Include="Assets\Blink\Tools\RPGBuilder\Scripts\RPGData\RPGCraftingRecipe.cs" />
+    <Compile Include="Assets\Blink\Tools\RPGBuilder\ThirdPartyAssets\GabrielAguiarProductions\Scripts\ParticleSystemController\ParticleSystemControllerEditor.cs" />
+    <Compile Include="Assets\Blink\Tools\RPGBuilder\Scripts\RPGData\RPGEffect.cs" />
+    <Compile Include="Assets\Blink\Tools\RPGBuilder\Scripts\Interfaces\IDisplayPanel.cs" />
+    <Compile Include="Assets\Blink\Tools\RPGBuilder\Scripts\DataHandling\DataSavingSystem.cs" />
+    <Compile Include="Assets\Blink\Tools\RPGBuilder\Scripts\UIElements\ScreenTextObject.cs" />
+    <Compile Include="Assets\Blink\Tools\RPGBuilder\Scripts\UIElements\NPCSpawnSlotHolder.cs" />
+    <Compile Include="Assets\Blink\Tools\RPGBuilder\Scripts\Utility\UIGridRenderer.cs" />
+    <Compile Include="Assets\Blink\Tools\RPGBuilder\Scripts\UIElements\ComboSlot.cs" />
+    <Compile Include="Assets\Blink\Tools\RPGBuilder\Scripts\UIElements\CraftingItemSlotHolder.cs" />
+    <Compile Include="Assets\Blink\Tools\RPGBuilder\Scripts\RPGData\RPGResourceNode.cs" />
+    <Compile Include="Assets\Blink\Tools\RPGBuilder\Scripts\Managers\EnchantingManager.cs" />
+    <Compile Include="Assets\Blink\Tools\RPGBuilder\Scripts\Character\ThirdPerson\CharacterAnimator.cs" />
+    <Compile Include="Assets\Blink\Tools\RPGBuilder\Scripts\RPGData\RPGBonus.cs" />
+    <Compile Include="Assets\Blink\Tools\RPGBuilder\Scripts\Managers\QuestTrackerDisplayManager.cs" />
+    <Compile Include="Assets\Blink\Tools\RPGBuilder\Scripts\UIElements\CurrencyDisplaySlotHolder.cs" />
+    <Compile Include="Assets\Blink\Tools\RPGBuilder\Scripts\UI\FPSCounter.cs" />
+    <Compile Include="Assets\Blink\Tools\RPGBuilder\Scripts\UI\ScreenSpaceNameplates.cs" />
+    <Compile Include="Assets\Blink\Tools\RPGBuilder\ThirdPartyAssets\RDR\Particles\Fantasy_Portal\Script\UserCamera.cs" />
+    <Compile Include="Assets\Blink\Tools\RPGBuilder\Scripts\RPGData\RPGQuest.cs" />
+    <Compile Include="Assets\Blink\Tools\RPGBuilder\Scripts\Managers\GameModifierManager.cs" />
+    <Compile Include="Assets\Blink\Tools\RPGBuilder\Scripts\Managers\EnchantingPanelDisplayManager.cs" />
+    <Compile Include="Assets\Blink\Tools\RPGBuilder\Scripts\Managers\LoadingScreenManager.cs" />
+    <Compile Include="Assets\Blink\Tools\RPGBuilder\Scripts\UIElements\KeybindSlotHolder.cs" />
+    <Compile Include="Assets\Blink\Tools\RPGBuilder\Scripts\Managers\RegionMessageDisplayManager.cs" />
+    <Compile Include="Assets\Blink\Tools\RPGBuilder\Scripts\Character\ThirdPerson\Controller.cs" />
+    <Compile Include="Assets\Blink\Tools\RPGBuilder\Scripts\UIElements\PlayerDialogueOptionSlot.cs" />
+    <Compile Include="Assets\Blink\Tools\RPGBuilder\Scripts\Character\ThirdPerson\PlayerCamera.cs" />
+    <Compile Include="Assets\Blink\Tools\RPGBuilder\Scripts\Managers\RegionManager.cs" />
+    <Compile Include="Assets\Blink\Tools\RPGBuilder\Scripts\RPGData\RPGSpellbook.cs" />
+    <Compile Include="Assets\Blink\Tools\RPGBuilder\Scripts\Managers\CrosshairDisplayManager.cs" />
+    <Compile Include="Assets\Blink\Tools\RPGBuilder\Scripts\CustomAttributes\RPGBCustomAttributes.cs" />
+    <Compile Include="Assets\Blink\Tools\RPGBuilder\Scripts\World\InteractiveNode.cs" />
+    <Compile Include="Assets\Blink\Tools\RPGBuilder\Scripts\Utility\Win32.cs" />
+    <Compile Include="Assets\Blink\Tools\RPGBuilder\ThirdPartyAssets\GabrielAguiarProductions\Scripts\UniqueMagicAbilities\SpawnMagicAbilityScript.cs" />
+    <Compile Include="Assets\Blink\Tools\RPGBuilder\Scripts\Managers\WeaponTemplatesDisplayManager.cs" />
+    <Compile Include="Assets\Blink\Tools\RPGBuilder\Scripts\RPGData\RPGItem.cs" />
+    <Compile Include="Assets\Blink\Tools\RPGBuilder\Scripts\Managers\CharacterEventsManager.cs" />
+    <Compile Include="Assets\Blink\Tools\RPGBuilder\Scripts\Managers\MeshParticleManager.cs" />
+    <Compile Include="Assets\Blink\Tools\RPGBuilder\Scripts\Character\RPGBCharacterController.cs" />
+    <Compile Include="Assets\Blink\Tools\RPGBuilder\Scripts\Logic\StatCalculator.cs" />
+    <Compile Include="Assets\Blink\Tools\RPGBuilder\Scripts\Managers\TreePointsManager.cs" />
+    <Compile Include="Assets\Blink\Tools\RPGBuilder\Scripts\Managers\CombatManager.cs" />
+    <Compile Include="Assets\Blink\Tools\RPGBuilder\Scripts\UI\Toolbar.cs" />
+    <Compile Include="Assets\Blink\Tools\RPGBuilder\Scripts\Managers\TaskCheckerManager.cs" />
+    <Compile Include="Assets\Blink\Tools\RPGBuilder\Scripts\Character\RPGBCharacterControllerEssentials.cs" />
+    <Compile Include="Assets\Blink\Tools\RPGBuilder\Scripts\Managers\PetPanelDisplayManager.cs" />
+    <Compile Include="Assets\Blink\Tools\RPGBuilder\Scripts\DataHandling\RPGBuilderJsonSaver.cs" />
+    <Compile Include="Assets\Blink\Tools\RPGBuilder\Scripts\LogicMono\NodeSockets.cs" />
+    <Compile Include="Assets\Blink\Tools\RPGBuilder\Scripts\UIElements\SocketSlotHolder.cs" />
+    <Compile Include="Assets\Blink\Tools\RPGBuilder\Scripts\RPGData\RPGGeneralDATA.cs" />
+    <Compile Include="Assets\Blink\Tools\RPGBuilder\Scripts\Managers\GroundIndicatorManager.cs" />
+    <Compile Include="Assets\Blink\Tools\RPGBuilder\ThirdPartyAssets\GabrielAguiarProductions\Scripts\UniqueProjectiles\SpawnProjectilesScript.cs" />
+    <Compile Include="Assets\Blink\Tools\RPGBuilder\Scripts\LogicMono\ProjectileHitDetection.cs" />
+    <Compile Include="Assets\Blink\Tools\RPGBuilder\Scripts\UIElements\ActionBarSlot.cs" />
+    <Compile Include="Assets\Blink\Tools\RPGBuilder\Scripts\UIElements\TreeNodeHolder.cs" />
+    <Compile Include="Assets\Blink\Tools\RPGBuilder\Scripts\DisplayHandler\StatBarDisplayHandler.cs" />
+    <Compile Include="Assets\Blink\Tools\RPGBuilder\Scripts\Managers\LootPanelDisplayManager.cs" />
+    <Compile Include="Assets\Blink\Tools\RPGBuilder\Scripts\RPGData\RPGEnchantment.cs" />
+    <Compile Include="Assets\Blink\Tools\RPGBuilder\Scripts\RPGData\RPGFaction.cs" />
+    <Compile Include="Assets\Blink\Tools\RPGBuilder\Scripts\UIElements\WorldDroppedItemDataHolder.cs" />
+    <Compile Include="Assets\Blink\Tools\RPGBuilder\ThirdPartyAssets\RDR\Particles\Fantasy_Portal\Script\Exit.cs" />
+    <Compile Include="Assets\Blink\Tools\RPGBuilder\Scripts\Managers\GameActionsManager.cs" />
+    <Compile Include="Assets\Blink\Tools\RPGBuilder\Scripts\Managers\MinimapDisplayManager.cs" />
+    <Compile Include="Assets\Blink\Tools\RPGBuilder\Scripts\LogicMono\GroundHitDetection.cs" />
+    <Compile Include="Assets\Blink\Tools\RPGBuilder\Scripts\World\CameraParticleObject.cs" />
+    <Compile Include="Assets\Blink\Tools\RPGBuilder\Scripts\UIElements\AbilityTooltipElement.cs" />
+    <Compile Include="Assets\Blink\Tools\RPGBuilder\Scripts\UIElements\ItemSlotHolder.cs" />
+    <Compile Include="Assets\Blink\Tools\RPGBuilder\Scripts\Character\RPGBCharacterWorldInteraction.cs" />
+    <Compile Include="Assets\Blink\Tools\RPGBuilder\Scripts\UIElements\QuestTrackerSlotHolder.cs" />
+    <Compile Include="Assets\Blink\Tools\RPGBuilder\Scripts\Managers\MainMenuManager.cs" />
+    <Compile Include="Assets\Blink\Tools\RPGBuilder\Scripts\UIElements\GetItemSlot.cs" />
+    <Compile Include="Assets\Blink\Tools\RPGBuilder\Scripts\UIElements\NameplatesDATAHolder.cs" />
+    <Compile Include="Assets\Blink\Tools\RPGBuilder\ThirdPartyAssets\GabrielAguiarProductions\Scripts\UniqueMagicAbilities\SpawnCometsScript.cs" />
+    <Compile Include="Assets\Blink\Tools\RPGBuilder\Scripts\RPGData\RPGDialogue.cs" />
+    <Compile Include="Assets\Blink\Tools\RPGBuilder\Scripts\UI\ScreenSpaceWorldDroppedItems.cs" />
+    <Compile Include="Assets\Blink\Tools\RPGBuilder\Scripts\UIElements\EnchantSlotHolder.cs" />
+    <Compile Include="Assets\Blink\Tools\RPGBuilder\Scripts\Managers\InventoryDisplayManager.cs" />
+    <Compile Include="Assets\Blink\Tools\RPGBuilder\Scripts\RPGData\RPGDialogueGraph.cs" />
+    <Compile Include="Assets\Blink\Tools\RPGBuilder\Scripts\UIElements\WeaponTemplateSlotHolder.cs" />
+    <Compile Include="Assets\Blink\Tools\RPGBuilder\Scripts\Character\ThirdPerson\RPGBThirdPersonController.cs" />
+    <Compile Include="Assets\Blink\Tools\RPGBuilder\Scripts\Managers\BonusManager.cs" />
+    <Compile Include="Assets\Blink\Tools\RPGBuilder\Scripts\Managers\TargetInfoDisplayManager.cs" />
+    <Compile Include="Assets\Blink\Tools\RPGBuilder\Scripts\UIElements\StatDataHolder.cs" />
+    <Compile Include="Assets\Blink\Tools\RPGBuilder\Scripts\Managers\PlayerInfoDisplayManager.cs" />
+    <Compile Include="Assets\Blink\Tools\RPGBuilder\Scripts\UIElements\SpellbookNodeSlot.cs" />
+    <Compile Include="Assets\Blink\Tools\RPGBuilder\Scripts\Managers\ItemsGainEventDisplayManager.cs" />
+    <Compile Include="Assets\Blink\Tools\RPGBuilder\Scripts\UIElements\LootItemSlotHolder.cs" />
+    <Compile Include="Assets\Blink\Tools\RPGBuilder\Scripts\RPGData\RPGTalentTree.cs" />
+    <Compile Include="Assets\Blink\Tools\RPGBuilder\Scripts\Character\ThirdPerson\InterpolationCurve.cs" />
+    <Compile Include="Assets\Blink\Tools\RPGBuilder\Scripts\UIElements\CombatTreeSlot.cs" />
+    <Compile Include="Assets\Blink\Tools\RPGBuilder\Scripts\Managers\ScreenOverlayManager.cs" />
+    <Compile Include="Assets\Blink\Tools\RPGBuilder\Scripts\RPGData\RPGDialogueGraphUtilities.cs" />
+    <Compile Include="Assets\Blink\Tools\RPGBuilder\Scripts\Character\PlayerAnimatorLayerHandler.cs" />
+    <Compile Include="Assets\Blink\Tools\RPGBuilder\Scripts\Managers\CursorManager.cs" />
+    <Compile Include="Assets\Blink\Tools\RPGBuilder\Scripts\Character\ThirdPerson\PlayerController.cs" />
+    <Compile Include="Assets\Blink\Tools\RPGBuilder\Scripts\Managers\StatAllocationDisplayManager.cs" />
+    <Compile Include="Assets\Blink\Tools\RPGBuilder\Scripts\Managers\StatAllocationManager.cs" />
+    <Compile Include="Assets\Blink\Tools\RPGBuilder\ThirdPartyAssets\GabrielAguiarProductions\Scripts\ParticleSystemController\Serializables.cs" />
+    <Compile Include="Assets\Blink\Tools\RPGBuilder\Scripts\RPGData\RPGCurrency.cs" />
+    <Compile Include="Assets\Blink\Tools\RPGBuilder\Scripts\Managers\TreesDisplayManager.cs" />
+    <Compile Include="Assets\Blink\Tools\RPGBuilder\Scripts\DisplayHandler\EquipmentItemSlotDisplayHandler.cs" />
+    <Compile Include="Assets\Blink\Tools\RPGBuilder\Scripts\Character\ThirdPerson\Util.cs" />
+    <Compile Include="Assets\Blink\Tools\RPGBuilder\ThirdPartyAssets\GabrielAguiarProductions\Scripts\ParticleSystemController\SaveParticleSystemScript.cs" />
+    <Compile Include="Assets\Blink\Tools\RPGBuilder\Scripts\UIElements\EnchantCostSlotHolder.cs" />
+    <Compile Include="Assets\Blink\Tools\RPGBuilder\Scripts\Interfaces\IPlayerInteractable.cs" />
+    <Compile Include="Assets\Blink\Tools\RPGBuilder\Scripts\UIElements\CharacterSlotHolder.cs" />
+    <Compile Include="Assets\Blink\Tools\RPGBuilder\Scripts\LogicMono\GroundIndicator.cs" />
+    <Compile Include="Assets\Blink\Tools\RPGBuilder\Scripts\Managers\ActiveBlockingDisplayManager.cs" />
+    <Compile Include="Assets\Blink\Tools\RPGBuilder\Scripts\DisplayHandler\PlayerStatesDisplayHandler.cs" />
+    <Compile Include="Assets\Blink\Tools\RPGBuilder\Scripts\World\GraveyardHandler.cs" />
+    <Compile Include="Assets\Blink\Tools\RPGBuilder\Scripts\Managers\MerchantPanelDisplayManager.cs" />
+    <Compile Include="Assets\Blink\Tools\RPGBuilder\Scripts\RPGData\RPGWorldPosition.cs" />
+    <Compile Include="Assets\Blink\Tools\RPGBuilder\Scripts\Utility\RendererExtension.cs" />
+    <Compile Include="Assets\Blink\Tools\RPGBuilder\ThirdPartyAssets\RDR\Particles\Fantasy_Portal\Script\NextPrefab.cs" />
+    <Compile Include="Assets\Blink\Tools\RPGBuilder\Scripts\Managers\RequirementsManager.cs" />
+    <Compile Include="Assets\Blink\Tools\RPGBuilder\Scripts\AI\RPGBAIAgent.cs" />
+    <Compile Include="Assets\Blink\Tools\RPGBuilder\Scripts\Managers\RPGBDemoTutorialDisplayManager.cs" />
+    <Compile Include="Assets\Blink\Tools\RPGBuilder\Scripts\Managers\GatheringManager.cs" />
+    <Compile Include="Assets\Blink\Tools\RPGBuilder\Scripts\UI\ItemTooltip.cs" />
+    <Compile Include="Assets\Blink\Tools\RPGBuilder\Scripts\DataHandling\AssetIDHandler.cs" />
+    <Compile Include="Assets\Blink\Tools\RPGBuilder\Scripts\Managers\LevelingManager.cs" />
+    <Compile Include="Assets\Blink\Tools\RPGBuilder\Scripts\LogicMono\RPGBuilderEssentials.cs" />
+    <Compile Include="Assets\Blink\Tools\RPGBuilder\Scripts\Nodes\RPGDialogueBaseNode.cs" />
+    <Compile Include="Assets\Blink\Tools\RPGBuilder\Scripts\Managers\SkillBookDisplayManager.cs" />
+    <Compile Include="Assets\Blink\Tools\RPGBuilder\Scripts\UIElements\NodeStateSlot.cs" />
+    <Compile Include="Assets\Blink\Tools\RPGBuilder\Scripts\DisplayHandler\EXPBarDisplayHandler.cs" />
+    <Compile Include="Assets\Blink\Tools\RPGBuilder\Scripts\Managers\MusicManager.cs" />
+    <Compile Include="Assets\Blink\Tools\RPGBuilder\Scripts\Managers\InventoryManager.cs" />
+    <Compile Include="Assets\Blink\Tools\RPGBuilder\Scripts\Managers\FactionManager.cs" />
+    <Compile Include="Assets\Blink\Tools\RPGBuilder\Scripts\RPGData\RPGCombo.cs" />
+    <Compile Include="Assets\Blink\Tools\RPGBuilder\Scripts\RPGData\RPGLevelsTemplate.cs" />
+    <Compile Include="Assets\Blink\Tools\RPGBuilder\Scripts\Managers\ErrorEventsDisplayManager.cs" />
+    <Compile Include="Assets\Blink\Tools\RPGBuilder\Scripts\DataHandling\GameSettingsData.cs" />
+    <Compile Include="Assets\Blink\Tools\RPGBuilder\Scripts\Managers\GameOptionsDisplayManager.cs" />
+    <Compile Include="Assets\Blink\Tools\RPGBuilder\Scripts\UIElements\ShapeshiftSlot.cs" />
+    <Compile Include="Assets\Blink\Tools\RPGBuilder\Scripts\RPGData\RPGCombatDATA.cs" />
+    <Compile Include="Assets\Blink\Tools\RPGBuilder\Scripts\Character\ThirdPerson\SpringArm.cs" />
+    <Compile Include="Assets\Blink\Tools\RPGBuilder\Scripts\Managers\CharacterPanelDisplayManager.cs" />
+    <Compile Include="Assets\Blink\Tools\RPGBuilder\Scripts\Character\ThirdPerson\PlayerInput.cs" />
+    <Compile Include="Assets\Blink\Tools\RPGBuilder\Scripts\Managers\WorldInteractableDisplayManager.cs" />
+    <Compile Include="Assets\Blink\Tools\RPGBuilder\Scripts\Managers\ConfirmationPopupManager.cs" />
+    <Compile Include="Assets\Blink\Tools\RPGBuilder\Scripts\Managers\QuestJournalDisplayManager.cs" />
+    <Compile Include="Assets\Blink\Tools\RPGBuilder\Scripts\Utility\UILineRenderer.cs" />
+    <Compile Include="Assets\Blink\Tools\RPGBuilder\Scripts\UIElements\FactionSlotDataHolder.cs" />
+    <Compile Include="Assets\Blink\Tools\RPGBuilder\Resources\EditorData\RPGBuilderEditorDATA.cs" />
+    <Compile Include="Assets\Blink\Tools\RPGBuilder\ThirdPartyAssets\GabrielAguiarProductions\Scripts\UniqueProjectiles\ProjectileMoveScript.cs" />
+    <Compile Include="Assets\Blink\Tools\RPGBuilder\Scripts\RPGData\RPGLootTable.cs" />
+    <Compile Include="Assets\Blink\Tools\RPGBuilder\Scripts\Logic\AILogic.cs" />
+    <Compile Include="Assets\Blink\Tools\RPGBuilder\Scripts\UIElements\SkillSlotHolder.cs" />
+    <Compile Include="Assets\Blink\Tools\RPGBuilder\Scripts\Managers\SettingsPanelDisplayManager.cs" />
+    <Compile Include="Assets\Blink\Tools\RPGBuilder\Scripts\Managers\AbilityManager.cs" />
+    <Compile Include="Assets\Blink\Tools\RPGBuilder\Scripts\UI\AbilityTooltip.cs" />
+    <Compile Include="Assets\Blink\Tools\RPGBuilder\ThirdPartyAssets\GabrielAguiarProductions\Scripts\UniqueProjectiles\RotateToMouseScript.cs" />
+    <Compile Include="Assets\Blink\Tools\RPGBuilder\Scripts\LogicMono\CombatNode.cs" />
+    <Compile Include="Assets\Blink\Tools\RPGBuilder\Resources\EditorData\RPGBuilderEditorFilters.cs" />
+    <Compile Include="Assets\Blink\Tools\RPGBuilder\Scripts\Managers\CraftingManager.cs" />
+    <Compile Include="Assets\Blink\Tools\RPGBuilder\Scripts\Character\ThirdPerson\TestHelper.cs" />
+    <Compile Include="Assets\Blink\Tools\RPGBuilder\Scripts\UIElements\MerchantItemSlotHolder.cs" />
+    <Compile Include="Assets\Blink\Tools\RPGBuilder\Scripts\Managers\CombosDisplayManager.cs" />
+    <Compile Include="Assets\Blink\Tools\RPGBuilder\Scripts\DataHandling\CharacterData.cs" />
+    <Compile Include="Assets\Blink\Tools\RPGBuilder\ThirdPartyAssets\GabrielAguiarProductions\Scripts\ParticleSystemController\ParticleSystemController.cs" />
+    <Compile Include="Assets\Blink\Tools\RPGBuilder\Scripts\World\WorldDroppedItem.cs" />
+    <Compile Include="Assets\Blink\Tools\RPGBuilder\Scripts\AI\NPCSpawner.cs" />
+    <Compile Include="Assets\Blink\Tools\RPGBuilder\Scripts\RPGData\RPGStat.cs" />
+    <Compile Include="Assets\Blink\Tools\RPGBuilder\Scripts\Managers\QuestManager.cs" />
+    <Compile Include="Assets\Blink\Tools\RPGBuilder\Scripts\Managers\CustomInputManager.cs" />
+    <Compile Include="Assets\Blink\Tools\RPGBuilder\Scripts\UIElements\StatAllocationSlotDataHolder.cs" />
+    <Compile Include="Assets\Blink\Tools\RPGBuilder\Scripts\UIElements\GameModifierSlotDataHolder.cs" />
+    <Compile Include="Assets\Blink\Tools\RPGBuilder\Scripts\UIElements\QuestObjectiveTextSlot.cs" />
+    <Compile Include="Assets\Blink\Tools\RPGBuilder\Scripts\Utility\MathParabola.cs" />
+    <Compile Include="Assets\Blink\Tools\RPGBuilder\Scripts\Character\PlayerAppearanceHandler.cs" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Assets\Blink\Tools\RPGBuilder\ThirdPartyAssets\DanielShervheim\Stylized Water\Shaders\WaterUtilities.cginc" />
+    <None Include="Assets\Blink\Tools\RPGBuilder\Art\UI\Fonts\Titillium\TitilliumWebLicense.txt" />
+    <None Include="Assets\Blink\Tools\RPGBuilder\ThirdPartyAssets\RDR\Particles\RPG Effect Pack\Shader\Shield.shader" />
+    <None Include="Assets\Blink\Tools\RPGBuilder\ThirdPartyAssets\Polyart\Shaders\Dreamscape_Foliage.shader" />
+    <None Include="Assets\Blink\Tools\RPGBuilder\ThirdPartyAssets\Polyart\Shaders\Dreamscape_Surface.shader" />
+    <None Include="Assets\Blink\Tools\RPGBuilder\Art\BlinkVFX\Shaders\BL_Splash_Fade.shader" />
+    <None Include="Assets\Blink\Tools\RPGBuilder\ThirdPartyAssets\BOXOPHOBIC\Skybox_Cubemap_Blending.shader" />
+    <None Include="Assets\Blink\Tools\RPGBuilder\ThirdPartyAssets\DanielShervheim\Stylized Water\Textures\README.txt" />
+    <None Include="Assets\Blink\Tools\RPGBuilder\Art\BlinkVFX\Shaders\BL_Alpha.shader" />
+    <None Include="Assets\Blink\Tools\RPGBuilder\Art\BlinkVFX\Shaders\BL_Fresnel_Ice.shader" />
+    <None Include="Assets\Blink\Tools\RPGBuilder\Art\UI\Fonts\Acme\AcmeLicense.txt" />
+    <None Include="Assets\Blink\Tools\RPGBuilder\Art\UI\Fonts\Alata\AlataLicense.txt" />
+    <None Include="Assets\Blink\Tools\RPGBuilder\ThirdPartyAssets\TitanForge Assets\TitanForge Sample Pack\Materials\TitanForge Sample Glass.shader" />
+    <None Include="Assets\Blink\Tools\RPGBuilder\Art\BlinkVFX\Shaders\BL_Wave.shader" />
+    <None Include="Assets\Blink\Tools\RPGBuilder\Art\UI\Fonts\Merriweather\MerriweatherLicense.txt" />
+    <None Include="Assets\Blink\Tools\RPGBuilder\ThirdPartyAssets\RDR\Particles\Fantasy_Portal\Readme.txt" />
+    <None Include="Assets\Blink\Tools\RPGBuilder\ThirdPartyAssets\Polytope Studio\Characters\Shaders\PT_Medieval_Armors_Shader_PBR.shader" />
+    <None Include="Assets\Blink\Tools\RPGBuilder\ThirdPartyAssets\NaughtyCharacter\NaughtyCharacterLicense.txt" />
+    <None Include="Assets\Blink\Tools\RPGBuilder\ThirdPartyAssets\GabrielAguiarProductions\Shaders\AdditiveMobile_Scroll01.shader" />
+    <None Include="Assets\Blink\Tools\RPGBuilder\ThirdPartyAssets\Polytope Studio\Environment2\Shaders\PT_Fruit_Trees_Shader.shader" />
+    <None Include="Assets\Blink\Tools\RPGBuilder\ThirdPartyAssets\DanielShervheim\Stylized Water\Shaders\ShadowUtilities.cginc" />
+    <None Include="Assets\Blink\Tools\RPGBuilder\ThirdPartyAssets\TitanForge Assets\TitanForge Sample Pack\TitanForge Sample Shader.shader" />
+    <None Include="Assets\Blink\Tools\RPGBuilder\Art\BlinkVFX\Shaders\BL_Splashv2.shader" />
+    <None Include="Assets\Blink\Tools\RPGBuilder\ThirdPartyLicenses.txt" />
+    <None Include="Assets\Blink\Tools\RPGBuilder\ThirdPartyAssets\DanielShervheim\Stylized Water\Shaders\Stylized Water.shader" />
+    <None Include="Assets\Blink\Tools\RPGBuilder\ThirdPartyAssets\Polyart\Shaders\Dreamscape_Masked_Lit.shader" />
+    <None Include="Assets\Blink\Tools\RPGBuilder\Art\BlinkVFX\Shaders\BL_Sphere.shader" />
+    <None Include="Assets\Blink\Tools\RPGBuilder\Art\BlinkVFX\Shaders\BL_Alpha_grad.shader" />
+    <None Include="Assets\Blink\Tools\RPGBuilder\Art\BlinkVFX\Shaders\BL_Tower.shader" />
+    <None Include="Assets\Blink\Tools\RPGBuilder\ThirdPartyAssets\RDR\Particles\PORTAL (AAA)\Shader\Particle.shader" />
+    <None Include="Assets\Blink\Tools\RPGBuilder\Art\BlinkVFX\Shaders\BL_Distortion.shader" />
+    <None Include="Assets\Blink\Tools\RPGBuilder\ThirdPartyAssets\RDR\Particles\RPG Effect Pack\Readme.txt" />
+    <None Include="Assets\Blink\Tools\RPGBuilder\ThirdPartyAssets\GabrielAguiarProductions\Shaders\Additive_EdgeSoft.shader" />
+    <None Include="Assets\Blink\Tools\RPGBuilder\Resources\Database\PersistentData\__DO NOT DELETE THESE FILES__.txt" />
+    <None Include="Assets\Blink\Tools\RPGBuilder\ThirdPartyAssets\GabrielAguiarProductions\Shaders\AlphaBlended_EdgeSoft.shader" />
+    <None Include="Assets\Blink\Tools\RPGBuilder\Art\BlinkVFX\Shaders\BL_Splash.shader" />
+    <None Include="Assets\Blink\Tools\RPGBuilder\ThirdPartyAssets\GabrielAguiarProductions\Shaders\AlphaBlended_Scroll01.shader" />
+    <None Include="Assets\Resources\Procedural Fire\Shaders\FireSphere.shader" />
+    <None Include="Assets\Blink\Tools\RPGBuilder\Art\BlinkVFX\Shaders\BL_Mask.shader" />
+    <None Include="Assets\Blink\Tools\RPGBuilder\ThirdPartyAssets\Polytope Studio\Characters\Shaders\PT_Medieval_Armors_Shader_Toon.shader" />
+    <None Include="Assets\Blink\Tools\RPGBuilder\ThirdPartyAssets\RDR\Particles\RPG Effect Pack\Shader\Particle.shader" />
+    <None Include="Assets\Blink\Tools\RPGBuilder\Art\Shaders\GroundIndicatorBasic.shader" />
+    <None Include="Assets\Blink\Tools\RPGBuilder\ThirdPartyAssets\Polyart\Shaders\Dreamscape_Surface_Coverage.shader" />
+    <None Include="Assets\Blink\Tools\RPGBuilder\ThirdPartyAssets\RDR\Particles\PORTAL (AAA)\Readme.txt" />
+    <None Include="Assets\Blink\Tools\RPGBuilder\Art\BlinkVFX\Shaders\BL_Splashv3.shader" />
+    <None Include="Assets\Blink\Tools\RPGBuilder\ThirdPartyAssets\RDR\Particles\PORTAL (AAA)\Shader\Distort.shader" />
+    <None Include="Assets\Blink\Tools\RPGBuilder\ThirdPartyAssets\DanielShervheim\StylizedWaterLicense.txt" />
   </ItemGroup>
   <ItemGroup>
     <Reference Include="UnityEngine">
@@ -324,6 +580,24 @@
     </Reference>
     <Reference Include="Newtonsoft.Json">
       <HintPath>Library\PackageCache\com.unity.nuget.newtonsoft-json@2.0.0\Runtime\Newtonsoft.Json.dll</HintPath>
+    </Reference>
+    <Reference Include="Sirenix.OdinInspector.Editor">
+      <HintPath>Assets\Plugins\Sirenix\Assemblies\Sirenix.OdinInspector.Editor.dll</HintPath>
+    </Reference>
+    <Reference Include="Sirenix.OdinInspector.Attributes">
+      <HintPath>Assets\Plugins\Sirenix\Assemblies\Sirenix.OdinInspector.Attributes.dll</HintPath>
+    </Reference>
+    <Reference Include="Sirenix.Serialization.Config">
+      <HintPath>Assets\Plugins\Sirenix\Assemblies\Sirenix.Serialization.Config.dll</HintPath>
+    </Reference>
+    <Reference Include="Sirenix.Utilities">
+      <HintPath>Assets\Plugins\Sirenix\Assemblies\Sirenix.Utilities.dll</HintPath>
+    </Reference>
+    <Reference Include="Sirenix.Serialization">
+      <HintPath>Assets\Plugins\Sirenix\Assemblies\Sirenix.Serialization.dll</HintPath>
+    </Reference>
+    <Reference Include="Sirenix.Utilities.Editor">
+      <HintPath>Assets\Plugins\Sirenix\Assemblies\Sirenix.Utilities.Editor.dll</HintPath>
     </Reference>
     <Reference Include="netstandard">
       <HintPath>F:\UnityHub\2021.2.0b4\Editor\Data\NetStandard\ref\2.0.0\netstandard.dll</HintPath>
@@ -735,6 +1009,22 @@
     </Reference>
   </ItemGroup>
   <ItemGroup>
+    <ProjectReference Include="Sirenix.OdinInspector.CompatibilityLayer.csproj">
+      <Project>{ECAA5468-7BB1-8230-9D8F-8DDAE7CC549A}</Project>
+      <Name>Sirenix.OdinInspector.CompatibilityLayer</Name>
+    </ProjectReference>
+    <ProjectReference Include="Sirenix.OdinInspector.CompatibilityLayer.Editor.csproj">
+      <Project>{E59F91DF-744E-3AB5-4221-9F296698C069}</Project>
+      <Name>Sirenix.OdinInspector.CompatibilityLayer.Editor</Name>
+    </ProjectReference>
+    <ProjectReference Include="XNode.csproj">
+      <Project>{D8741D90-99DA-2C77-E135-0ABD39F9592E}</Project>
+      <Name>XNode</Name>
+    </ProjectReference>
+    <ProjectReference Include="XNodeEditor.csproj">
+      <Project>{E15D0766-F273-4701-0965-0B21ED012A11}</Project>
+      <Name>XNodeEditor</Name>
+    </ProjectReference>
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
   <Target Name="GenerateTargetFrameworkMonikerAttribute" />
