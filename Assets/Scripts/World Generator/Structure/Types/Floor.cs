@@ -3,14 +3,14 @@ using UnityEngine;
 
 class Floor : Structure
 {
-    public List<Structure> walls = new List<Structure>();
     public Floor(Vector3 size, Transform parent, Vector3 position, Material material) : base(GameObject.CreatePrimitive(PrimitiveType.Cube), parent, size, position, material)
     {
 
     }
 
-    public void CreateWallsFor(IEnumerable<Direction> directions)
+    public List<Structure> CreateWallsFor(IEnumerable<Direction> directions)
     {
+        var walls = new List<Structure>();
         foreach (var direction in directions)
         {
             for (int i = 0; i < 8; i++)
@@ -37,6 +37,7 @@ class Floor : Structure
                 walls.Add(new Wall(scale, structureObject.transform.parent, position, material));
             }
         }
+        return walls;
     }
 }
 

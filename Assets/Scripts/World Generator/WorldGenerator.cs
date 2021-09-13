@@ -1,3 +1,4 @@
+using Assets.Scripts.World_Generator;
 using System.Collections.Generic;
 using System.Linq;
 using UnityEngine;
@@ -14,16 +15,17 @@ public class WorldGenerator : MonoBehaviour
 
     void Start()
     {
-        var roomPoints = GenerateRoomsWithPlayer();
+        var roomPoints = GenerateRooms();
 
         var triangles = GraphUtilities.Triangulate(roomPoints.Select(room => new Vertex(room.x, room.z)).ToList());
         var edges = GraphUtilities.GetEdgesFrom(triangles);
         var vertices = edges.Select(edge => edge.v0).Concat(edges.Select(edge => edge.v1)).Distinct().ToList();
         var minimumSpanningTree = GraphUtilities.BuildMinimumSpanningTreeFrom(edges, vertices);
         var minimumSpanningTreeEnriched = minimumSpanningTree.Concat(edges.GetRange(3, (int)(edges.Count() * 0.04))).Where(e => e.v0.x < worldSize.x && e.v0.y < worldSize.y && e.v1.x < worldSize.x && e.v1.y < worldSize.y && e.v0.x > 0 && e.v0.y > 0 && e.v1.x > 0 && e.v1.y > 0).ToList();
+ 
         minimumSpanningTreeEnriched.ForEach(edge => GenerateHallwayFrom(edge));
-
         worldGrid.GetAll().ForEach(f => GenerateWalls(f as Floor));
+
         UnityExtensions.CombineChildMeshesOf(gameObject, structureMaterial);
     }
 
@@ -32,26 +34,31 @@ public class WorldGenerator : MonoBehaviour
 
     }
 
-    private List<Vector3> GenerateRoomsWithPlayer()
+    private List<Vector3> GenerateRooms()
     {
         var listOfPoints = new List<Vector3>();
         var playerSpawned = false;
+
         worldGrid = new Grid<Structure>(worldSize);
 
         for (var i = 0; i < amountOfStructuresInWorld; i++)
         {
-            var position = new Vector3(Random.Range(0, worldSize.x), 0, Random.Range(0, worldSize.y));
-            var scale = new Vector3(Random.Range(5, 15), 0, Random.Range(5, 15));
-            listOfPoints.Add(position);
+            var roomBlueprint = new RoomPlanner()
+                .SetPosition(new Vector3(Random.Range(0, worldSize.x), 0, Random.Range(0, worldSize.y)))
+                .SetSize(new Vector3(Random.Range(5, 15), 0, Random.Range(5, 15)));
 
-            if (playerSpawned == false)
+            if (playerSpawned)
             {
-                var player = GameObject.FindGameObjectWithTag("Player");
-                player.transform.position = new Vector3(position.x, position.y + 5, position.z);
+                roomBlueprint.AddEnemySpawn();
+            }
+            else
+            {
+                roomBlueprint.AddPlayerSpawn();
                 playerSpawned = true;
             }
 
-            ProjectFloorOntoGridWithCeiling(position, scale);
+            listOfPoints.Add(roomBlueprint.Position);
+            ProjectFloorOntoGridWithCeiling(roomBlueprint.Position, roomBlueprint.Scale);
         }
 
         return listOfPoints;
@@ -72,7 +79,8 @@ public class WorldGenerator : MonoBehaviour
     private void GenerateWalls(Floor floor)
     {
         var structureMap = worldGrid.GetNodesSurrounding(new Vector2(floor.Position.x, floor.Position.z));
-        floor.CreateWallsFor(structureMap.Where(kv => kv.Value is null).Select(kv => kv.Key).ToList());
+        var walls = floor.CreateWallsFor(structureMap.Where(kv => kv.Value is null).Select(kv => kv.Key).ToList());
+        walls.ForEach(wall => worldGrid[wall.Position] = wall);
     }
 
     private void ProjectFloorOntoGridWithCeiling(Vector3 position, Vector3 size)
