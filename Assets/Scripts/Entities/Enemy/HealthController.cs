@@ -1,21 +1,21 @@
-﻿using Assets.Scripts.Items;
-using System.Collections.Generic;
-using System.Linq;
+﻿using Assets.Scripts.Entities;
+using Assets.Scripts.Items.Weapon;
 using TMPro;
 using UnityEngine;
 
 namespace Assets.Scripts
 {
+    [RequireComponent(typeof(Entity))]
     class HealthController : MonoBehaviour
     {
-        public int MaxHealth;
         public GameObject DamageText;
 
         private int Health;
 
         void Start()
         {
-            Health = MaxHealth;
+            var entity = gameObject.GetComponent<Entity>();
+            Health = entity.MaxHealth;
         }
 
         void Update()
@@ -36,7 +36,7 @@ namespace Assets.Scripts
 
         private void TakeDamageFrom(GameObject gameObject)
         {
-            var weaponScript = gameObject.GetComponent<WeaponStats>();
+            var weaponScript = gameObject.GetComponent<Weapon>();
             var damage = weaponScript.Damage;
 
             CreateFloatingTextFor(damage);

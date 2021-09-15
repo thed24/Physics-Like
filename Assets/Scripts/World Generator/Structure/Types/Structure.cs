@@ -1,3 +1,4 @@
+using Assets.Scripts.World_Generator;
 using UnityEngine;
 
 public abstract class Structure
@@ -20,8 +21,8 @@ public abstract class Structure
         structureObject.transform.parent = parent;
         structureObject.tag = GetType().ToString();
         structureObject.GetComponent<MeshRenderer>().material = material is not null ? material : structureObject.GetComponent<MeshRenderer>().material;
-        structureObject.transform.position = position.HasValue ? position.Value : structureObject.transform.position;
-        structureObject.transform.localScale = size.HasValue ? size.Value : structureObject.transform.localScale;
+        structureObject.transform.position = position ?? structureObject.transform.position;
+        structureObject.transform.localScale = size ?? structureObject.transform.localScale;
     }
     public void Remove()
     {

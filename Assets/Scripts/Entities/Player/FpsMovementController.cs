@@ -1,7 +1,8 @@
+using Assets.Scripts.Entities;
 using UnityEngine;
 
 [RequireComponent(typeof(CharacterController))]
-public class FpsCharacterController : MonoBehaviour
+public class FpsMovementController : MonoBehaviour
 {
     CharacterController characterController;
     Vector3 moveDirection = Vector3.zero;

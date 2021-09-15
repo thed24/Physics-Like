@@ -49,7 +49,7 @@ public class WorldGenerator : MonoBehaviour
 
             if (playerSpawned)
             {
-                roomBlueprint.AddEnemySpawn();
+                roomBlueprint.AddEnemySpawnWithChanceOf(25);
             }
             else
             {

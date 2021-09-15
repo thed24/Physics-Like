@@ -18,17 +18,26 @@ namespace Assets.Scripts.World_Generator
             this.Scale = Scale;
             return this;
         }
+
         public RoomPlanner AddPlayerSpawn()
         {
             var player = GameObject.FindGameObjectWithTag("Player");
             player.transform.position = new Vector3(Position.x, Position.y + 5, Position.z);
+            var starterWeapon = UnityExtensions.LoadPrefabFrom("Items/Sword/Short Sword");
+            starterWeapon.transform.position = new Vector3(Position.x, Position.y + 5, Position.z);
+            var torch = UnityExtensions.LoadPrefabFrom("Items/Torch/Torch");
+            torch.transform.position = new Vector3(Position.x, Position.y + 5, Position.z);
             return this;
         }
 
-        public RoomPlanner AddEnemySpawn()
+        public RoomPlanner AddEnemySpawnWithChanceOf(int chance)
         {
-            var enemy = UnityExtensions.LoadPrefabFrom("NPCs/Enemy");
-            enemy.transform.position = new Vector3(Position.x, Position.y + 5, Position.z);
+            int between0and100 = Random.Range(0, 100);
+            if (between0and100 > chance)
+            {
+                var enemy = UnityExtensions.LoadPrefabFrom("NPCs/Enemy");
+                enemy.transform.position = new Vector3(Position.x, Position.y + 5, Position.z);
+            }
             return this;
         }
     }
