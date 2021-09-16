@@ -28,7 +28,7 @@ namespace Assets.Scripts.Entities.Player
         void OnGUI()
         {
             GUI.DrawTexture(new Rect(Screen.width / 2, Screen.height / 2, Crosshair.width + 25, Crosshair.height + 25), IsCrosshairActive ? CrosshairActive : Crosshair);
-            GUI.Label(new Rect(Screen.width / 2, Screen.height / 2, 100, 50), ItemUnderCrosshair.Length != 0 ? ItemUnderCrosshair : "");
+            GUI.Label(new Rect(Screen.width / 2 - 5, Screen.height / 2 + 75, 100, 50), ItemUnderCrosshair.Length != 0 ? ItemUnderCrosshair : "");
         }
 
         private string GetItemUnderCrosshair()
