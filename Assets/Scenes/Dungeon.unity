@@ -460,25 +460,6 @@ MeshCollider:
   m_Convex: 0
   m_CookingOptions: 30
   m_Mesh: {fileID: 0}
---- !u!1 &2028312539 stripped
-GameObject:
-  m_CorrespondingSourceObject: {fileID: 6812130037919303008, guid: ca8c38bcd87417a4a9f28a0d4aeb1c4c, type: 3}
-  m_PrefabInstance: {fileID: 6812130036696961723}
-  m_PrefabAsset: {fileID: 0}
---- !u!114 &2028312546
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 2028312539}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 180eccd90f10bb04584b2d7aac9896b6, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  Crosshair: {fileID: 2800000, guid: af1865066551ebf4895f4ad284974131, type: 3}
-  CrosshairActive: {fileID: 2800000, guid: 98ff3a88d51dc4249a4be27b61c1025a, type: 3}
 --- !u!1001 &6812130036696961723
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -537,6 +518,14 @@ PrefabInstance:
     - target: {fileID: 6812130037919303015, guid: ca8c38bcd87417a4a9f28a0d4aeb1c4c, type: 3}
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 7356939216522035213, guid: ca8c38bcd87417a4a9f28a0d4aeb1c4c, type: 3}
+      propertyPath: Name
+      value: Player
+      objectReference: {fileID: 0}
+    - target: {fileID: 7356939216522035213, guid: ca8c38bcd87417a4a9f28a0d4aeb1c4c, type: 3}
+      propertyPath: MaxHealth
+      value: 10
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: ca8c38bcd87417a4a9f28a0d4aeb1c4c, type: 3}

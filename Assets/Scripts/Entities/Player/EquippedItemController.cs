@@ -52,6 +52,7 @@ public class EquippedItemController : MonoBehaviour
         var clone = Instantiate(weapon, weaponPoint.position, Quaternion.identity);
         clone.transform.parent ??= weaponPoint;
         clone.GetComponent<Animator>().enabled = true;
+        clone.GetComponent<Rigidbody>().isKinematic = true;
 
         return clone;
     }
