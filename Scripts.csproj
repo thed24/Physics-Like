@@ -37,27 +37,27 @@
   </PropertyGroup>
   <ItemGroup>
      <Compile Include="Assets\Scripts\World Generator\RoomPlanner.cs" />
+     <Compile Include="Assets\Scripts\Items\Weapon\Weapon.cs" />
      <Compile Include="Assets\Scripts\World Generator\Maths\Vertex.cs" />
+     <Compile Include="Assets\Scripts\World Generator\Structure\Direction.cs" />
+     <Compile Include="Assets\Scripts\Entities\Entity.cs" />
+     <Compile Include="Assets\Scripts\Effects\ProceduralDamageText.cs" />
+     <Compile Include="Assets\Scripts\Entities\Enemy\HealthController.cs" />
+     <Compile Include="Assets\Scripts\World Generator\Structure\Grid.cs" />
+     <Compile Include="Assets\Scripts\World Generator\Maths\GraphUtilities.cs" />
+     <Compile Include="Assets\Scripts\World Generator\Structure\PathFinder.cs" />
      <Compile Include="Assets\Scripts\World Generator\Maths\Triangle.cs" />
      <Compile Include="Assets\Scripts\World Generator\Maths\Edge.cs" />
-     <Compile Include="Assets\Scripts\World Generator\Structure\Direction.cs" />
      <Compile Include="Assets\Scripts\Entities\Player\GuiController.cs" />
      <Compile Include="Assets\Scripts\World Generator\WorldGenerator.cs" />
      <Compile Include="Assets\Scripts\World Generator\Structure\Types\Floor.cs" />
      <Compile Include="Assets\Scripts\World Generator\Maths\DisjointedSet.cs" />
      <Compile Include="Assets\Scripts\Entities\Player\FpsMovementController.cs" />
      <Compile Include="Assets\Scripts\World Generator\Structure\Types\Structure.cs" />
-     <Compile Include="Assets\Scripts\Effects\ProceduralDamageText.cs" />
      <Compile Include="Assets\Scripts\World Generator\Structure\Types\Wall.cs" />
-     <Compile Include="Assets\Scripts\Entities\Enemy\HealthController.cs" />
      <Compile Include="Assets\Scripts\Entities\Player\EquippedItemController.cs" />
-     <Compile Include="Assets\Scripts\World Generator\Structure\Grid.cs" />
-     <Compile Include="Assets\Scripts\World Generator\Maths\GraphUtilities.cs" />
      <Compile Include="Assets\Scripts\UnityExtensions.cs" />
-     <Compile Include="Assets\Scripts\World Generator\Structure\PathFinder.cs" />
      <Compile Include="Assets\Scripts\Items\Item.cs" />
-     <Compile Include="Assets\Scripts\Items\Weapon\Weapon.cs" />
-     <Compile Include="Assets\Scripts\Entities\Entity.cs" />
      <None Include="Assets\Scripts\Scripts.asmdef" />
     <Reference Include="UnityEngine">
         <HintPath>F:/UnityHub/2021.2.0b4/Editor/Data/Managed/UnityEngine/UnityEngine.dll</HintPath>
@@ -322,9 +322,6 @@
     </Reference>
     <Reference Include="Unity.VisualScripting.Antlr3.Runtime">
         <HintPath>S:/Projects/Personal/PhysicsLike/Library/PackageCache/com.unity.visualscripting@1.7.2/Runtime/VisualScripting.Flow/Dependencies/NCalc/Unity.VisualScripting.Antlr3.Runtime.dll</HintPath>
-    </Reference>
-    <Reference Include="clipper_library">
-        <HintPath>S:/Projects/Personal/PhysicsLike/Library/PackageCache/com.unity.cinemachine@2.8.0/Runtime/ThirdParty/clipper_library.dll</HintPath>
     </Reference>
     <Reference Include="Newtonsoft.Json">
         <HintPath>S:/Projects/Personal/PhysicsLike/Library/PackageCache/com.unity.nuget.newtonsoft-json@2.0.0/Runtime/Newtonsoft.Json.dll</HintPath>
