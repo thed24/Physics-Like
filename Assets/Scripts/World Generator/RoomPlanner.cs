@@ -1,4 +1,6 @@
-﻿using UnityEngine;
+﻿using System.Collections.Generic;
+using Assets.Scripts.Items;
+using UnityEngine;
 
 namespace Assets.Scripts.World_Generator
 {
@@ -23,10 +25,18 @@ namespace Assets.Scripts.World_Generator
         {
             var player = GameObject.FindGameObjectWithTag("Player");
             player.transform.position = new Vector3(Position.x, Position.y + 5, Position.z);
-            var starterWeapon = UnityExtensions.LoadPrefabFrom("Items/Sword/Short Sword");
-            starterWeapon.transform.position = new Vector3(Position.x, Position.y + 5, Position.z);
-            var torch = UnityExtensions.LoadPrefabFrom("Items/Torch/Torch");
-            torch.transform.position = new Vector3(Position.x, Position.y + 5, Position.z);
+
+            var chest = UnityExtensions.LoadPrefabFrom("Items/World/Chest");
+            var starterWeapon = UnityExtensions.LoadPrefabFrom("Items/Holdable/Spear/Spear");
+            var torch = UnityExtensions.LoadPrefabFrom("Items/Holdable/Torch/Torch");
+
+            chest.transform.position = new Vector3(Position.x, Position.y + 1, Position.z);
+            Debug.Log(chest.GetComponent<Chest>().Inventory);
+            chest.GetComponent<Chest>().Inventory.Items.AddRange(new List<Item>(){
+                starterWeapon.GetComponent<Item>(),
+                torch.GetComponent<Item>()
+            });
+
             return this;
         }
 

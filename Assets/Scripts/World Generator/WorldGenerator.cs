@@ -22,7 +22,7 @@ public class WorldGenerator : MonoBehaviour
         var vertices = edges.Select(edge => edge.v0).Concat(edges.Select(edge => edge.v1)).Distinct().ToList();
         var minimumSpanningTree = GraphUtilities.BuildMinimumSpanningTreeFrom(edges, vertices);
         var minimumSpanningTreeEnriched = minimumSpanningTree.Concat(edges.GetRange(3, (int)(edges.Count() * 0.04))).Where(e => e.v0.x < worldSize.x && e.v0.y < worldSize.y && e.v1.x < worldSize.x && e.v1.y < worldSize.y && e.v0.x > 0 && e.v0.y > 0 && e.v1.x > 0 && e.v1.y > 0).ToList();
- 
+
         minimumSpanningTreeEnriched.ForEach(edge => GenerateHallwayFrom(edge));
         worldGrid.GetAll().ForEach(f => GenerateWalls(f as Floor));
 

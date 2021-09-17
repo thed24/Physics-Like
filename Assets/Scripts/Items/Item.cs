@@ -2,13 +2,21 @@
 
 namespace Assets.Scripts.Items
 {
+    [RequireComponent(typeof(Rigidbody))]
+    [RequireComponent(typeof(AudioSource))]
     public class Item : MonoBehaviour
     {
+        [HideInInspector]
+        public AudioSource Source;
         public string Name;
-
-        private void Start()
+        public AudioClip InteractSound;
+        public Texture2D Icon;
+        public virtual void Start()
         {
-            tag = "Item";
+            Source = gameObject.AddComponent<AudioSource>();
+        }
+        public virtual void Interact(){
+            Source.PlayOneShot(InteractSound);
         }
     }
 }

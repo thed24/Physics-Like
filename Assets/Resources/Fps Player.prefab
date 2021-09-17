@@ -11,9 +11,10 @@ GameObject:
   - component: {fileID: 6812130036364925541}
   - component: {fileID: 6812130036364925531}
   - component: {fileID: 6812130036364925540}
+  - component: {fileID: 5194630000385510348}
   m_Layer: 0
   m_Name: Main Camera
-  m_TagString: Untagged
+  m_TagString: MainCamera
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -26,7 +27,7 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 6812130036364925542}
   m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
-  m_LocalPosition: {x: 0, y: 0, z: 0}
+  m_LocalPosition: {x: 0, y: 0.543, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children: []
@@ -84,6 +85,39 @@ AudioListener:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 6812130036364925542}
   m_Enabled: 1
+--- !u!114 &5194630000385510348
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 6812130036364925542}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: a79441f348de89743a2939f4d699eac1, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  m_RenderShadows: 1
+  m_RequiresDepthTextureOption: 2
+  m_RequiresOpaqueTextureOption: 2
+  m_CameraType: 0
+  m_Cameras: []
+  m_RendererIndex: -1
+  m_VolumeLayerMask:
+    serializedVersion: 2
+    m_Bits: 1
+  m_VolumeTrigger: {fileID: 0}
+  m_VolumeFrameworkUpdateModeOption: 2
+  m_RenderPostProcessing: 0
+  m_Antialiasing: 0
+  m_AntialiasingQuality: 2
+  m_StopNaN: 0
+  m_Dithering: 0
+  m_ClearDepth: 1
+  m_AllowXRRendering: 1
+  m_RequiresDepthTexture: 0
+  m_RequiresColorTexture: 0
+  m_Version: 2
 --- !u!1 &6812130037120777170
 GameObject:
   m_ObjectHideFlags: 0
@@ -108,7 +142,7 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 6812130037120777170}
   m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
-  m_LocalPosition: {x: -0.3, y: 0, z: 1}
+  m_LocalPosition: {x: -0.3, y: 0.5, z: 1}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children: []
@@ -139,7 +173,7 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 6812130037455199231}
   m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
-  m_LocalPosition: {x: 0.3, y: 0, z: 1}
+  m_LocalPosition: {x: 0.3, y: 0.5, z: 1}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children: []
@@ -210,7 +244,7 @@ MeshRenderer:
   m_RenderingLayerMask: 1
   m_RendererPriority: 0
   m_Materials:
-  - {fileID: 10303, guid: 0000000000000000f000000000000000, type: 0}
+  - {fileID: 2100000, guid: 31321ba15b8f8eb4c954353edc038b1d, type: 2}
   m_StaticBatchInfo:
     firstSubMesh: 0
     subMeshCount: 0
@@ -260,6 +294,7 @@ GameObject:
   - component: {fileID: 6812130037919303002}
   - component: {fileID: 4423939154398540452}
   - component: {fileID: 6812130037919303012}
+  - component: {fileID: 2495531251570161474}
   m_Layer: 0
   m_Name: Fps Player
   m_TagString: Player
@@ -276,7 +311,7 @@ Transform:
   m_GameObject: {fileID: 6812130037919303008}
   m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
   m_LocalPosition: {x: 0, y: 0, z: 0}
-  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_LocalScale: {x: 1, y: 1.25, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children:
   - {fileID: 6812130036364925541}
@@ -311,17 +346,13 @@ MonoBehaviour:
   m_GameObject: {fileID: 6812130037919303008}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 02b7d6e5da694bb4a867a28b60743cd5, type: 3}
+  m_Script: {fileID: 11500000, guid: c8bcdc56bf0056b43b1b68c0bccd9986, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  walkingSpeed: 7
-  runningSpeed: 10
-  jumpSpeed: 7
-  gravity: 19
-  playerCamera: {fileID: 6812130036364925531}
-  lookSpeed: 1.5
-  lookXLimit: 45
-  canMove: 1
+  leftHandEquipPoint: {fileID: 6812130037120777169}
+  rightHandEquipPoint: {fileID: 6812130037455199230}
+  leftHand: {fileID: 0}
+  rightHand: {fileID: 0}
 --- !u!114 &6812130037919303002
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -331,13 +362,17 @@ MonoBehaviour:
   m_GameObject: {fileID: 6812130037919303008}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 04364b9e104a4e44a8808795fbbcde4a, type: 3}
+  m_Script: {fileID: 11500000, guid: 0a1e37cf4dd52f54c88aae8015d89d7d, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  leftHandEquipPoint: {fileID: 6812130037120777169}
-  rightHandEquipPoint: {fileID: 6812130037455199230}
-  leftHand: {fileID: 0}
-  rightHand: {fileID: 0}
+  walkingSpeed: 7.5
+  runningSpeed: 11.5
+  jumpSpeed: 8
+  gravity: 20
+  playerCamera: {fileID: 6812130036364925531}
+  lookSpeed: 2
+  lookXLimit: 45
+  canMove: 1
 --- !u!114 &4423939154398540452
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -352,6 +387,8 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   Crosshair: {fileID: 2800000, guid: af1865066551ebf4895f4ad284974131, type: 3}
   CrosshairActive: {fileID: 2800000, guid: 98ff3a88d51dc4249a4be27b61c1025a, type: 3}
+  Font: {fileID: 12800000, guid: 997a43b767814dd0a7642ec9b78cba41, type: 3}
+  FontSize: 20
 --- !u!33 &6812130037919303012
 MeshFilter:
   m_ObjectHideFlags: 0
@@ -360,3 +397,18 @@ MeshFilter:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 6812130037919303008}
   m_Mesh: {fileID: 0}
+--- !u!114 &2495531251570161474
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 6812130037919303008}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: ecd2eceb6f130244e9a5415ffd81c0a5, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  Inventory: {fileID: 0}
+  Name: Player
+  MaxHealth: 5

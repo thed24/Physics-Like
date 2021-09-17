@@ -337,6 +337,21 @@
     <Reference Include="UnityEditor.UnityConnectModule">
         <HintPath>F:/UnityHub/2021.2.0b4/Editor/Data/Managed/UnityEngine/UnityEditor.UnityConnectModule.dll</HintPath>
     </Reference>
+    <Reference Include="Unity.Burst.Unsafe">
+        <HintPath>S:/Projects/Personal/PhysicsLike/Library/PackageCache/com.unity.burst@1.6.0-pre.2/Unity.Burst.Unsafe.dll</HintPath>
+    </Reference>
+    <Reference Include="Unity.Burst.Cecil.Mdb">
+        <HintPath>S:/Projects/Personal/PhysicsLike/Library/PackageCache/com.unity.burst@1.6.0-pre.2/Unity.Burst.CodeGen/Unity.Burst.Cecil.Mdb.dll</HintPath>
+    </Reference>
+    <Reference Include="Unity.Burst.Cecil.Pdb">
+        <HintPath>S:/Projects/Personal/PhysicsLike/Library/PackageCache/com.unity.burst@1.6.0-pre.2/Unity.Burst.CodeGen/Unity.Burst.Cecil.Pdb.dll</HintPath>
+    </Reference>
+    <Reference Include="Unity.Burst.Cecil">
+        <HintPath>S:/Projects/Personal/PhysicsLike/Library/PackageCache/com.unity.burst@1.6.0-pre.2/Unity.Burst.CodeGen/Unity.Burst.Cecil.dll</HintPath>
+    </Reference>
+    <Reference Include="Unity.Burst.Cecil.Rocks">
+        <HintPath>S:/Projects/Personal/PhysicsLike/Library/PackageCache/com.unity.burst@1.6.0-pre.2/Unity.Burst.CodeGen/Unity.Burst.Cecil.Rocks.dll</HintPath>
+    </Reference>
     <Reference Include="Unity.VisualScripting.Antlr3.Runtime">
         <HintPath>S:/Projects/Personal/PhysicsLike/Library/PackageCache/com.unity.visualscripting@1.7.2/Runtime/VisualScripting.Flow/Dependencies/NCalc/Unity.VisualScripting.Antlr3.Runtime.dll</HintPath>
     </Reference>
@@ -694,17 +709,20 @@
     <Reference Include="Unity.VSCode.Editor">
         <HintPath>S:/Projects/Personal/PhysicsLike/Library/ScriptAssemblies/Unity.VSCode.Editor.dll</HintPath>
     </Reference>
-    <Reference Include="Unity.VisualScripting.Welcome.Editor">
-        <HintPath>S:/Projects/Personal/PhysicsLike/Library/ScriptAssemblies/Unity.VisualScripting.Welcome.Editor.dll</HintPath>
+    <Reference Include="Unity.RenderPipelines.Universal.Shaders">
+        <HintPath>S:/Projects/Personal/PhysicsLike/Library/ScriptAssemblies/Unity.RenderPipelines.Universal.Shaders.dll</HintPath>
+    </Reference>
+    <Reference Include="Unity.RenderPipelines.Universal.Runtime">
+        <HintPath>S:/Projects/Personal/PhysicsLike/Library/ScriptAssemblies/Unity.RenderPipelines.Universal.Runtime.dll</HintPath>
+    </Reference>
+    <Reference Include="PPv2URPConverters">
+        <HintPath>S:/Projects/Personal/PhysicsLike/Library/ScriptAssemblies/PPv2URPConverters.dll</HintPath>
     </Reference>
     <Reference Include="Unity.TextMeshPro.Editor">
         <HintPath>S:/Projects/Personal/PhysicsLike/Library/ScriptAssemblies/Unity.TextMeshPro.Editor.dll</HintPath>
     </Reference>
     <Reference Include="Unity.VisualStudio.Editor">
         <HintPath>S:/Projects/Personal/PhysicsLike/Library/ScriptAssemblies/Unity.VisualStudio.Editor.dll</HintPath>
-    </Reference>
-    <Reference Include="Unity.Timeline.Editor">
-        <HintPath>S:/Projects/Personal/PhysicsLike/Library/ScriptAssemblies/Unity.Timeline.Editor.dll</HintPath>
     </Reference>
     <Reference Include="Unity.Timeline">
         <HintPath>S:/Projects/Personal/PhysicsLike/Library/ScriptAssemblies/Unity.Timeline.dll</HintPath>
@@ -718,8 +736,17 @@
     <Reference Include="Unity.VisualScripting.State.Editor">
         <HintPath>S:/Projects/Personal/PhysicsLike/Library/ScriptAssemblies/Unity.VisualScripting.State.Editor.dll</HintPath>
     </Reference>
+    <Reference Include="Unity.Burst.Editor">
+        <HintPath>S:/Projects/Personal/PhysicsLike/Library/ScriptAssemblies/Unity.Burst.Editor.dll</HintPath>
+    </Reference>
+    <Reference Include="Unity.Searcher.Editor">
+        <HintPath>S:/Projects/Personal/PhysicsLike/Library/ScriptAssemblies/Unity.Searcher.Editor.dll</HintPath>
+    </Reference>
     <Reference Include="Unity.VisualScripting.SettingsProvider.Editor">
         <HintPath>S:/Projects/Personal/PhysicsLike/Library/ScriptAssemblies/Unity.VisualScripting.SettingsProvider.Editor.dll</HintPath>
+    </Reference>
+    <Reference Include="Unity.RenderPipelines.Core.Runtime">
+        <HintPath>S:/Projects/Personal/PhysicsLike/Library/ScriptAssemblies/Unity.RenderPipelines.Core.Runtime.dll</HintPath>
     </Reference>
     <Reference Include="Unity.VisualScripting.Flow">
         <HintPath>S:/Projects/Personal/PhysicsLike/Library/ScriptAssemblies/Unity.VisualScripting.Flow.dll</HintPath>
@@ -733,14 +760,47 @@
     <Reference Include="Unity.Rider.Editor">
         <HintPath>S:/Projects/Personal/PhysicsLike/Library/ScriptAssemblies/Unity.Rider.Editor.dll</HintPath>
     </Reference>
+    <Reference Include="Unity.RenderPipelines.Core.ShaderLibrary">
+        <HintPath>S:/Projects/Personal/PhysicsLike/Library/ScriptAssemblies/Unity.RenderPipelines.Core.ShaderLibrary.dll</HintPath>
+    </Reference>
     <Reference Include="UnityEngine.UI">
         <HintPath>S:/Projects/Personal/PhysicsLike/Library/ScriptAssemblies/UnityEngine.UI.dll</HintPath>
     </Reference>
-    <Reference Include="Unity.VisualScripting.State">
-        <HintPath>S:/Projects/Personal/PhysicsLike/Library/ScriptAssemblies/Unity.VisualScripting.State.dll</HintPath>
-    </Reference>
     <Reference Include="Unity.VisualScripting.Core">
         <HintPath>S:/Projects/Personal/PhysicsLike/Library/ScriptAssemblies/Unity.VisualScripting.Core.dll</HintPath>
+    </Reference>
+    <Reference Include="Unity.Mathematics">
+        <HintPath>S:/Projects/Personal/PhysicsLike/Library/ScriptAssemblies/Unity.Mathematics.dll</HintPath>
+    </Reference>
+    <Reference Include="Unity.ShaderGraph.Editor">
+        <HintPath>S:/Projects/Personal/PhysicsLike/Library/ScriptAssemblies/Unity.ShaderGraph.Editor.dll</HintPath>
+    </Reference>
+    <Reference Include="Unity.Burst">
+        <HintPath>S:/Projects/Personal/PhysicsLike/Library/ScriptAssemblies/Unity.Burst.dll</HintPath>
+    </Reference>
+    <Reference Include="Unity.RenderPipelines.Universal.Editor">
+        <HintPath>S:/Projects/Personal/PhysicsLike/Library/ScriptAssemblies/Unity.RenderPipelines.Universal.Editor.dll</HintPath>
+    </Reference>
+    <Reference Include="Unity.VisualScripting.Welcome.Editor">
+        <HintPath>S:/Projects/Personal/PhysicsLike/Library/ScriptAssemblies/Unity.VisualScripting.Welcome.Editor.dll</HintPath>
+    </Reference>
+    <Reference Include="Unity.RenderPipeline.Universal.ShaderLibrary">
+        <HintPath>S:/Projects/Personal/PhysicsLike/Library/ScriptAssemblies/Unity.RenderPipeline.Universal.ShaderLibrary.dll</HintPath>
+    </Reference>
+    <Reference Include="Unity.Timeline.Editor">
+        <HintPath>S:/Projects/Personal/PhysicsLike/Library/ScriptAssemblies/Unity.Timeline.Editor.dll</HintPath>
+    </Reference>
+    <Reference Include="Unity.RenderPipelines.ShaderGraph.ShaderGraphLibrary">
+        <HintPath>S:/Projects/Personal/PhysicsLike/Library/ScriptAssemblies/Unity.RenderPipelines.ShaderGraph.ShaderGraphLibrary.dll</HintPath>
+    </Reference>
+    <Reference Include="Unity.Mathematics.Editor">
+        <HintPath>S:/Projects/Personal/PhysicsLike/Library/ScriptAssemblies/Unity.Mathematics.Editor.dll</HintPath>
+    </Reference>
+    <Reference Include="Unity.RenderPipelines.Core.Editor">
+        <HintPath>S:/Projects/Personal/PhysicsLike/Library/ScriptAssemblies/Unity.RenderPipelines.Core.Editor.dll</HintPath>
+    </Reference>
+    <Reference Include="Unity.VisualScripting.State">
+        <HintPath>S:/Projects/Personal/PhysicsLike/Library/ScriptAssemblies/Unity.VisualScripting.State.dll</HintPath>
     </Reference>
   </ItemGroup>
   <ItemGroup>
