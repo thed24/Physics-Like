@@ -9,7 +9,14 @@ namespace Assets.Scripts.Entities
         [HideInInspector]
         public Inventory Inventory;
         public string Name;
+        public int Level;
+        public int Experience;
         public int MaxHealth;
+        public int MaxMana;
+        public int Dexterity;
+        public int Strength;
+        public int Intelligence;
+        public int Luck;
 
         public void Start(){
             Inventory = GetComponent<Inventory>();

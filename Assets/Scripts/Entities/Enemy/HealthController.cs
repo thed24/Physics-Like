@@ -1,5 +1,5 @@
 ﻿using Assets.Scripts.Entities;
-using Assets.Scripts.Items.Weapon;
+using Assets.Scripts.HoldableItems;
 using TMPro;
 using UnityEngine;
 
@@ -10,17 +10,17 @@ namespace Assets.Scripts
     {
         public GameObject DamageText;
 
-        private int Health;
+        private int CurrentHealth;
 
         void Start()
         {
             var entity = gameObject.GetComponent<Entity>();
-            Health = entity.MaxHealth;
+            CurrentHealth = entity.MaxHealth;
         }
 
         void Update()
         {
-            if (Health <= 0)
+            if (CurrentHealth <= 0)
             {
                 Destroy(gameObject);
             }
@@ -40,7 +40,7 @@ namespace Assets.Scripts
             var damage = weaponScript.Damage;
 
             CreateFloatingTextFor(damage);
-            Health -= damage;
+            CurrentHealth -= damage;
         }
 
         private void CreateFloatingTextFor(int damage)

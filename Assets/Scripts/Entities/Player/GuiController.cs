@@ -1,5 +1,4 @@
-﻿using Assets.Scripts.Items;
-using UnityEngine;
+﻿using UnityEngine;
 
 namespace Assets.Scripts.Entities.Player
 {
@@ -47,9 +46,9 @@ namespace Assets.Scripts.Entities.Player
         {
             if (Physics.Raycast(Camera.main.transform.position, Camera.main.transform.forward, out RaycastHit hit, 10.0f))
             {
-                if (hit.collider != null && hit.collider.gameObject.GetComponent<Item>() != null)
+                if (hit.collider != null && hit.collider.gameObject.GetComponent<IItem>() != null)
                 {
-                    return hit.collider.GetComponent<Item>().Name;
+                    return hit.collider.GetComponent<IItem>().Name;
                 }
             }
             return "";

@@ -1,6 +1,4 @@
 ﻿using Assets.Scripts.Entities;
-using Assets.Scripts.Items;
-using Assets.Scripts.Items.Weapon;
 using UnityEngine;
 
 [RequireComponent(typeof(FirstPersonController))]
@@ -15,60 +13,73 @@ public class EquippedItems : MonoBehaviour
 
     private Entity entity;
 
-    void Start(){
+    private class HandData
+    {
+        public Transform equipPoint { get; set; }
+        public int actionButton { get; set; }
+        public KeyCode dropKey { get; set; }
+    }
+
+    void Start()
+    {
         entity = gameObject.GetComponent<Entity>();
     }
 
-    void Update(){
-        var itemAtCrosshair = GetItemAtCrosshair<HoldableItem>();
-        var worldItemAtCrosshair = GetItemAtCrosshair<WorldItem>();
-
-        ActionForHand(ref leftHand, leftHandEquipPoint, 0, KeyCode.Q, itemAtCrosshair);
-        ActionForHand(ref rightHand, rightHandEquipPoint, 1, KeyCode.R, itemAtCrosshair);
-
-        if (Input.GetKeyDown(KeyCode.E) && itemAtCrosshair != null){
-            entity.Inventory.Items.Add(itemAtCrosshair.GetComponent<Item>());
-            itemAtCrosshair.SetActive(false);
-        } 
-        else if (Input.GetKeyDown(KeyCode.E) && worldItemAtCrosshair != null){
-            worldItemAtCrosshair.GetComponent<WorldItem>().Interact();
-        }
-    }
-
-    private void ActionForHand(ref GameObject hand, Transform equipPoint, int actionButton, KeyCode dropKey, GameObject itemAtCrosshair){
-        if (hand != null && hand.GetComponent<Weapon>() != null)
-        {
-            AnimateWeaponOnClick(hand, actionButton);
-        }
-        else if (hand == null && Input.GetMouseButtonDown(actionButton) && itemAtCrosshair != null)
-        {
-            EquipItemAt(ref hand, itemAtCrosshair, equipPoint);
-        }
-        else if (hand != null && Input.GetKeyDown(dropKey)){
-            ThrowItemFrom(ref hand, equipPoint);
-        }
-    }
-
-    private void EquipItemAt(ref GameObject slot, GameObject item, Transform hand)
+    void Update()
     {
-        var clonedItem = Instantiate(item, hand.position, Quaternion.identity);
-        clonedItem.transform.parent ??= hand;
-        clonedItem.GetComponent<Animator>().enabled = true;
-        clonedItem.GetComponent<Rigidbody>().isKinematic = true;
-        slot = clonedItem;
+        var leftHandData = new HandData() { equipPoint = leftHandEquipPoint, actionButton = 0, dropKey = KeyCode.Q };
+        var rightHandData = new HandData() { equipPoint = rightHandEquipPoint, actionButton = 1, dropKey = KeyCode.R };
 
-        item.GetComponent<HoldableItem>().Interact();
+        var holdableItemUnderCrosshair = GetItemAtCrosshair<IHoldable>();
+        var interactableItemUnderCrosshair = GetItemAtCrosshair<IInteractable>();
+
+        ActionForHand(ref leftHand, leftHandData, holdableItemUnderCrosshair);
+        ActionForHand(ref rightHand, rightHandData, holdableItemUnderCrosshair);
+        ActionForWorld(KeyCode.E, holdableItemUnderCrosshair, interactableItemUnderCrosshair);
     }
 
-    private void ThrowItemFrom(ref GameObject item, Transform hand)
+    private void ActionForHand(ref GameObject hand, HandData handData, GameObject itemAtCrosshair)
     {
-        var clone = Instantiate(item, hand.position, Quaternion.identity);
-        GameObject.Destroy(item);
-        item = null;
+        var equipPoint = handData.equipPoint;
+        var actionButton = handData.actionButton;
+        var dropKey = handData.dropKey;
 
-        clone.GetComponent<Animator>().enabled = false;
-        clone.GetComponent<Rigidbody>().isKinematic = false;
-        clone.GetComponent<Rigidbody>().AddForce(hand.forward * 500);
+        if (Input.GetMouseButtonDown(actionButton) && hand != null)
+        {
+            hand.GetComponent<IHoldable>().OnUse();
+        }
+        else if (Input.GetMouseButtonDown(actionButton) && hand == null && itemAtCrosshair != null)
+        {
+            itemAtCrosshair.transform.parent ??= equipPoint;
+            itemAtCrosshair.transform.localPosition = new Vector3(0, 0, 0);
+            itemAtCrosshair.transform.rotation = Quaternion.identity;
+
+            hand = itemAtCrosshair;
+
+            itemAtCrosshair.GetComponent<IHoldable>().OnPickup();
+        }
+        else if (Input.GetKeyDown(dropKey) && hand != null)
+        {
+            hand.transform.parent = null;
+            hand.GetComponent<IHoldable>().OnDrop();
+            hand = null;
+        }
+    }
+
+    private void ActionForWorld(KeyCode keyCode, GameObject itemAtCrosshair, GameObject worldItemAtCrosshair)
+    {
+        if (Input.GetKeyDown(KeyCode.E))
+        {
+            if (itemAtCrosshair != null)
+            {
+                entity.Inventory.AddItem(itemAtCrosshair.GetComponent<IItem>());
+                itemAtCrosshair.SetActive(false);
+            }
+            else if (worldItemAtCrosshair != null)
+            {
+                worldItemAtCrosshair.GetComponent<IInteractable>().Interact();
+            }
+        }
     }
 
     private GameObject GetItemAtCrosshair<T>()
@@ -82,22 +93,4 @@ public class EquippedItems : MonoBehaviour
         }
         return null;
     }
-
-    private void AnimateWeaponOnClick(GameObject weapon, int mouseButton)
-    {
-        var weaponAnimator = weapon.GetComponent<Animator>();
-        var animationName = weapon.GetComponent<Weapon>().AttackAnimation.name;
-        var animationInfo = weaponAnimator.GetCurrentAnimatorStateInfo(0);
-
-        if (!animationInfo.IsName(animationName) && Input.GetMouseButtonDown(mouseButton))
-        {
-            weaponAnimator.Play(animationName);
-            weapon.GetComponent<Weapon>().Source.PlayOneShot(weapon.GetComponent<Weapon>().AttackSound);
-        }
-        else
-        {
-            weapon.tag = animationInfo.IsName(animationName) ? "ActiveWeapon" : "Weapon";
-        }
-    }
 }
-

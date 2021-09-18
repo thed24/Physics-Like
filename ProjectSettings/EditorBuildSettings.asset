@@ -6,9 +6,6 @@ EditorBuildSettings:
   serializedVersion: 2
   m_Scenes:
   - enabled: 1
-    path: Assets/Scenes/Starter Island.unity
-    guid: 0d228d21a422d444ab1936a85d2e2296
-  - enabled: 1
     path: Assets/Scenes/Dungeon.unity
     guid: 9fc0d4010bbf28b4594072e72b8655ab
   m_configObjects: {}
