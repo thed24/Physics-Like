@@ -1,5 +1,4 @@
-﻿using System;
-using UnityEngine;
+﻿using UnityEngine;
 
 namespace Assets.Scripts.HoldableItems
 {
@@ -27,6 +26,7 @@ namespace Assets.Scripts.HoldableItems
         public AudioClip UseSound { get; set; }
         public Animator Animator { get; set; }
         public AnimationClip UseAnimation { get; set; }
+        public Texture2D Icon { get; set; }
 
         public void Start()
         {
@@ -41,7 +41,6 @@ namespace Assets.Scripts.HoldableItems
 
             if (!animationInfo.IsName(UseAnimation.name))
             {
-                Debug.Log(UseAnimation.name);
                 weaponAnimator.Play(UseAnimation.name);
                 Source.PlayOneShot(UseSound);
             }

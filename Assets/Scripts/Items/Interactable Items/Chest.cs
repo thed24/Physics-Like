@@ -21,6 +21,7 @@ namespace Assets.Scripts.Items
         public AudioSource Source { get; set; }
 
         public AudioClip InteractSound { get; set; }
+        public Texture2D Icon { get; set; }
 
         public void Start()
         {

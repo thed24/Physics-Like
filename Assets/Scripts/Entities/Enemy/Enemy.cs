@@ -1,21 +1,31 @@
 ﻿using Assets.Scripts.Entities;
 using Assets.Scripts.HoldableItems;
+using Assets.Scripts.Items;
 using TMPro;
 using UnityEngine;
 
 namespace Assets.Scripts
 {
-    [RequireComponent(typeof(Entity))]
-    class HealthController : MonoBehaviour
+    [RequireComponent(typeof(Inventory))]
+    public class Enemy : MonoBehaviour, IEntity, IDamageable
     {
         public GameObject DamageText;
-
+        public Inventory Inventory { get; set; }
+        public string Name { get; set; }
+        public int Level { get; set; }
+        public int Experience { get; set; }
+        public int MaxHealth { get; set; }
+        public int MaxMana { get; set; }
+        public int Dexterity { get; set; }
+        public int Strength { get; set; }
+        public int Intelligence { get; set; }
+        public int Luck { get; set; }
         private int CurrentHealth;
 
         void Start()
         {
-            var entity = gameObject.GetComponent<Entity>();
-            CurrentHealth = entity.MaxHealth;
+            CurrentHealth = MaxHealth;
+            Inventory = GetComponent<Inventory>();
         }
 
         void Update()
@@ -30,20 +40,20 @@ namespace Assets.Scripts
         {
             if (collision.gameObject.CompareTag("ActiveWeapon"))
             {
-                TakeDamageFrom(collision.gameObject);
+                var weaponScript = collision.body.gameObject.GetComponent<Weapon>();
+                var damage = weaponScript.Damage;
+
+                TakeDamage(damage);
             }
         }
 
-        private void TakeDamageFrom(GameObject gameObject)
+        public void TakeDamage(int damage)
         {
-            var weaponScript = gameObject.GetComponent<Weapon>();
-            var damage = weaponScript.Damage;
-
             CreateFloatingTextFor(damage);
             CurrentHealth -= damage;
         }
 
-        private void CreateFloatingTextFor(int damage)
+        void CreateFloatingTextFor(int damage)
         {
             var NewDamageText = Instantiate(DamageText, transform.position, Quaternion.identity);
             NewDamageText.GetComponent<TextMeshPro>().SetText($"{damage}");

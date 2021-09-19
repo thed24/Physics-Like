@@ -1,5 +1,6 @@
 ﻿using System.Collections.Generic;
 using Assets.Scripts.Builders;
+using Assets.Scripts.Entities.Builders;
 using Assets.Scripts.Items;
 using UnityEngine;
 
@@ -28,10 +29,18 @@ namespace Assets.Scripts.World_Generator
             player.transform.position = new Vector3(Position.x, Position.y + 5, Position.z);
 
             var chest = UnityExtensions.LoadPrefabFrom("Items/Interactable/Chest");
-            var starterWeapon = WeaponBuilder.BuildRandomWeaponAt();
 
             chest.transform.position = new Vector3(Position.x, Position.y + 1, Position.z);
-            chest.GetComponent<Chest>().Inventory.AddItem(starterWeapon.GetComponent<IItem>());
+            chest.GetComponent<Chest>().Inventory.AddItems(new List<IItem>() 
+            { 
+                WeaponBuilder.BuildRandomWeaponAt(),
+                WeaponBuilder.BuildRandomWeaponAt(),
+                WeaponBuilder.BuildRandomWeaponAt(),
+                WeaponBuilder.BuildRandomWeaponAt(),
+                WeaponBuilder.BuildRandomWeaponAt(),
+                WeaponBuilder.BuildRandomWeaponAt(),
+                WeaponBuilder.BuildRandomWeaponAt()
+            });
 
             return this;
         }
@@ -41,7 +50,7 @@ namespace Assets.Scripts.World_Generator
             int between0and100 = Random.Range(0, 100);
             if (between0and100 > chance)
             {
-                var enemy = UnityExtensions.LoadPrefabFrom("NPCs/Enemy");
+                var enemy = EnemyBuilder.BuildRandomEntity();
                 enemy.transform.position = new Vector3(Position.x, Position.y + 5, Position.z);
             }
             return this;

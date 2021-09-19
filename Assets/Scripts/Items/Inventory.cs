@@ -22,8 +22,12 @@ namespace Assets.Scripts.Items
             items.ForEach(item => item.GameObject.SetActive(false));
         }
 
+        public List<IItem> GetItems(){
+            return Items;
+        }
+
         public GameObject RetrieveItemAt(int index){
-            if (index < Items.Count)
+            if (index < Items.Count && Items[index] != null)
             {
                 var item = Items[index];
                 Items.RemoveAt(index);

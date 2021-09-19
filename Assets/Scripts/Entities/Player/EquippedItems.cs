@@ -1,8 +1,6 @@
-﻿using Assets.Scripts.Entities;
-using UnityEngine;
+﻿using UnityEngine;
 
 [RequireComponent(typeof(FirstPersonController))]
-[RequireComponent(typeof(Entity))]
 public class EquippedItems : MonoBehaviour
 {
     public Transform leftHandEquipPoint;
@@ -11,7 +9,7 @@ public class EquippedItems : MonoBehaviour
     public GameObject leftHand;
     public GameObject rightHand;
 
-    private Entity entity;
+    private IEntity entity;
 
     private class HandData
     {
@@ -22,7 +20,7 @@ public class EquippedItems : MonoBehaviour
 
     void Start()
     {
-        entity = gameObject.GetComponent<Entity>();
+        entity = gameObject.GetComponent<IEntity>();
     }
 
     void Update()

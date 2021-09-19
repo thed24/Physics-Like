@@ -130,6 +130,10 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 0}
     m_Modifications:
+    - target: {fileID: 4423939154398540452, guid: ca8c38bcd87417a4a9f28a0d4aeb1c4c, type: 3}
+      propertyPath: Font
+      value: 
+      objectReference: {fileID: 12800000, guid: 3b7a0087c8acce444a98955a84f9c62c, type: 3}
     - target: {fileID: 6812130037919303008, guid: ca8c38bcd87417a4a9f28a0d4aeb1c4c, type: 3}
       propertyPath: m_Name
       value: Fps Player

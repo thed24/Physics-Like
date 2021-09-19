@@ -45,11 +45,9 @@
      <Compile Include="Assets\Scripts\World Generator\WorldGenerator.cs" />
      <Compile Include="Assets\Scripts\World Generator\Structure\Types\Floor.cs" />
      <Compile Include="Assets\Scripts\World Generator\Maths\DisjointedSet.cs" />
-     <Compile Include="Assets\Scripts\Entities\Entity.cs" />
      <Compile Include="Assets\Scripts\World Generator\Structure\Types\Structure.cs" />
      <Compile Include="Assets\Scripts\Effects\ProceduralDamageText.cs" />
      <Compile Include="Assets\Scripts\World Generator\Structure\Types\Wall.cs" />
-     <Compile Include="Assets\Scripts\Entities\Enemy\HealthController.cs" />
      <Compile Include="Assets\Scripts\World Generator\Structure\Grid.cs" />
      <Compile Include="Assets\Scripts\World Generator\Maths\GraphUtilities.cs" />
      <Compile Include="Assets\Scripts\Entities\Player\FirstPersonController.cs" />
@@ -64,6 +62,11 @@
      <Compile Include="Assets\Scripts\Interfaces\IHoldable.cs" />
      <Compile Include="Assets\Scripts\Interfaces\IItem.cs" />
      <Compile Include="Assets\Scripts\Items\ItemTypes.cs" />
+     <Compile Include="Assets\Scripts\Entities\Enemy\Enemy.cs" />
+     <Compile Include="Assets\Scripts\Interfaces\IEntity.cs" />
+     <Compile Include="Assets\Scripts\Interfaces\IDamageable.cs" />
+     <Compile Include="Assets\Scripts\Entities\Player\Player.cs" />
+     <Compile Include="Assets\Scripts\Entities\Builders\EnemyBuilder.cs" />
      <None Include="Assets\Scripts\Scripts.asmdef" />
     <Reference Include="UnityEngine">
         <HintPath>F:\UnityHub\2021.2.0b4\Editor\Data\Managed\UnityEngine\UnityEngine.dll</HintPath>

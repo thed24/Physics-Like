@@ -28,6 +28,7 @@ namespace Assets.Scripts.Builders
                 weaponGameObject,
                 weaponGameObject.name.Split('_')[0],
                 Random.Range(1, 10),
+                new Texture2D(1, 1),
                 attackAnimation,
                 attackSound,
                 pickupSound,
@@ -36,11 +37,12 @@ namespace Assets.Scripts.Builders
             );
         }
 
-        public static Weapon BuildWeapon(GameObject weapon, string name, int damage, AnimationClip attackAnimation, AudioClip attackSound, AudioClip interactSound, AudioClip dropSound, RuntimeAnimatorController animator)
+        public static Weapon BuildWeapon(GameObject weapon, string name, int damage, Texture2D icon, AnimationClip attackAnimation, AudioClip attackSound, AudioClip interactSound, AudioClip dropSound, RuntimeAnimatorController animator)
         {
             weapon.AddComponent<Weapon>();
             weapon.GetComponent<Weapon>().Name = name;
             weapon.GetComponent<Weapon>().Damage = damage;
+            weapon.GetComponent<Weapon>().Icon = icon;
             weapon.GetComponent<Weapon>().UseAnimation = attackAnimation;
             weapon.GetComponent<Weapon>().UseSound = attackSound;
             weapon.GetComponent<Weapon>().PickupSound = attackSound;
