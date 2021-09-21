@@ -8,7 +8,8 @@ namespace Assets.Scripts.Builders
     public class WeaponBuilder
     {
         private static List<Object> weapons => Resources.LoadAll("Items/Holdable/Weapons").ToList();
-        private static List<AudioClip> sounds => Resources.LoadAll<AudioClip>("Sounds").ToList();
+        private static List<AudioClip> whooshSounds => Resources.LoadAll<AudioClip>("Sounds/Whoosh").ToList();
+        private static List<AudioClip> attackSounds => Resources.LoadAll<AudioClip>("Sounds/Combat").ToList();
         private static List<AnimationClip> animations => Resources.LoadAll<AnimationClip>("Animations").ToList();
         private static List<RuntimeAnimatorController> animators => Resources.LoadAll<RuntimeAnimatorController>("Animations").ToList();
 
@@ -18,7 +19,8 @@ namespace Assets.Scripts.Builders
             var weaponGameObject = Object.Instantiate(weapon, position, Quaternion.identity) as GameObject;
 
             var attackAnimation = animations.Where(animation => !animation.name.Contains("Idle")).ToList()[Random.Range(0, animations.Where(animation => !animation.name.Contains("Idle")).ToList().Count)];
-            var attackSound = sounds[Random.Range(0, sounds.Count)];
+            var attackSound = attackSounds[Random.Range(0, attackSounds.Count)];
+            var whooshSound = whooshSounds[Random.Range(0, whooshSounds.Count)];
             var animator = animators.First(animator => animator.name.Contains(attackAnimation.name.Split(' ')[0]));
 
             return BuildWeapon(
@@ -28,8 +30,8 @@ namespace Assets.Scripts.Builders
                 new Texture2D(1, 1),
                 attackAnimation,
                 attackSound,
-                attackSound,
-                attackSound,
+                whooshSound,
+                whooshSound,
                 animator
             );
         }
