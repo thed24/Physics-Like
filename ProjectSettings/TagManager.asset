@@ -13,6 +13,7 @@ TagManager:
   - InteractableItem
   - Chest
   - WorldItem
+  - Structure
   layers:
   - Default
   - TransparentFX

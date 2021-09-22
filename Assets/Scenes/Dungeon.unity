@@ -360,7 +360,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 170b2c466200004478360d140f92b59b, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  worldSize: {x: 128, y: 128}
+  worldSize: {x: 128, y: 7, z: 128}
   amountOfStructuresInWorld: 16
   structureMaterial: {fileID: 2100000, guid: 333a08b54ec5eec4f84f74d910ad751e, type: 2}
 --- !u!33 &1135141575

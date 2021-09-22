@@ -48,12 +48,10 @@
      <Compile Include="Assets\Scripts\World Generator\Structure\Direction.cs" />
      <Compile Include="Assets\Scripts\Entities\Player\GuiController.cs" />
      <Compile Include="Assets\Scripts\World Generator\WorldGenerator.cs" />
-     <Compile Include="Assets\Scripts\World Generator\Structure\Types\Floor.cs" />
      <Compile Include="Assets\Scripts\World Generator\Maths\DisjointedSet.cs" />
      <Compile Include="Assets\Scripts\Interfaces\Items\IHoldable.cs" />
      <Compile Include="Assets\Scripts\World Generator\Structure\Types\Structure.cs" />
      <Compile Include="Assets\Scripts\Effects\ProceduralDamageText.cs" />
-     <Compile Include="Assets\Scripts\World Generator\Structure\Types\Wall.cs" />
      <Compile Include="Assets\Scripts\Entities\Builders\EnemyBuilder.cs" />
      <Compile Include="Assets\Scripts\World Generator\Structure\Grid.cs" />
      <Compile Include="Assets\Scripts\World Generator\Maths\GraphUtilities.cs" />

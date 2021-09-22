@@ -7,14 +7,14 @@ public class Node
 {
     public Direction DirectionFromParent;
     public Node Parent;
-    public Vector2 Position;
+    public Vector3 Position;
     public float DistanceToTarget;
     public float Cost;
     public float Weight;
     public float Heuristics => (DistanceToTarget != -1 && Cost != -1) ? DistanceToTarget + Cost : -1;
     public bool Walkable;
 
-    public Node(Vector2 posistion, bool walkable,  Direction direction, float weight = 1)
+    public Node(Vector3 posistion, bool walkable,  Direction direction, float weight = 1)
     {
         Parent = null;
         Position = posistion;
@@ -49,7 +49,7 @@ public class Node
 
 public static class PathFinder
 {
-    public static Stack<Node> FindPath(Vector2 start, Vector2 end, Grid<Structure> grid)
+    public static Stack<Node> FindPath(Vector3 start, Vector3 end, Grid<Structure> grid)
     {
         var startingNode = new Node(start, true, Direction.None);
         var lastNode = new Node(end, true, Direction.None);
@@ -73,7 +73,7 @@ public static class PathFinder
                 if (!nodesInPath.Contains(adjacentNode) && !uncheckedNodes.Contains(adjacentNode))
                 {
                     adjacentNode.Parent = current;
-                    adjacentNode.DistanceToTarget = Math.Abs(adjacentNode.Position.x - lastNode.Position.x) + Math.Abs(adjacentNode.Position.y - lastNode.Position.y);
+                    adjacentNode.DistanceToTarget = Math.Abs(adjacentNode.Position.x - lastNode.Position.x) + Math.Abs(adjacentNode.Position.z - lastNode.Position.z);
                     adjacentNode.Cost = adjacentNode.Weight + adjacentNode.Parent.Cost;
                     uncheckedNodes.Add(adjacentNode);
                 }
@@ -101,29 +101,12 @@ public static class PathFinder
     private static List<Node> GetAdjacentNodes(Node node, Grid<Structure> grid)
     {
         var adjacentNodes = new List<Node>();
+        var adjacentPositionsAndDirections = grid.GetPointsSurrounding(node.Position);
 
-        int row = (int) node.Position.y;
-        int column = (int) node.Position.x;
-
-        if (row + 1 < grid.GridSize.x)
-        {
-            var adjacentPosition = new Vector2Int(column, row + 1);
-            adjacentNodes.Add(new Node(adjacentPosition, grid[adjacentPosition] is null, Direction.Up));
-        }
-        if (row - 1 >= 0)
-        {
-            var adjacentPosition = new Vector2Int(column, row - 1);
-            adjacentNodes.Add(new Node(adjacentPosition, grid[adjacentPosition] is null, Direction.Down));
-        }
-        if (column - 1 >= 0)
-        {
-            var adjacentPosition = new Vector2Int(column - 1, row);
-            adjacentNodes.Add(new Node(adjacentPosition, grid[adjacentPosition] is null, Direction.Left));
-        }
-        if (column + 1 < grid.GridSize.y)
-        {
-            var adjacentPosition = new Vector2Int(column + 1, row);
-            adjacentNodes.Add(new Node(adjacentPosition, grid[adjacentPosition] is null, Direction.Right));
+        foreach (var positionAndDirection in adjacentPositionsAndDirections){
+            var neighbouringNodeDirection = positionAndDirection.Key;
+            var neighbouringNodePosition = positionAndDirection.Value;
+            adjacentNodes.Add(new Node(neighbouringNodePosition, grid[neighbouringNodePosition] is null, neighbouringNodeDirection));
         }
 
         return adjacentNodes;

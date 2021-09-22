@@ -3,29 +3,24 @@ using UnityEngine;
 
 public class Grid<T>
 {
-    readonly T[] data;
-    public Vector2Int GridSize { get; private set; }
+    readonly T[,,] data;
+    public Vector3 GridSize { get; private set; }
 
-    public Grid(Vector2Int size)
+    public Grid(Vector3 size)
     {
         GridSize = size;
 
-        data = new T[size.x * size.y];
+        data = new T[(int)size.x, (int)size.y, (int)size.z];
     }
 
-    public int GetIndex(Vector2Int pos)
+    public Dictionary<Direction, Vector3> GetPointsSurrounding(Vector3 position)
     {
-        return pos.x + (GridSize.x * pos.y);
-    }
-
-    public Dictionary<Direction, T> GetNodesSurrounding(Vector2 position)
-    {
-        var mapOfNodes = new Dictionary<Direction, T>
+        var mapOfNodes = new Dictionary<Direction, Vector3>
         {
-            [Direction.Up] = this[new Vector2(position.x, position.y + 1)],
-            [Direction.Down] = this[new Vector2(position.x, position.y - 1)],
-            [Direction.Right] = this[new Vector2(position.x + 1, position.y)],
-            [Direction.Left] = this[new Vector2(position.x - 1, position.y)],
+            [Direction.Up] = new Vector3(position.x, position.y, position.z + 1),
+            [Direction.Down] = new Vector3(position.x, position.y, position.z - 1),
+            [Direction.Right] = new Vector3(position.x + 1, position.y, position.z),
+            [Direction.Left] = new Vector3(position.x - 1, position.y, position.z),
         };
         return mapOfNodes;
     }
@@ -39,61 +34,21 @@ public class Grid<T>
         }
         return all;
     }
-
-    public T this[int x, int y]
-    {
-        get
-        {
-            return this[new Vector2Int(x, y)];
-        }
-        set
-        {
-            this[new Vector2Int(x, y)] = value;
-        }
-    }
-
-    public T this[Vector2 pos]
-    {
-        get
-        {
-            if (GetIndex(Vector2Int.RoundToInt(pos)) < data.Length && GetIndex(Vector2Int.RoundToInt(pos)) > 0)
-                return data[GetIndex(Vector2Int.RoundToInt(pos))];
-            else
-                return default;
-        }
-        set
-        {
-            data[GetIndex(Vector2Int.RoundToInt(pos))] = value;
-        }
-    }
-
     public T this[Vector3 pos]
     {
         get
         {
-            if (GetIndex(new Vector2Int((int)pos.x, (int)pos.y)) < data.Length && GetIndex(new Vector2Int((int)pos.x, (int)pos.y)) > 0)
-                return data[GetIndex(new Vector2Int((int)pos.x, (int)pos.y))];
-            else
+            if (pos.x < 0 || pos.y < 0 || pos.z < 0 || pos.x >= GridSize.x || pos.y >= GridSize.y || pos.z >= GridSize.z){
                 return default;
+            }
+            return data[(int)pos.x, (int)pos.y, (int)pos.z];
         }
         set
         {
-            data[GetIndex(new Vector2Int((int)pos.x, (int)pos.y))] = value;
-        }
-    }
-
-    public T this[Vector2Int pos]
-    {
-        get
-        {
-            if (GetIndex(pos) < data.Length && GetIndex(pos) > 0)
-                return data[GetIndex(pos)];
-            else
-                return default;
-        }
-        set
-        {
-            data[GetIndex(pos)] = value;
+            if (pos.x < 0 || pos.y < 0 || pos.z < 0 || pos.x >= GridSize.x || pos.y >= GridSize.y || pos.z >= GridSize.z){
+                return;
+            }
+            data[(int)pos.x, (int)pos.y, (int)pos.z] = value;
         }
     }
 }

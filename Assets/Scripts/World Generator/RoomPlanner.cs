@@ -8,7 +8,7 @@ namespace Assets.Scripts.World_Generator
 {
     public class RoomPlanner
     {
-        public Vector3 Scale;
+        public Vector2 Scale;
         public Vector3 Position;
 
         public RoomPlanner SetPosition(Vector3 Position)
@@ -17,7 +17,7 @@ namespace Assets.Scripts.World_Generator
             return this;
         }
 
-        public RoomPlanner SetSize(Vector3 Scale)
+        public RoomPlanner SetSize(Vector2 Scale)
         {
             this.Scale = Scale;
             return this;
@@ -26,7 +26,7 @@ namespace Assets.Scripts.World_Generator
         public RoomPlanner AddPlayerSpawn()
         {
             var player = GameObject.FindGameObjectWithTag("Player");
-            player.transform.position = new Vector3(Position.x, Position.y + 5, Position.z);
+            player.transform.position = new Vector3(Position.x, Position.y + 4, Position.z);
 
             var chest = UnityExtensions.LoadPrefabFrom("Items/Interactable/Chest");
 

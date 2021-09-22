@@ -9,7 +9,7 @@ using UnityEngine;
 public class WorldGenerator : MonoBehaviour
 {
     private Grid<Structure> worldGrid;
-    public Vector2Int worldSize;
+    public Vector3 worldSize;
     public int amountOfStructuresInWorld;
     public Material structureMaterial;
 
@@ -21,10 +21,10 @@ public class WorldGenerator : MonoBehaviour
         var edges = GraphUtilities.GetEdgesFrom(triangles);
         var vertices = edges.Select(edge => edge.v0).Concat(edges.Select(edge => edge.v1)).Distinct().ToList();
         var minimumSpanningTree = GraphUtilities.BuildMinimumSpanningTreeFrom(edges, vertices);
-        var minimumSpanningTreeEnriched = minimumSpanningTree.Concat(edges.GetRange(3, (int)(edges.Count() * 0.04))).Where(e => e.v0.x < worldSize.x && e.v0.y < worldSize.y && e.v1.x < worldSize.x && e.v1.y < worldSize.y && e.v0.x > 0 && e.v0.y > 0 && e.v1.x > 0 && e.v1.y > 0).ToList();
+        var minimumSpanningTreeEnriched = minimumSpanningTree.Concat(edges.GetRange(3, (int)(edges.Count() * 0.04))).Where(e => e.v0.x < worldSize.x && e.v0.y < worldSize.z && e.v1.x < worldSize.x && e.v1.y < worldSize.z && e.v0.x > 0 && e.v0.y > 0 && e.v1.x > 0 && e.v1.y > 0).ToList();
 
         minimumSpanningTreeEnriched.ForEach(edge => GenerateHallwayFrom(edge));
-        worldGrid.GetAll().ForEach(f => GenerateWalls(f as Floor));
+        worldGrid.GetAll().Where(s => s.Position.y == 0).ToList().ForEach(s => GenerateWalls(s));
 
         UnityExtensions.CombineChildMeshesOf(gameObject, structureMaterial);
     }
@@ -44,8 +44,8 @@ public class WorldGenerator : MonoBehaviour
         for (var i = 0; i < amountOfStructuresInWorld; i++)
         {
             var roomBlueprint = new RoomPlanner()
-                .SetPosition(new Vector3(Random.Range(0, worldSize.x), 0, Random.Range(0, worldSize.y)))
-                .SetSize(new Vector3(Random.Range(5, 15), 0, Random.Range(5, 15)));
+                .SetPosition(new Vector3(Random.Range(0, (int) worldSize.x), 0, Random.Range(0, (int) worldSize.z)))
+                .SetSize(new Vector2(Random.Range(5, 15), Random.Range(5, 15)));
 
             if (playerSpawned)
             {
@@ -58,7 +58,7 @@ public class WorldGenerator : MonoBehaviour
             }
 
             listOfPoints.Add(roomBlueprint.Position);
-            ProjectFloorOntoGridWithCeiling(roomBlueprint.Position, roomBlueprint.Scale);
+            MirrorStructureBasedOn(roomBlueprint);
         }
 
         return listOfPoints;
@@ -66,36 +66,43 @@ public class WorldGenerator : MonoBehaviour
 
     private void GenerateHallwayFrom(Edge edge)
     {
-        var paths = PathFinder.FindPath(new Vector2((float)edge.v0.x, (float)edge.v0.y), new Vector2((float)edge.v1.x, (float)edge.v1.y), worldGrid);
+        var paths = PathFinder.FindPath(new Vector3((float)edge.v0.x, 0, (float)edge.v0.y), new Vector3((float)edge.v1.x, 0, (float)edge.v1.y), worldGrid);
         foreach (var path in paths)
         {
-            var scale = new Vector3(1, 1, 1);
-            var position = new Vector3(path.Position.x, 0, path.Position.y);
-
-            ProjectFloorOntoGridWithCeiling(position, scale);
+            MirrorStructureBasedOn(new Vector3(path.Position.x, 0, path.Position.z), new Vector2(1, 1));
         }
     }
 
-    private void GenerateWalls(Floor floor)
+    private void GenerateWalls(Structure structure)
     {
-        var structureMap = worldGrid.GetNodesSurrounding(new Vector2(floor.Position.x, floor.Position.z));
-        var walls = floor.CreateWallsFor(structureMap.Where(kv => kv.Value is null).Select(kv => kv.Key).ToList());
+        var positionMap = worldGrid.GetPointsSurrounding(structure.Position);
+        var unoccupiedSpots = positionMap.Where(kv => worldGrid[kv.Value] is null).Select(kv => kv.Key).ToList();
+    
+        var walls = structure.CreateWallsFor(unoccupiedSpots, (int) worldSize.y);
         walls.ForEach(wall => worldGrid[wall.Position] = wall);
     }
 
-    private void ProjectFloorOntoGridWithCeiling(Vector3 position, Vector3 size)
+    private void MirrorStructureBasedOn(RoomPlanner roomDesign)
     {
-        var startPosition = new Vector2((float)System.Math.Floor(position.x - (size.x / 2)), (float)System.Math.Floor(position.z - (size.z / 2)));
-        var endPosition = new Vector2((float)System.Math.Ceiling(position.x + (size.x / 2)), (float)System.Math.Ceiling(position.z + (size.z / 2)));
+        var size = roomDesign.Scale;
+        var position = roomDesign.Position;
+
+        MirrorStructureBasedOn(position, size);
+    }
+
+    private void MirrorStructureBasedOn(Vector3 position, Vector2 size)
+    {
+        var startPosition = new Vector2((float)System.Math.Floor(position.x - (size.x / 2)), (float)System.Math.Floor(position.z - (size.y / 2)));
+        var endPosition = new Vector2((float)System.Math.Ceiling(position.x + (size.x / 2)), (float)System.Math.Ceiling(position.z + (size.y / 2)));
 
         for (var i = (int)startPosition.x; i < endPosition.x; i++)
         {
             for (var j = (int)startPosition.y; j < endPosition.y; j++)
             {
-                if (i > 0 && j > 0 && i < worldSize.x && j < worldSize.y)
+                if (i > 0 && j > 0 && i < worldSize.x && j < worldSize.z)
                 {
-                    worldGrid[i, j] = new Floor(new Vector3(1, 1, 1), transform, new Vector3(i, 0, j), structureMaterial);
-                    worldGrid[i, j] = new Floor(new Vector3(1, 1, 1), transform, new Vector3(i, 7, j), structureMaterial);
+                    worldGrid[new Vector3(i, 0, j)] = new Structure(transform, new Vector3(i, 0, j), structureMaterial);
+                    worldGrid[new Vector3(i, worldSize.y, j)] = new Structure(transform, new Vector3(i, worldSize.y, j), structureMaterial);
                 }
             }
         }

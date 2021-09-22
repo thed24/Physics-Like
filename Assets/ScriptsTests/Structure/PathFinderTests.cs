@@ -11,7 +11,7 @@ class PathFinderTests{
         expected.Push(new Node(new Vector2(1, 1), true, Direction.Up));
 
         // Given
-        var grid = new Grid<Structure>(new Vector2Int(3, 3));
+        var grid = new Grid<Structure>(new Vector3(3, 0, 3));
 
         // When
         var path = PathFinder.FindPath(new Vector2(1, 0), new Vector2(1, 2), grid);
@@ -29,7 +29,7 @@ class PathFinderTests{
         expected.Push(new Node(new Vector2(0, 1), true, Direction.Right));
 
         // Given
-        var grid = new Grid<Structure>(new Vector2Int(3, 3));
+        var grid = new Grid<Structure>(new Vector3(3, 0, 3));
 
         // When
         var path = PathFinder.FindPath(new Vector2(0, 0), new Vector2(2, 2), grid);
