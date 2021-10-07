@@ -46,7 +46,7 @@ Light:
   m_Shape: 0
   m_Color: {r: 1, g: 0.76436174, b: 0.4198113, a: 1}
   m_Intensity: 1
-  m_Range: 10
+  m_Range: 15
   m_SpotAngle: 30
   m_InnerSpotAngle: 21.80208
   m_CookieSize: 10
@@ -407,9 +407,10 @@ GameObject:
   - component: {fileID: 6812130037919303013}
   - component: {fileID: 6812130037919303014}
   - component: {fileID: 6812130037919303002}
-  - component: {fileID: 4423939154398540452}
-  - component: {fileID: 4034808220361077584}
   - component: {fileID: 881889803038641754}
+  - component: {fileID: 7816866751020065001}
+  - component: {fileID: 3602250145302839978}
+  - component: {fileID: 6492191358648536486}
   m_Layer: 0
   m_Name: Fps Player
   m_TagString: Player
@@ -467,8 +468,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   leftHandEquipPoint: {fileID: 6812130037120777169}
   rightHandEquipPoint: {fileID: 6812130037455199230}
-  leftHand: {fileID: 0}
-  rightHand: {fileID: 0}
+  entity: {fileID: 881889803038641754}
 --- !u!114 &6812130037919303002
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -489,34 +489,6 @@ MonoBehaviour:
   lookSpeed: 2
   lookXLimit: 45
   canMove: 1
---- !u!114 &4423939154398540452
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 6812130037919303008}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 180eccd90f10bb04584b2d7aac9896b6, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  Crosshair: {fileID: 2800000, guid: af1865066551ebf4895f4ad284974131, type: 3}
-  CrosshairActive: {fileID: 2800000, guid: 98ff3a88d51dc4249a4be27b61c1025a, type: 3}
-  Font: {fileID: 12800000, guid: 997a43b767814dd0a7642ec9b78cba41, type: 3}
-  FontSize: 20
---- !u!114 &4034808220361077584
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 6812130037919303008}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 9f6be3b40ca1e644f885e6a9f589ccf9, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
 --- !u!114 &881889803038641754
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -529,6 +501,46 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 9dfc152205d43bd4486e6996bf6174e2, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  GuiController: {fileID: 4423939154398540452}
-  FirstPersonController: {fileID: 6812130037919303002}
+--- !u!114 &7816866751020065001
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 6812130037919303008}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 3a4e6befc71509647a992a6412d90c3e, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  Crosshair: {fileID: 2800000, guid: af1865066551ebf4895f4ad284974131, type: 3}
+  CrosshairActive: {fileID: 2800000, guid: 98ff3a88d51dc4249a4be27b61c1025a, type: 3}
+  Font: {fileID: 12800000, guid: 3b7a0087c8acce444a98955a84f9c62c, type: 3}
+  FontSize: 24
   EquippedItems: {fileID: 6812130037919303014}
+--- !u!114 &3602250145302839978
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 6812130037919303008}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: e6b567a9ce19051458b5bd04b22a0b28, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  Capacity: 2
+--- !u!114 &6492191358648536486
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 6812130037919303008}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: e6b567a9ce19051458b5bd04b22a0b28, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  Capacity: 24

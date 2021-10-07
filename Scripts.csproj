@@ -36,35 +36,36 @@
     <ImplicitlyExpandDesignTimeFacades>false</ImplicitlyExpandDesignTimeFacades>
   </PropertyGroup>
   <ItemGroup>
-     <Compile Include="Assets\Scripts\Items\ItemTypes.cs" />
+     <Compile Include="Assets\Scripts\Builders\EnemyBuilder.cs" />
+     <Compile Include="Assets\Scripts\Models\Inventory\Inventory.cs" />
      <Compile Include="Assets\Scripts\World Generator\RoomPlanner.cs" />
      <Compile Include="Assets\Scripts\Entities\Enemy\Enemy.cs" />
-     <Compile Include="Assets\Scripts\Interfaces\Items\IItem.cs" />
-     <Compile Include="Assets\Scripts\Interfaces\Entities\IEntity.cs" />
+     <Compile Include="Assets\Scripts\Items\Chest.cs" />
      <Compile Include="Assets\Scripts\Entities\Player\Player.cs" />
      <Compile Include="Assets\Scripts\World Generator\Maths\Vertex.cs" />
      <Compile Include="Assets\Scripts\World Generator\Maths\Triangle.cs" />
+     <Compile Include="Assets\Scripts\Models\Items\BaseItem.cs" />
      <Compile Include="Assets\Scripts\World Generator\Maths\Edge.cs" />
+     <Compile Include="Assets\Scripts\Models\Entities\Entity.cs" />
      <Compile Include="Assets\Scripts\World Generator\Structure\Direction.cs" />
-     <Compile Include="Assets\Scripts\Entities\Player\GuiController.cs" />
      <Compile Include="Assets\Scripts\World Generator\WorldGenerator.cs" />
      <Compile Include="Assets\Scripts\World Generator\Maths\DisjointedSet.cs" />
-     <Compile Include="Assets\Scripts\Interfaces\Items\IHoldable.cs" />
-     <Compile Include="Assets\Scripts\World Generator\Structure\Types\Structure.cs" />
+     <Compile Include="Assets\Scripts\UI\HudController.cs" />
+     <Compile Include="Assets\Scripts\Models\Items\Item.cs" />
+     <Compile Include="Assets\Scripts\Models\Items\Interactable.cs" />
      <Compile Include="Assets\Scripts\Effects\ProceduralDamageText.cs" />
-     <Compile Include="Assets\Scripts\Entities\Builders\EnemyBuilder.cs" />
+     <Compile Include="Assets\Scripts\Models\Items\ItemDetails.cs" />
      <Compile Include="Assets\Scripts\World Generator\Structure\Grid.cs" />
      <Compile Include="Assets\Scripts\World Generator\Maths\GraphUtilities.cs" />
-     <Compile Include="Assets\Scripts\Items\Builders\WeaponBuilder.cs" />
+     <Compile Include="Assets\Scripts\World Generator\Structure\Structure.cs" />
+     <Compile Include="Assets\Scripts\UI\InventoryController.cs" />
      <Compile Include="Assets\Scripts\Entities\Player\FirstPersonController.cs" />
-     <Compile Include="Assets\Scripts\Items\Inventory.cs" />
      <Compile Include="Assets\Scripts\UnityExtensions.cs" />
-     <Compile Include="Assets\Scripts\Items\Holdable Items\Weapon.cs" />
+     <Compile Include="Assets\Scripts\Models\Inventory\InventorySlot.cs" />
      <Compile Include="Assets\Scripts\World Generator\Structure\PathFinder.cs" />
-     <Compile Include="Assets\Scripts\Interfaces\Entities\IDamageable.cs" />
-     <Compile Include="Assets\Scripts\Interfaces\Items\IInteractable.cs" />
-     <Compile Include="Assets\Scripts\Items\Interactable Items\Chest.cs" />
+     <Compile Include="Assets\Scripts\Builders\WeaponBuilder.cs" />
      <Compile Include="Assets\Scripts\Entities\Player\EquippedItems.cs" />
+     <Compile Include="Assets\Scripts\Items\Weapon.cs" />
      <None Include="Assets\Scripts\Scripts.asmdef" />
     <Reference Include="UnityEngine">
         <HintPath>F:\UnityHub\2021.2.0b4\Editor\Data\Managed\UnityEngine\UnityEngine.dll</HintPath>

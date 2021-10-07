@@ -1,0 +1,6 @@
+<ui:UXML xmlns:ui="UnityEngine.UIElements" xmlns:uie="UnityEditor.UIElements">
+    <ui:VisualElement name="Inventory" class="inventory" style="flex-direction: column-reverse; margin-left: 0; justify-content: flex-start;">
+        <ui:VisualElement name="SlotContainer" class="slotcontainer" style="flex-wrap: wrap;" />
+        <ui:Label text="Inventory" display-tooltip-when-elided="true" name="Title" class="title" />
+    </ui:VisualElement>
+</ui:UXML>

@@ -27,6 +27,9 @@ public class FirstPersonController : MonoBehaviour
 
     void Update()
     {
+        if (Cursor.lockState == CursorLockMode.None)
+            return;
+
         Vector3 forward = transform.TransformDirection(Vector3.forward);
         Vector3 right = transform.TransformDirection(Vector3.right);
 

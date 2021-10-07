@@ -31,7 +31,7 @@ namespace Assets.Scripts.World_Generator
             var chest = UnityExtensions.LoadPrefabFrom("Items/Interactable/Chest");
 
             chest.transform.position = new Vector3(Position.x, Position.y + 1, Position.z);
-            chest.GetComponent<Chest>().Inventory.AddItems(new List<IItem>() 
+            chest.GetComponent<Chest>().Inventory.AddItems(new List<Item>() 
             { 
                 WeaponBuilder.BuildRandomWeaponAt(),
                 WeaponBuilder.BuildRandomWeaponAt(),

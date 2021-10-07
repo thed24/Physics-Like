@@ -49,7 +49,10 @@
         "Obj/":true,
         "ProjectSettings/":true,
         "temp/":true,
-        "Temp/":true
+        "Temp/":true,
+        "**/*.csproj":true,
+        "**/*.sln":true,
+        "**/*.asmdef":true,
     },
     "git.ignoreLimitWarning": true
 }
