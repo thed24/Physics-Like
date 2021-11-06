@@ -1,4 +1,5 @@
 ﻿using System.Collections.Generic;
+using UnityEditor.Animations;
 using UnityEngine;
 
 static class UnityExtensions
@@ -6,7 +7,7 @@ static class UnityExtensions
     public static GameObject LoadPrefabFrom(string path)
     {
         Object prefab = Resources.Load(path);
-        return (GameObject) Object.Instantiate(prefab, new Vector3(0, 0, 0), Quaternion.identity);
+        return (GameObject)Object.Instantiate(prefab, new Vector3(0, 0, 0), Quaternion.identity);
     }
 
     public static GameObject GetItemAtCrosshair<T>()
@@ -20,7 +21,6 @@ static class UnityExtensions
         }
         return null;
     }
-
     public static void CombineChildMeshesOf(GameObject parentObject, Material sharedMaterial)
     {
         var position = parentObject.transform.position;

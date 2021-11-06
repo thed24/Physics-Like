@@ -37,8 +37,8 @@
 }
 
 .slotContainer {
-    width: 128px;
-    height: 128px;
+    width: 100px;
+    height: 100px;
     margin: 5px;
     border-left-color: rgb(48, 48, 48);
     border-right-color: rgb(48, 48, 48);
@@ -55,7 +55,4 @@
     padding: 15px;
     flex-shrink: 0;
     flex-grow: 1;
-}
-
-.Inventory {
 }
