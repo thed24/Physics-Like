@@ -123,6 +123,11 @@ NavMeshSettings:
     debug:
       m_Flags: 0
   m_NavMeshData: {fileID: 0}
+--- !u!4 &86555282 stripped
+Transform:
+  m_CorrespondingSourceObject: {fileID: 3877206481519797556, guid: 3712f29ddf49ab846a3e1f8a99760102, type: 3}
+  m_PrefabInstance: {fileID: 1226975979}
+  m_PrefabAsset: {fileID: 0}
 --- !u!114 &151089055 stripped
 MonoBehaviour:
   m_CorrespondingSourceObject: {fileID: 5527959352449617378, guid: 3712f29ddf49ab846a3e1f8a99760102, type: 3}
@@ -367,6 +372,18 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 0}
     m_Modifications:
+    - target: {fileID: 281250432576740591, guid: 3712f29ddf49ab846a3e1f8a99760102, type: 3}
+      propertyPath: Hands.Array.size
+      value: 2
+      objectReference: {fileID: 0}
+    - target: {fileID: 281250432576740591, guid: 3712f29ddf49ab846a3e1f8a99760102, type: 3}
+      propertyPath: Hands.Array.data[0]
+      value: 
+      objectReference: {fileID: 86555282}
+    - target: {fileID: 281250432576740591, guid: 3712f29ddf49ab846a3e1f8a99760102, type: 3}
+      propertyPath: Hands.Array.data[1]
+      value: 
+      objectReference: {fileID: 1843131813}
     - target: {fileID: 7026839993749506896, guid: 3712f29ddf49ab846a3e1f8a99760102, type: 3}
       propertyPath: m_Name
       value: Character Controller
@@ -530,3 +547,8 @@ MonoBehaviour:
   blendDistance: 0
   weight: 1
   sharedProfile: {fileID: 0}
+--- !u!4 &1843131813 stripped
+Transform:
+  m_CorrespondingSourceObject: {fileID: 3899389279254104017, guid: 3712f29ddf49ab846a3e1f8a99760102, type: 3}
+  m_PrefabInstance: {fileID: 1226975979}
+  m_PrefabAsset: {fileID: 0}

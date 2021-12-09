@@ -69,6 +69,7 @@
      <Compile Include="Assets\Scripts\Application\Entities\Player\HandController.cs" />
      <Compile Include="Assets\Scripts\Application\Items\Weapon.cs" />
      <Compile Include="Assets\Scripts\Application\Skills\FireBall.cs" />
+     <Compile Include="Assets\Scripts\Domain\Entities\Hands.cs" />
      <None Include="Assets\Scripts\Scripts.asmdef" />
     <Reference Include="UnityEngine">
         <HintPath>F:/UnityHub/2021.2.0b4/Editor/Data/Managed/UnityEngine/UnityEngine.dll</HintPath>

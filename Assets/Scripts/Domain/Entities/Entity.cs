@@ -9,6 +9,7 @@ public class Entity : MonoBehaviour {
     public Inventory Equipped;
     public Inventory Inventory;
     public GameObject[] SkillPrefabs;
+    public Transform[] Hands;
     public string Name;
     public int Level;
     public int Experience;
@@ -28,25 +29,31 @@ public class Entity : MonoBehaviour {
         Health -= damage;
     }
 
-    public bool IsHoldingItemInHand(int handIndex){
-        return Equipped.SeeItemAtSlot(handIndex);
+    public bool IsHoldingItemInHand(int hand){
+        return Equipped.SeeItemAtSlot(hand);
     }
 
-    public virtual void EquipItem(Item item, int handIndex){
+    public virtual void EquipItem(Item item, int hand){
         item.OnPickup();
-        Equipped.AddItemAtSlot(handIndex, item);
+        Equipped.AddItemAtSlot(hand, item);
+
+        item.gameObject.SetActive(true);
+        item.transform.SetParent(Hands[hand]);
+        item.transform.localPosition = new Vector3(0, 0, 0);
+        item.transform.rotation = Quaternion.identity;
+        item.GetComponent<Item>().OnPickup();
     }
 
-    public virtual void DropItem(int handIndex){
-        var item = Equipped.GetItemAtSlot(handIndex);
+    public virtual void DropItem(int hand){
+        var item = Equipped.GetItemAtSlot(hand);
         if (item != null) {
             item.OnDrop();
             item.gameObject.transform.parent = null;
         }
     }
 
-    public virtual void TryUseHeldItem(int equippedItemIndex) {
-        var item = Equipped.SeeItemAtSlot(equippedItemIndex);
+    public virtual void TryUseHeldItem(int hand) {
+        var item = Equipped.SeeItemAtSlot(hand);
 
         if (item != null && Time.time > item.Details.NextUse){
             item.OnUse();

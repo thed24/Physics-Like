@@ -4,9 +4,6 @@ using UnityEngine;
 public class FireBall : Skill
 {
     public GameObject Explosion;
-    public void Reset(){
-        Details.NextUse = 0;
-    }
 
     public override void OnUse(){
         base.OnUse();

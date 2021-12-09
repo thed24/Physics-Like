@@ -7,6 +7,9 @@ public class Skill : MonoBehaviour {
     public AudioSource Source;
     public AudioClip UseSound;
     public AudioClip HitSound;
+    public void Reset(){
+        Details.NextUse = 0;
+    }
     public virtual void Start(){
         Source = GetComponent<AudioSource>();
         Details.NextUse = 0f;

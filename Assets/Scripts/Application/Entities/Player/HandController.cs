@@ -3,58 +3,48 @@
 [RequireComponent(typeof(FirstPersonController))]
 public class HandController : MonoBehaviour
 {
-    public Transform leftHandEquipPoint;
-    public Transform rightHandEquipPoint;
-
     public GameObject leftHand => entity.Equipped.SeeItemAtSlot(0)?.gameObject;
     public GameObject rightHand => entity.Equipped.SeeItemAtSlot(1)?.gameObject;
 
     public Entity entity;
-    
-    void Start()
-    {
-        entity.Equipped.InventoryChanged += OnInventoryChanged;
-    }
 
     void Update()
     {
         var holdableItemUnderCrosshair = UnityExtensions.GetItemAtCrosshair<Item>();
         var interactableItemUnderCrosshair = UnityExtensions.GetItemAtCrosshair<Interactable>();
 
-        var LeftHand = new Hand() { equipPoint = leftHandEquipPoint, handId = 0, dropKey = KeyCode.Q };
-        var RightHand = new Hand() { equipPoint = rightHandEquipPoint, handId = 1, dropKey = KeyCode.R };
-
-        ActionForHand(LeftHand, holdableItemUnderCrosshair);
-        ActionForHand(RightHand, holdableItemUnderCrosshair);
-        ActionForWorld(KeyCode.E, holdableItemUnderCrosshair, interactableItemUnderCrosshair);
+        ActionFor(Hand.Left, holdableItemUnderCrosshair);
+        ActionFor(Hand.Right, holdableItemUnderCrosshair);
+        InteractWithWorld(KeyCode.E, holdableItemUnderCrosshair, interactableItemUnderCrosshair);
     }
 
-    private void ActionForHand(Hand hand, GameObject itemAtCrosshair)
+    private void ActionFor(Hand hand, GameObject itemAtCrosshair)
     {
-        var equipPoint = hand.equipPoint;
-        var handId = hand.handId;
-        var dropKey = hand.dropKey;
+        var handId = hand.GetIndex();
+        var dropKey = hand.GetDropKey();
+
+        var isPressingActionKey = Input.GetMouseButtonDown(handId);
+        var isPressingDropKey = Input.GetKeyDown(dropKey);
         var isHoldingItem = entity.IsHoldingItemInHand(handId);
 
-        if (Input.GetMouseButtonDown(handId) && isHoldingItem is true) // Attack
+        switch (isPressingActionKey, isPressingDropKey, isHoldingItem, itemAtCrosshair)
         {
-            entity.TryUseHeldItem(handId);
-        }
-        else if (Input.GetMouseButtonDown(handId) && isHoldingItem is false && itemAtCrosshair == null){ // Skillcast
-            entity.TryUseSkill(0);
-        }
-        else if (Input.GetMouseButtonDown(handId) && isHoldingItem is false && itemAtCrosshair != null) // Pickup
-        {
-            entity.EquipItem(itemAtCrosshair.GetComponent<Item>(), handId);
-            HoldItemInHand(itemAtCrosshair.GetComponent<Item>(), equipPoint); // Maybe shift logic elsewhere
-        }
-        else if (Input.GetKeyDown(dropKey) && isHoldingItem is true) // Drop
-        {
-            entity.DropItem(handId);
+            case (true, false, true, _):
+                entity.TryUseHeldItem(handId);
+                break;
+            case (true, false, false, null):
+                entity.TryUseSkill(0);
+                break;
+            case (true, false, false, not null):
+                entity.EquipItem(itemAtCrosshair.GetComponent<Item>(), handId);
+                break;
+            case (false, true, true, _):
+                entity.DropItem(handId);
+                break;
         }
     }
 
-    private void ActionForWorld(KeyCode keyCode, GameObject itemAtCrosshair, GameObject worldItemAtCrosshair)
+    private void InteractWithWorld(KeyCode keyCode, GameObject itemAtCrosshair, GameObject worldItemAtCrosshair)
     {
         if (Input.GetKeyDown(KeyCode.E))
         {
@@ -69,34 +59,5 @@ public class HandController : MonoBehaviour
                 worldItemAtCrosshair.GetComponent<Interactable>().Interact();
             }
         }
-    }
-
-    private void HoldItemInHand(Item item, Transform equipPoint){
-        item.transform.SetParent(equipPoint);
-        item.transform.localPosition = new Vector3(0, 0, 0);
-        item.transform.rotation = Quaternion.identity;
-        item.GetComponent<Item>().OnPickup();
-    }
-
-    private void OnInventoryChanged()
-    {
-        var inventory = entity.Equipped;
-        for (int i = 0; i < inventory.Slots.Count; i++)
-        {
-            var item = inventory.SeeItemAtSlot(i);
-            var equipPoint = i == 0 ? leftHandEquipPoint : rightHandEquipPoint;
-            if (item != null)
-            {
-                item.gameObject.SetActive(true);
-                HoldItemInHand(item, equipPoint);
-            }
-        }
-    }
-
-    private class Hand
-    {
-        public Transform equipPoint { get; set; }
-        public int handId { get; set; }
-        public KeyCode dropKey { get; set; }
     }
 }
