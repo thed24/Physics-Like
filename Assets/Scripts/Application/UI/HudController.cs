@@ -24,17 +24,21 @@ namespace Assets.Scripts.Entities.Player
 
         void Update()
         {
-            var itemUnderCrosshair = UnityExtensions.GetItemAtCrosshair<BaseItem>();
+            var leftHandItem = EquippedItems.player.Equipped.SeeItemAtSlot(0);
+            var rightHandItem = EquippedItems.player.Equipped.SeeItemAtSlot(1);
 
-            ItemInLeftHand = EquippedItems.leftHand != null ? EquippedItems.leftHand.name : "Empty";
-            ItemInRightHand = EquippedItems.rightHand != null ? EquippedItems.rightHand.name : "Empty";
+            ItemInLeftHand = leftHandItem.HasValue ? leftHandItem.Value.Name : "Empty";
+            ItemInRightHand = rightHandItem.HasValue ? rightHandItem.Value.Name : "Empty";
 
-            if (itemUnderCrosshair != null)
+            var itemUnderCrosshair = UnityExtensions.GetItemAtCrosshair<IInteractable>();
+            if (itemUnderCrosshair.HasValue)
             {
-                var name = itemUnderCrosshair.GetComponent<BaseItem>().Details.Name;
+                var name = itemUnderCrosshair.Value.GetComponent<IInteractable>().Name;
                 IsCrosshairActive = name != "";
                 ItemUnderCrosshair = name;
-            } else {
+            }
+            else
+            {
                 IsCrosshairActive = false;
                 ItemUnderCrosshair = "";
             }
@@ -52,10 +56,10 @@ namespace Assets.Scripts.Entities.Player
             // Equipped items
             GUI.Label(new Rect(100, Screen.height - 50, 100, 50), ItemInLeftHand.Replace("(Clone)", ""), fontStyle);
             GUI.Label(new Rect(Screen.width - 200, Screen.height - 50, 100, 50), ItemInRightHand.Replace("(Clone)", ""), fontStyle);
-            
+
             // Health and Mana
-            GUI.Label(new Rect(100, Screen.height - 75, 100, 50), $"Mana: {EquippedItems.entity.Mana} / {EquippedItems.entity.MaxMana}", fontStyle);
-            GUI.Label(new Rect(Screen.width - 200, Screen.height - 75, 100, 50), $"Health: {EquippedItems.entity.Health} / {EquippedItems.entity.MaxHealth}", fontStyle);
+            GUI.Label(new Rect(100, Screen.height - 75, 100, 50), $"Mana: {EquippedItems.player.Mana} / {EquippedItems.player.MaxMana}", fontStyle);
+            GUI.Label(new Rect(Screen.width - 200, Screen.height - 75, 100, 50), $"Health: {EquippedItems.player.Health} / {EquippedItems.player.MaxHealth}", fontStyle);
         }
     }
 }

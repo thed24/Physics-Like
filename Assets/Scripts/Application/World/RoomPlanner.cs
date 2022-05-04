@@ -29,12 +29,10 @@ namespace Assets.Scripts.World_Generator
             player.transform.position = new Vector3(Position.x, Position.y + 6, Position.z);
 
             var chest = UnityExtensions.LoadPrefabFrom("Items/Interactable/Chest");
-
             chest.transform.position = new Vector3(Position.x, (float)(Position.y + 0.5), Position.z);
             chest.transform.Rotate(new Vector3(-90, 0, 0));
-
-            chest.GetComponent<Chest>().Inventory.AddItems(new List<Item>() 
-            { 
+            chest.GetComponent<Chest>().Inventory.AddItems(new List<IHoldable>()
+            {
                 WeaponBuilder.BuildRandomWeaponAt(),
                 WeaponBuilder.BuildRandomWeaponAt(),
                 WeaponBuilder.BuildRandomWeaponAt(),
@@ -51,7 +49,7 @@ namespace Assets.Scripts.World_Generator
         {
             var enemy = EnemyBuilder.BuildRandomEntity();
             enemy.transform.position = new Vector3(Position.x, Position.y + 5, Position.z);
-            
+
             return this;
         }
     }

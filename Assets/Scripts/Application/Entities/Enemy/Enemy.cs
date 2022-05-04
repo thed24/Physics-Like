@@ -1,15 +1,25 @@
-﻿using Assets.Scripts.Entities;
-using Assets.Scripts.HoldableItems;
-using Assets.Scripts.Items;
-using TMPro;
+﻿using TMPro;
 using UnityEngine;
 
 namespace Assets.Scripts
 {
     [RequireComponent(typeof(Animator))]
-    public class Enemy : Entity
+    public class Enemy : MonoBehaviour, IEntity
     {
+        [field: SerializeField] public int MaxHealth { get; set; }
+        [field: SerializeField] public int Health { get; set; }
+        [field: SerializeField] public int MaxMana { get; set; }
+        [field: SerializeField] public int Mana { get; set; }
+        [field: SerializeField] public int Level { get; set; }
+        [field: SerializeField] public int Experience { get; set; }
+        [field: SerializeField] public int Dexterity { get; set; }
+        [field: SerializeField] public int Strength { get; set; }
+        [field: SerializeField] public int Intelligence { get; set; }
+        [field: SerializeField] public int Luck { get; set; }
+        [field: SerializeField] public string Name { get; set; }
+
         public GameObject DamageText;
+
         void Update()
         {
             if (Health <= 0)
@@ -17,10 +27,10 @@ namespace Assets.Scripts
                 Destroy(gameObject);
             }
         }
-        public override void TakeDamage(int damage)
+
+        public void TakeDamage(int damage)
         {
             CreateFloatingTextFor(damage);
-            base.TakeDamage(damage);
         }
 
         private void CreateFloatingTextFor(int damage)

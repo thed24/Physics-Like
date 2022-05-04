@@ -10,16 +10,17 @@ static class UnityExtensions
         return (GameObject)Object.Instantiate(prefab, new Vector3(0, 0, 0), Quaternion.identity);
     }
 
-    public static GameObject GetItemAtCrosshair<T>()
+    public static Maybe<GameObject> GetItemAtCrosshair<T>()
     {
-        if (Physics.Raycast(Camera.main.transform.position, Camera.main.transform.forward, out RaycastHit hit, 10.0f))
+        if (Physics.Raycast(Camera.main.transform.position, Camera.main.transform.forward, out RaycastHit hit, 7.5f))
         {
             if (hit.collider != null && hit.collider.gameObject.GetComponent<T>() != null)
             {
-                return hit.collider.gameObject;
+                return Maybe<GameObject>.Some(hit.collider.gameObject);
             }
         }
-        return null;
+
+        return Maybe<GameObject>.None();
     }
     public static void CombineChildMeshesOf(GameObject parentObject, Material sharedMaterial)
     {

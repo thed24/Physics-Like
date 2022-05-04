@@ -20,7 +20,7 @@ namespace Assets.Scripts.Builders
             var attackSound = Resources.LoadAll<AudioClip>($"Items/Holdable/{weaponType}").FirstOrDefault();
             var attackAnimation = Resources.LoadAll<AnimationClip>($"Items/Holdable/{weaponType}").Where(animation => !animation.name.Contains("Idle")).FirstOrDefault();
             var idleAnimation = Resources.LoadAll<AnimationClip>($"Items/Holdable/{weaponType}").Where(animation => animation.name.Contains("Idle")).FirstOrDefault();
-            var animator = Resources.LoadAll<RuntimeAnimatorController>("Items/Holdable").First();
+            var animator = Resources.Load<RuntimeAnimatorController>("Items/Holdable/Weapon Animator");
             var weaponGameObject = Object.Instantiate(weapon, position, Quaternion.identity) as GameObject;
 
             return BuildWeapon(
@@ -44,12 +44,15 @@ namespace Assets.Scripts.Builders
             controller.layers[0].stateMachine.states[0].state.motion = idleAnimation;
 
             weapon.AddComponent<Weapon>();
-            weapon.GetComponent<Weapon>().Details = new ItemDetails() { Icon = icon, Name = name, Cooldown = 0.25f };
+            weapon.GetComponent<Weapon>().Icon = icon;
+            weapon.GetComponent<Weapon>().Name = name;
+            weapon.GetComponent<Weapon>().Cooldown = 0.25f;
             weapon.GetComponent<Weapon>().Damage = damage;
             weapon.GetComponent<Weapon>().UseAnimation = attackAnimation;
             weapon.GetComponent<Weapon>().UseSound = attackSound;
-            weapon.GetComponent<Weapon>().PickupSound = attackSound;
-            weapon.GetComponent<Weapon>().DropSound = attackSound;
+            weapon.GetComponent<Weapon>().PickupSound = dropSound;
+            weapon.GetComponent<Weapon>().DropSound = dropSound;
+            weapon.GetComponent<Weapon>().EquipSound = dropSound;
             weapon.GetComponent<Animator>().runtimeAnimatorController = controller;
             weapon.GetComponent<Animator>().enabled = false;
 

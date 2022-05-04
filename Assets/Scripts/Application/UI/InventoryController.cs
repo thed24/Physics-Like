@@ -43,7 +43,7 @@ public class InventoryController : MonoBehaviour
         {
             Root.visible = !Root.visible;
             Time.timeScale = Root.visible ? 0 : 1;
-            UnityEngine.Cursor.lockState = Root.visible ? CursorLockMode.None : CursorLockMode.Locked;      
+            UnityEngine.Cursor.lockState = Root.visible ? CursorLockMode.None : CursorLockMode.Locked;
         }
     }
 
@@ -79,16 +79,18 @@ public class InventoryController : MonoBehaviour
             .OrderBy(i => i.Distance)
             .First();
 
-        if (closestInventoryAndSlot.Inventory is not null && closestInventoryAndSlot.Inventory.SeeItemAtSlot(closestInventoryAndSlot.SlotIndex) is null)
+        if (closestInventoryAndSlot.Inventory is not null && !closestInventoryAndSlot.Inventory.SeeItemAtSlot(closestInventoryAndSlot.SlotIndex).HasValue)
         {
-            closestInventoryAndSlot.Inventory.AddItemAtSlot(closestInventoryAndSlot.SlotIndex, OriginalSlot.GetItem());
-        } else if (!InventoryRoots.Any(NestedRoot => {
+            var item = OriginalSlot.GetItem();
+            closestInventoryAndSlot.Inventory.AddItemAtSlot(closestInventoryAndSlot.SlotIndex, item);
+        }
+        else if (!InventoryRoots.Any(NestedRoot =>
+        {
             VisualElement container = NestedRoot.Query<VisualElement>("SlotContainer");
             return GhostIcon.worldBound.Overlaps(container.worldBound);
         }))
         {
             var item = OriginalSlot.GetItem();
-            item.gameObject.SetActive(true);
             item.OnDrop();
         }
 

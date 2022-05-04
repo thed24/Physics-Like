@@ -23,8 +23,8 @@ RenderSettings:
   m_AmbientSkyColor: {r: 0, g: 0, b: 0, a: 1}
   m_AmbientEquatorColor: {r: 0.114, g: 0.125, b: 0.133, a: 1}
   m_AmbientGroundColor: {r: 0.047, g: 0.043, b: 0.035, a: 1}
-  m_AmbientIntensity: 1
-  m_AmbientMode: 3
+  m_AmbientIntensity: 0.4
+  m_AmbientMode: 0
   m_SubtractiveShadowColor: {r: 0.42, g: 0.478, b: 0.627, a: 1}
   m_SkyboxMaterial: {fileID: 10304, guid: 0000000000000000f000000000000000, type: 0}
   m_HaloStrength: 0.5
@@ -97,7 +97,7 @@ LightmapSettings:
     m_ExportTrainingData: 0
     m_TrainingDataDestination: TrainingData
     m_LightProbeSampleCountMultiplier: 4
-  m_LightingDataAsset: {fileID: 0}
+  m_LightingDataAsset: {fileID: 112000000, guid: 16cfa841432caf64391e441cc355cbc2, type: 2}
   m_LightingSettings: {fileID: 0}
 --- !u!196 &4
 NavMeshSettings:
@@ -370,11 +370,16 @@ PrefabInstance:
   m_ObjectHideFlags: 0
   serializedVersion: 2
   m_Modification:
+    serializedVersion: 2
     m_TransformParent: {fileID: 0}
     m_Modifications:
     - target: {fileID: 281250432576740591, guid: 3712f29ddf49ab846a3e1f8a99760102, type: 3}
       propertyPath: Hands.Array.size
       value: 2
+      objectReference: {fileID: 0}
+    - target: {fileID: 281250432576740591, guid: 3712f29ddf49ab846a3e1f8a99760102, type: 3}
+      propertyPath: Skills.Array.size
+      value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 281250432576740591, guid: 3712f29ddf49ab846a3e1f8a99760102, type: 3}
       propertyPath: Hands.Array.data[0]
@@ -384,17 +389,77 @@ PrefabInstance:
       propertyPath: Hands.Array.data[1]
       value: 
       objectReference: {fileID: 1843131813}
+    - target: {fileID: 281250432576740591, guid: 3712f29ddf49ab846a3e1f8a99760102, type: 3}
+      propertyPath: Skills.Array.data[0]
+      value: 
+      objectReference: {fileID: 1595854628522715200, guid: 83686495db916a0419edbbec8f2468fa, type: 3}
+    - target: {fileID: 281250432576740591, guid: 3712f29ddf49ab846a3e1f8a99760102, type: 3}
+      propertyPath: <Luck>k__BackingField
+      value: 5
+      objectReference: {fileID: 0}
+    - target: {fileID: 281250432576740591, guid: 3712f29ddf49ab846a3e1f8a99760102, type: 3}
+      propertyPath: <Mana>k__BackingField
+      value: 10
+      objectReference: {fileID: 0}
+    - target: {fileID: 281250432576740591, guid: 3712f29ddf49ab846a3e1f8a99760102, type: 3}
+      propertyPath: <Name>k__BackingField
+      value: Player
+      objectReference: {fileID: 0}
+    - target: {fileID: 281250432576740591, guid: 3712f29ddf49ab846a3e1f8a99760102, type: 3}
+      propertyPath: <Level>k__BackingField
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 281250432576740591, guid: 3712f29ddf49ab846a3e1f8a99760102, type: 3}
+      propertyPath: <Health>k__BackingField
+      value: 10
+      objectReference: {fileID: 0}
+    - target: {fileID: 281250432576740591, guid: 3712f29ddf49ab846a3e1f8a99760102, type: 3}
+      propertyPath: <MaxMana>k__BackingField
+      value: 10
+      objectReference: {fileID: 0}
+    - target: {fileID: 281250432576740591, guid: 3712f29ddf49ab846a3e1f8a99760102, type: 3}
+      propertyPath: <Strength>k__BackingField
+      value: 5
+      objectReference: {fileID: 0}
+    - target: {fileID: 281250432576740591, guid: 3712f29ddf49ab846a3e1f8a99760102, type: 3}
+      propertyPath: <Dexterity>k__BackingField
+      value: 5
+      objectReference: {fileID: 0}
+    - target: {fileID: 281250432576740591, guid: 3712f29ddf49ab846a3e1f8a99760102, type: 3}
+      propertyPath: <MaxHealth>k__BackingField
+      value: 10
+      objectReference: {fileID: 0}
+    - target: {fileID: 281250432576740591, guid: 3712f29ddf49ab846a3e1f8a99760102, type: 3}
+      propertyPath: <Intelligence>k__BackingField
+      value: 5
+      objectReference: {fileID: 0}
+    - target: {fileID: 803522637935420354, guid: 3712f29ddf49ab846a3e1f8a99760102, type: 3}
+      propertyPath: m_Enabled
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 1502385450492972594, guid: 3712f29ddf49ab846a3e1f8a99760102, type: 3}
+      propertyPath: m_Enabled
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 5527959352449617378, guid: 3712f29ddf49ab846a3e1f8a99760102, type: 3}
+      propertyPath: Capacity
+      value: 6
+      objectReference: {fileID: 0}
     - target: {fileID: 7026839993749506896, guid: 3712f29ddf49ab846a3e1f8a99760102, type: 3}
       propertyPath: m_Name
       value: Character Controller
       objectReference: {fileID: 0}
+    - target: {fileID: 7069025521119110660, guid: 3712f29ddf49ab846a3e1f8a99760102, type: 3}
+      propertyPath: player
+      value: 
+      objectReference: {fileID: 1572916131}
     - target: {fileID: 7696520998639817194, guid: 3712f29ddf49ab846a3e1f8a99760102, type: 3}
       propertyPath: m_RootOrder
       value: 3
       objectReference: {fileID: 0}
     - target: {fileID: 7696520998639817194, guid: 3712f29ddf49ab846a3e1f8a99760102, type: 3}
       propertyPath: m_LocalPosition.x
-      value: 0
+      value: 0.231
       objectReference: {fileID: 0}
     - target: {fileID: 7696520998639817194, guid: 3712f29ddf49ab846a3e1f8a99760102, type: 3}
       propertyPath: m_LocalPosition.y
@@ -433,7 +498,19 @@ PrefabInstance:
       value: 0
       objectReference: {fileID: 0}
     m_RemovedComponents: []
+    m_AddedGameObjects: []
   m_SourcePrefab: {fileID: 100100000, guid: 3712f29ddf49ab846a3e1f8a99760102, type: 3}
+--- !u!114 &1572916131 stripped
+MonoBehaviour:
+  m_CorrespondingSourceObject: {fileID: 281250432576740591, guid: 3712f29ddf49ab846a3e1f8a99760102, type: 3}
+  m_PrefabInstance: {fileID: 1226975979}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 9dfc152205d43bd4486e6996bf6174e2, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!1 &1603711912
 GameObject:
   m_ObjectHideFlags: 0
@@ -542,11 +619,11 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 172515602e62fb746b5d573b38a5fe58, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  isGlobal: 1
+  m_IsGlobal: 1
   priority: 0
   blendDistance: 0
   weight: 1
-  sharedProfile: {fileID: 0}
+  sharedProfile: {fileID: 11400000, guid: 38e9bfcdd6648d54ca0c73f972f01629, type: 2}
 --- !u!4 &1843131813 stripped
 Transform:
   m_CorrespondingSourceObject: {fileID: 3899389279254104017, guid: 3712f29ddf49ab846a3e1f8a99760102, type: 3}
