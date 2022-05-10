@@ -57,6 +57,7 @@
      <Compile Include="Assets\Scripts\Application\UI\HudController.cs" />
      <Compile Include="Assets\Scripts\Domain\Skills\Interfaces\ISkill.cs" />
      <Compile Include="Assets\Scripts\Application\VFX\ProceduralDamageText.cs" />
+     <Compile Include="Assets\Scripts\Extensions\LinqExtensions.cs" />
      <Compile Include="Assets\Scripts\Domain\Entities\Hands.cs" />
      <Compile Include="Assets\Scripts\Domain\Items\Interfaces\IInteractable.cs" />
      <Compile Include="Assets\Scripts\Application\World\Structure\Grid.cs" />

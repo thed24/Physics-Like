@@ -13,6 +13,7 @@ public class WorldGenerator : MonoBehaviour
     public float roomSizeModifier;
     public int amountOfStructuresInWorld;
     public Material structureMaterial;
+    public float enemySpawnChancePerRoom;
 
     void Start()
     {
@@ -24,15 +25,15 @@ public class WorldGenerator : MonoBehaviour
         var minimumSpanningTree = GraphUtilities.BuildMinimumSpanningTreeFrom(edges, vertices);
         var minimumSpanningTreeEnriched = minimumSpanningTree.Concat(edges.GetRange(3, (int)(edges.Count() * 0.04))).Where(e => e.v0.x < worldSize.x && e.v0.y < worldSize.z && e.v1.x < worldSize.x && e.v1.y < worldSize.z && e.v0.x > 0 && e.v0.y > 0 && e.v1.x > 0 && e.v1.y > 0).ToList();
 
-        minimumSpanningTreeEnriched.ForEach(edge => GenerateHallwayFrom(edge));
-        worldGrid.GetAll().Where(s => s.Position.y == 0).ToList().ForEach(s => GenerateWalls(s));
+        minimumSpanningTreeEnriched
+            .ForEach(edge => GenerateHallwayFrom(edge));
+
+        worldGrid
+            .GetAll()
+            .Where(s => s.Position.y == 0)
+            .ForEach(s => GenerateWalls(s));
 
         UnityExtensions.CombineChildMeshesOf(gameObject, structureMaterial);
-    }
-
-    void Update()
-    {
-
     }
 
     private List<Vector3> GenerateRooms()
@@ -44,15 +45,17 @@ public class WorldGenerator : MonoBehaviour
 
         for (var i = 0; i < amountOfStructuresInWorld; i++)
         {
-            var roomBlueprint = new RoomPlanner()
-                .SetPosition(new Vector3(Random.Range(0, (int) worldSize.x), 0, Random.Range(0, (int) worldSize.z)))
-                .SetSize(new Vector2(Random.Range(5, 15) * roomSizeModifier, Random.Range(5, 15) * roomSizeModifier));
+            var roomBlueprint = new RoomPlanner(transform)
+                .SetPosition(new Vector3(Random.Range(0, (int)worldSize.x), 0, Random.Range(0, (int)worldSize.z)))
+                .SetSize(new Vector2(Random.Range(5, 15) * roomSizeModifier, Random.Range(5, 15) * roomSizeModifier))
+                .AddTorches();
 
             if (playerSpawned)
             {
-                roomBlueprint.AddEnemy();
+                roomBlueprint.AddEnemy(enemySpawnChancePerRoom);
             }
-            else
+
+            if (!playerSpawned)
             {
                 roomBlueprint.AddPlayerSpawn();
                 playerSpawned = true;
@@ -65,31 +68,24 @@ public class WorldGenerator : MonoBehaviour
         return listOfPoints;
     }
 
-    private void GenerateHallwayFrom(Edge edge)
-    {
-        var paths = PathFinder.FindPath(new Vector3((float)edge.v0.x, 0, (float)edge.v0.y), new Vector3((float)edge.v1.x, 0, (float)edge.v1.y), worldGrid);
-        foreach (var path in paths)
-        {
-            MirrorStructureBasedOn(new Vector3(path.Position.x, 0, path.Position.z), new Vector2(1, 1));
-        }
-    }
+    private void GenerateHallwayFrom(Edge edge) => PathFinder
+            .FindPath(new Vector3((float)edge.v0.x, 0, (float)edge.v0.y), new Vector3((float)edge.v1.x, 0, (float)edge.v1.y), worldGrid)
+            .ForEach(node => MirrorStructureBasedOn(new Vector3(node.Position.x, 0, node.Position.z), new Vector2(1, 1)));
 
     private void GenerateWalls(Structure structure)
     {
-        var positionMap = worldGrid.GetPointsSurrounding(structure.Position);
-        var unoccupiedSpots = positionMap.Where(kv => worldGrid[kv.Value] is null).Select(kv => kv.Key).ToList();
-    
-        var walls = structure.CreateWallsFor(unoccupiedSpots, (int) worldSize.y);
-        walls.ForEach(wall => worldGrid[wall.Position] = wall);
+        var unoccupiedSpots = worldGrid
+            .GetPointsSurrounding(structure.Position)
+            .Where(kv => worldGrid[kv.Value] is null)
+            .Select(kv => kv.Key).ToList();
+
+        structure
+            .CreateWallsFor(unoccupiedSpots, (int)worldSize.y)
+            .ForEach(wall => worldGrid[wall.Position] = wall);
     }
 
-    private void MirrorStructureBasedOn(RoomPlanner roomDesign)
-    {
-        var size = roomDesign.Scale;
-        var position = roomDesign.Position;
-
-        MirrorStructureBasedOn(position, size);
-    }
+    private void MirrorStructureBasedOn(RoomPlanner roomDesign) =>
+        MirrorStructureBasedOn(roomDesign.Position, roomDesign.Scale);
 
     private void MirrorStructureBasedOn(Vector3 position, Vector2 size)
     {
