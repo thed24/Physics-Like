@@ -14,7 +14,7 @@ public class Node
     public float Heuristics => (DistanceToTarget != -1 && Cost != -1) ? DistanceToTarget + Cost : -1;
     public bool Walkable;
 
-    public Node(Vector3 posistion, bool walkable,  Direction direction, float weight = 1)
+    public Node(Vector3 posistion, bool walkable, Direction direction, float weight = 1)
     {
         Parent = null;
         Position = posistion;
@@ -31,12 +31,12 @@ public class Node
     }
 
     public override bool Equals(object obj)
-    { 
+    {
         if (obj == null || GetType() != obj.GetType())
         {
             return false;
         }
-        
+
         var other = (Node)obj;
         return other.Position == Position;
     }
@@ -85,7 +85,7 @@ public static class PathFinder
             return null;
 
         var temp = nodesInPath[nodesInPath.IndexOf(current)];
-        if (temp is null) 
+        if (temp is null)
             return null;
 
         while (temp != startingNode && temp is not null)
@@ -103,7 +103,8 @@ public static class PathFinder
         var adjacentNodes = new List<Node>();
         var adjacentPositionsAndDirections = grid.GetPointsSurrounding(node.Position);
 
-        foreach (var positionAndDirection in adjacentPositionsAndDirections){
+        foreach (var positionAndDirection in adjacentPositionsAndDirections)
+        {
             var neighbouringNodeDirection = positionAndDirection.Key;
             var neighbouringNodePosition = positionAndDirection.Value;
             adjacentNodes.Add(new Node(neighbouringNodePosition, grid[neighbouringNodePosition] is null, neighbouringNodeDirection));

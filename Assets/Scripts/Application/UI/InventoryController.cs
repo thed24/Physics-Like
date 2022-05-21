@@ -1,6 +1,6 @@
+using Assets.Scripts.Items;
 using System.Collections.Generic;
 using System.Linq;
-using Assets.Scripts.Items;
 using UnityEngine;
 using UnityEngine.UIElements;
 

@@ -475,3 +475,14 @@ crashlytics-build.properties
 
 /Assets/Plugins
 /Assets/Blink
+/Tools/
+
+!Bakery/ftLightmaps.cs
+!Bakery/ftLightmapsStorage.cs
+!Bakery/ftLocalStorage.cs
+!Bakery/ftGlobalStorage.cs
+!Bakery/BakeryProjectSettings.cs (on v1.9+)
+!Editor/x64/Bakery/scripts/ftModelPostProcessor.cs
+!Editor/x64/Bakery/scripts/ftSavedPadding2.cs
+
+/Tools/Bakery

@@ -20,13 +20,12 @@ public class WorldGenerator : MonoBehaviour
         var roomPoints = GenerateRooms();
 
         var triangles = GraphUtilities.Triangulate(roomPoints.Select(room => new Vertex(room.x, room.z)).ToList());
-        var edges = GraphUtilities.GetEdgesFrom(triangles);
+        var edges = GraphUtilities.GetEdges(triangles);
         var vertices = edges.Select(edge => edge.v0).Concat(edges.Select(edge => edge.v1)).Distinct().ToList();
         var minimumSpanningTree = GraphUtilities.BuildMinimumSpanningTreeFrom(edges, vertices);
-        var minimumSpanningTreeEnriched = minimumSpanningTree.Concat(edges.GetRange(3, (int)(edges.Count() * 0.04))).Where(e => e.v0.x < worldSize.x && e.v0.y < worldSize.z && e.v1.x < worldSize.x && e.v1.y < worldSize.z && e.v0.x > 0 && e.v0.y > 0 && e.v1.x > 0 && e.v1.y > 0).ToList();
+        var minimumSpanningTreeEnriched = minimumSpanningTree.Concat(edges.ToList().GetRange(3, (int)(edges.Count() * 0.04))).Where(e => e.v0.x < worldSize.x && e.v0.y < worldSize.z && e.v1.x < worldSize.x && e.v1.y < worldSize.z && e.v0.x > 0 && e.v0.y > 0 && e.v1.x > 0 && e.v1.y > 0).ToList();
 
-        minimumSpanningTreeEnriched
-            .ForEach(edge => GenerateHallwayFrom(edge));
+        minimumSpanningTreeEnriched.ForEach(edge => GenerateHallwayFrom(edge));
 
         worldGrid
             .GetAll()
@@ -80,7 +79,7 @@ public class WorldGenerator : MonoBehaviour
             .Select(kv => kv.Key).ToList();
 
         structure
-            .CreateWallsFor(unoccupiedSpots, (int)worldSize.y)
+            .CreateWalls(unoccupiedSpots, (int)worldSize.y)
             .ForEach(wall => worldGrid[wall.Position] = wall);
     }
 

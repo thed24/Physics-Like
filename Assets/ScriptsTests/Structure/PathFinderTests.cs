@@ -3,7 +3,8 @@ using NUnit.Framework;
 using System.Collections.Generic;
 using UnityEngine;
 
-class PathFinderTests{
+class PathFinderTests
+{
     [Test]
     public void GivenLinearStartAndEndPoints_WhenFindingPath_ReturnLinearPath()
     {

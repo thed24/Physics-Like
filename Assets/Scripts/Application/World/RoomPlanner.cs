@@ -1,8 +1,8 @@
-﻿using System;
-using System.Collections.Generic;
-using Assets.Scripts.Builders;
+﻿using Assets.Scripts.Builders;
 using Assets.Scripts.Entities.Builders;
 using Assets.Scripts.Items;
+using System;
+using System.Collections.Generic;
 using UnityEngine;
 
 namespace Assets.Scripts.World_Generator
@@ -65,16 +65,9 @@ namespace Assets.Scripts.World_Generator
 
         public RoomPlanner AddTorches()
         {
-            foreach (var direction in Enum.GetValues(typeof(Direction)) as Direction[])
-            {
-                var torch = UnityExtensions.LoadPrefabFrom("Items/Torch");
-                torch.transform.position = new Vector3
-                (
-                    Position.x + UnityEngine.Random.Range(-Scale.x / 2, Scale.x / 2),
-                    Position.y + Scale.y / 2,
-                    Position.z + UnityEngine.Random.Range(0, Scale.x - 1)
-                );
-            }
+            var torch = UnityExtensions.LoadPrefabFrom("Items/Interactable/Torch/Torch");
+            torch.transform.position = new Vector3(Position.x, Scale.y / 2, Position.z);
+            
             return this;
         }
     }

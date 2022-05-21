@@ -15,7 +15,7 @@ public static class HandExtensions
 
     public static int GetIndex(this Hand hand)
     {
-        return (int) hand;
+        return (int)hand;
     }
 
     public static KeyCode GetDropKey(this Hand hand)

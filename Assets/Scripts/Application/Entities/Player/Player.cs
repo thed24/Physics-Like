@@ -1,4 +1,3 @@
-using System;
 using Assets.Scripts.Items;
 using UnityEngine;
 

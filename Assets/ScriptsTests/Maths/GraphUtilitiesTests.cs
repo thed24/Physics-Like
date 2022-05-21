@@ -1,6 +1,6 @@
 
-using System.Collections.Generic;
 using NUnit.Framework;
+using System.Collections.Generic;
 
 public class GraphUtilitiesTests
 {
@@ -19,7 +19,7 @@ public class GraphUtilitiesTests
     };
 
         // When
-        var edges = GraphUtilities.GetEdgesFrom(triangle);
+        var edges = GraphUtilities.GetEdges(triangle);
 
         // Then
         Assert.That(edges, Is.EqualTo(expected));

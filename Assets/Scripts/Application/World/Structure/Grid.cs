@@ -25,7 +25,8 @@ public class Grid<T>
         return mapOfNodes;
     }
 
-    public List<T> GetAll(){
+    public List<T> GetAll()
+    {
         var all = new List<T>();
         foreach (var item in data)
         {
@@ -38,14 +39,16 @@ public class Grid<T>
     {
         get
         {
-            if (pos.x < 0 || pos.y < 0 || pos.z < 0 || pos.x >= GridSize.x || pos.y >= GridSize.y || pos.z >= GridSize.z){
+            if (pos.x < 0 || pos.y < 0 || pos.z < 0 || pos.x >= GridSize.x || pos.y >= GridSize.y || pos.z >= GridSize.z)
+            {
                 return default;
             }
             return data[(int)pos.x, (int)pos.y, (int)pos.z];
         }
         set
         {
-            if (pos.x < 0 || pos.y < 0 || pos.z < 0 || pos.x >= GridSize.x || pos.y >= GridSize.y || pos.z >= GridSize.z){
+            if (pos.x < 0 || pos.y < 0 || pos.z < 0 || pos.x >= GridSize.x || pos.y >= GridSize.y || pos.z >= GridSize.z)
+            {
                 return;
             }
             data[(int)pos.x, (int)pos.y, (int)pos.z] = value;

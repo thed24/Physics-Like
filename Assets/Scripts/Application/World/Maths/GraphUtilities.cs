@@ -9,21 +9,23 @@ public class GraphUtilities
         var badTriangles = triangles.Where(triangle => triangle.IsInCircumcircle(vertex)).ToList();
         triangles = triangles.Where(triangle => !triangle.IsInCircumcircle(vertex)).ToList();
 
-        var edges = GetEdgesFrom(badTriangles);
-        edges = RemoveDuplicateEdgesFrom(edges);
+        var edges = GetEdges(badTriangles);
+        edges = RemoveDuplicateEdges(edges);
 
         foreach (var edge in edges)
+        {
             triangles.Add(new Triangle(edge.v0, edge.v1, vertex));
+        }
 
         return triangles;
     }
 
     private static Triangle CreateSuperTriangle(List<Vertex> verticies)
     {
-        var minx = (double) int.MaxValue;
-        var miny = (double) int.MaxValue;
-        var maxx = (double) int.MinValue;
-        var maxy = (double) int.MinValue;
+        var minx = (double)int.MaxValue;
+        var miny = (double)int.MaxValue;
+        var maxx = (double)int.MinValue;
+        var maxy = (double)int.MinValue;
 
         foreach (var vertex in verticies)
         {
@@ -43,7 +45,7 @@ public class GraphUtilities
         return new Triangle(v0, v1, v2);
     }
 
-    private static List<Edge> RemoveDuplicateEdgesFrom(List<Edge> edges)
+    private static List<Edge> RemoveDuplicateEdges(List<Edge> edges)
     {
         var uniqueEdges = new List<Edge>();
 
@@ -61,13 +63,15 @@ public class GraphUtilities
             }
 
             if (isUnique)
+            {
                 uniqueEdges.Add(edges.ElementAt(i));
+            }
         }
 
         return uniqueEdges;
     }
 
-    public static List<Edge> GetEdgesFrom(List<Triangle> triangles)
+    public static List<Edge> GetEdges(List<Triangle> triangles)
     {
         var edges = new List<Edge>();
 

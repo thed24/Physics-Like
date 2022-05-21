@@ -4,10 +4,10 @@ using UnityEngine;
 public class Structure
 {
     protected readonly GameObject structureObject;
-    public Vector3 Size 
-    { 
-        get { return structureObject.transform.localScale; } 
-        set { structureObject.transform.localScale = value; } 
+    public Vector3 Size
+    {
+        get { return structureObject.transform.localScale; }
+        set { structureObject.transform.localScale = value; }
     }
     public Vector3 Position
     {
@@ -23,7 +23,7 @@ public class Structure
         structureObject.GetComponent<MeshRenderer>().material = material is not null ? material : structureObject.GetComponent<MeshRenderer>().material;
         structureObject.transform.position = position ?? structureObject.transform.position;
     }
-    public List<Structure> CreateWallsFor(IEnumerable<Direction> directions, int height)
+    public List<Structure> CreateWalls(IEnumerable<Direction> directions, int height)
     {
         var walls = new List<Structure>();
         var material = structureObject.GetComponent<MeshRenderer>().material;

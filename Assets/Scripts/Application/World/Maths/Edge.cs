@@ -13,7 +13,8 @@ public class Edge
         Weight = (int)Math.Sqrt(Math.Pow(v0.x - v1.x, 2) + Math.Pow(v0.y - v1.y, 2));
     }
 
-    public Edge GetInverseEdge(){
+    public Edge GetInverseEdge()
+    {
         return new Edge(v1, v0);
     }
 

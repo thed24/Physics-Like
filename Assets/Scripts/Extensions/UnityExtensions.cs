@@ -1,5 +1,4 @@
-﻿using System.Collections.Generic;
-using UnityEditor.Animations;
+﻿using UnityEditor;
 using UnityEngine;
 
 static class UnityExtensions
