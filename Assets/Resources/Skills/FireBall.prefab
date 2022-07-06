@@ -226,17 +226,16 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: c534f58abeaab0c4b92c81e536f771c8, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  Details:
-    Name: Fireball
-    Description: A fiery ball.
-    Cost: 2
-    Cooldown: 1
-    NextUse: 0
-    Damage: 1
-  Source: {fileID: -2110164206302849644}
-  UseSound: {fileID: 8300000, guid: fe6836a115ad7184a8fdd52fd5857339, type: 3}
-  HitSound: {fileID: 8300000, guid: 0926a6069dbcff34a922cd4c110b6d26, type: 3}
   Explosion: {fileID: 2565863189320800233, guid: 1f6e7bd1c6ff67c4db9c190867362d04, type: 3}
+  <Name>k__BackingField: Fireball
+  <Description>k__BackingField: Throws a flaming ball.
+  <Cost>k__BackingField: 2
+  <Cooldown>k__BackingField: 2
+  <NextUse>k__BackingField: 1312.0851
+  <Value>k__BackingField: 5
+  Source: {fileID: -2110164206302849644}
+  UseSound: {fileID: 8300000, guid: e0bdb654de7474544abe4be60634c25e, type: 3}
+  HitSound: {fileID: 8300000, guid: 0926a6069dbcff34a922cd4c110b6d26, type: 3}
 --- !u!1 &2214363694928703444
 GameObject:
   m_ObjectHideFlags: 0
@@ -953,6 +952,7 @@ ParticleSystem:
         m_PostInfinity: 2
         m_RotationOrder: 4
     randomizeRotationDirection: 0
+    gravitySource: 0
     maxNumParticles: 1000
     customEmitterVelocity: {x: 0, y: 0, z: 0}
     size3D: 0
@@ -4337,6 +4337,7 @@ ParticleSystem:
         m_RotationOrder: 4
     minVertexDistance: 0.2
     textureMode: 0
+    textureScale: {x: 1, y: 1}
     ribbonCount: 1
     shadowBias: 0.5
     worldSpace: 0

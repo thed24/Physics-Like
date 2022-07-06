@@ -29,9 +29,15 @@ public class Player : MonoBehaviour, IEntity, IUseSkills, IHoldItems
         MaxMana = Mana;
     }
 
-    public void TakeDamage(int damage) => Health -= damage;
+    public void TakeDamage(int damage)
+    {
+        Health -= damage;
+    }
 
-    public bool IsHoldingItemInHand(int hand) => Equipped.SeeItemAtSlot(hand).HasValue;
+    public bool IsHoldingItemInHand(int hand)
+    {
+        return Equipped.SeeItemAtSlot(hand).HasValue;
+    }
 
     public void EquipItem(IHoldable item, int hand)
     {

@@ -36,108 +36,7 @@
     <ImplicitlyExpandDesignTimeFacades>false</ImplicitlyExpandDesignTimeFacades>
   </PropertyGroup>
   <ItemGroup>
-     <Compile Include="Assets\Tools\TextureGraph\Core\Editor\Nodes\TSolidColorNodeParamsDrawer.cs" />
-     <Compile Include="Assets\Tools\TextureGraph\Core\Editor\Nodes\TTransform2dNodeParamsDrawer.cs" />
-     <Compile Include="Assets\Tools\TextureGraph\Core\Editor\Nodes\TCropNodeParamsDrawer.cs" />
-     <Compile Include="Assets\Tools\TextureGraph\Core\Editor\GraphEditor\TExporter.cs" />
-     <Compile Include="Assets\Tools\TextureGraph\Core\Editor\Nodes\TMirrorNodeParamsDrawer.cs" />
-     <Compile Include="Assets\Tools\TextureGraph\Core\Editor\Nodes\TBlendSrcDstNodeParamsDrawer.cs" />
-     <Compile Include="Assets\Tools\TextureGraph\Core\Editor\GraphEditor\TView2DWindow.cs" />
-     <Compile Include="Assets\Tools\TextureGraph\Core\Editor\GraphEditor\TNodeSearcherWindow.cs" />
-     <Compile Include="Assets\Tools\TextureGraph\Core\Editor\Nodes\TContrastBrightnessNodeParamsDrawer.cs" />
-     <Compile Include="Assets\Tools\TextureGraph\Core\Editor\GraphEditor\TNodeViewExtension.cs" />
-     <Compile Include="Assets\Tools\TextureGraph\Core\Editor\Common\TPackageInitializer.cs" />
-     <Compile Include="Assets\Tools\TextureGraph\Core\Editor\Nodes\TWarpNodeParamsDrawer.cs" />
-     <Compile Include="Assets\Tools\TextureGraph\Core\Editor\Nodes\TSkewNodeParamsDrawer.cs" />
-     <Compile Include="Assets\Tools\TextureGraph\Core\Editor\Nodes\TQuadTransformNodeParamsDrawer.cs" />
-     <Compile Include="Assets\Tools\TextureGraph\Core\Editor\GraphEditor\TCreateNodeWindow.cs" />
-     <Compile Include="Assets\Tools\TextureGraph\Core\Editor\Nodes\TRidgedNoiseNodeParamsDrawer.cs" />
-     <Compile Include="Assets\Tools\TextureGraph\Core\Editor\Common\TLink.cs" />
-     <Compile Include="Assets\Tools\TextureGraph\Core\Editor\GraphEditor\TNodeCreationMenu.cs" />
-     <Compile Include="Assets\Tools\TextureGraph\Core\Editor\GraphEditor\TGraphView.cs" />
-     <Compile Include="Assets\Tools\TextureGraph\Core\Editor\Nodes\TOutputToRTNodeParamsDrawer.cs" />
-     <Compile Include="Assets\Tools\TextureGraph\Core\Editor\Common\TPointsDragger.cs" />
-     <Compile Include="Assets\Tools\TextureGraph\Core\Editor\GraphEditor\TGuidSetter.cs" />
-     <Compile Include="Assets\Tools\TextureGraph\Core\Editor\Nodes\TGradientRadialNodeParamsDrawer.cs" />
-     <Compile Include="Assets\Tools\TextureGraph\Core\Editor\GraphEditor\ITManagedView.cs" />
-     <Compile Include="Assets\Tools\TextureGraph\Core\Editor\Nodes\TBillowNoiseNodeParamsDrawer.cs" />
-     <Compile Include="Assets\Tools\TextureGraph\Core\Editor\Parameters\TLevelsEditorDrawer.cs" />
-     <Compile Include="Assets\Tools\TextureGraph\Core\Editor\Graph\TGraphInspector.cs" />
-     <Compile Include="Assets\Tools\TextureGraph\Core\Editor\Nodes\TSharpenNodeParamsDrawer.cs" />
-     <Compile Include="Assets\Tools\TextureGraph\Core\Editor\Nodes\TAlphaMergeNodeParamsDrawer.cs" />
-     <Compile Include="Assets\Tools\TextureGraph\Core\Editor\Nodes\TRgbaMergeNodeParamsDrawer.cs" />
-     <Compile Include="Assets\Tools\TextureGraph\Core\Editor\GraphEditor\TGraphEditorCommand.cs" />
-     <Compile Include="Assets\Tools\TextureGraph\Core\Editor\GraphEditor\TView3DWindow.cs" />
-     <Compile Include="Assets\Tools\TextureGraph\Core\Editor\Nodes\TGradientLinearNodeParamsDrawer.cs" />
-     <Compile Include="Assets\Tools\TextureGraph\Core\Editor\Nodes\TStepNodeParamsDrawer.cs" />
-     <Compile Include="Assets\Tools\TextureGraph\Core\Editor\GraphEditor\TWindowDragZone.cs" />
-     <Compile Include="Assets\Tools\TextureGraph\Core\Editor\GraphEditor\TGraphSettingsWindow.cs" />
-     <Compile Include="Assets\Tools\TextureGraph\Core\Editor\Graph\TGraphOpenHandler.cs" />
-     <Compile Include="Assets\Tools\TextureGraph\Core\Editor\Nodes\TDefaultParamsDrawer.cs" />
-     <Compile Include="Assets\Tools\TextureGraph\Core\Editor\Nodes\TThresholdNodeParamsDrawer.cs" />
-     <Compile Include="Assets\Tools\TextureGraph\Core\Editor\GraphEditor\TNodeView.cs" />
-     <Compile Include="Assets\Tools\TextureGraph\Core\Editor\Nodes\TPerlinNoiseNodeParamsDrawer.cs" />
-     <Compile Include="Assets\Tools\TextureGraph\Core\Editor\GraphEditor\TDraggable.cs" />
-     <Compile Include="Assets\Tools\TextureGraph\Core\Editor\Nodes\TGradientAngularNodeParamsDrawer.cs" />
-     <Compile Include="Assets\Tools\TextureGraph\Core\Editor\GraphEditor\TGraphSaver.cs" />
-     <Compile Include="Assets\Tools\TextureGraph\Core\Editor\GraphEditor\TExportWindow.cs" />
-     <Compile Include="Assets\Tools\TextureGraph\Core\Editor\Nodes\TClampNodeParamsDrawer.cs" />
-     <Compile Include="Assets\Tools\TextureGraph\Core\Editor\GraphEditor\TSubWindow.cs" />
-     <Compile Include="Assets\Tools\TextureGraph\Core\Editor\GraphEditor\TParametersDrawer.cs" />
-     <Compile Include="Assets\Tools\TextureGraph\Core\Editor\Nodes\TPowNodeParamsDrawer.cs" />
-     <Compile Include="Assets\Tools\TextureGraph\Core\Editor\GraphEditor\TGraphEditorUtilities.cs" />
-     <Compile Include="Assets\Tools\TextureGraph\Core\Editor\Nodes\TCheckerboardNodeParamsDrawer.cs" />
-     <Compile Include="Assets\Tools\TextureGraph\Core\Editor\GraphEditor\TViewManager.cs" />
-     <Compile Include="Assets\Tools\TextureGraph\Core\Editor\Nodes\TChannelsShuffleNodeParamsDrawer.cs" />
-     <Compile Include="Assets\Tools\TextureGraph\Core\Editor\Nodes\TGaussianBlurNodeParamsDrawer.cs" />
-     <Compile Include="Assets\Tools\TextureGraph\Core\Editor\GraphEditor\TNodeViewCreator.cs" />
-     <Compile Include="Assets\Tools\TextureGraph\Core\Editor\Nodes\TGradientAxialNodeParamsDrawer.cs" />
-     <Compile Include="Assets\Tools\TextureGraph\Core\Editor\Nodes\TEmbossNodeParamsDrawer.cs" />
-     <Compile Include="Assets\Tools\TextureGraph\Core\Editor\Nodes\TBlurNodeParamsDrawer.cs" />
-     <Compile Include="Assets\Tools\TextureGraph\Core\Editor\Nodes\TRgbaSplitNodeParamsDrawer.cs" />
-     <Compile Include="Assets\Tools\TextureGraph\Core\Editor\Nodes\TGradientMapDynamicNodeParamsDrawer.cs" />
-     <Compile Include="Assets\Tools\TextureGraph\Core\Editor\Nodes\TNodeMetadataInitializer.cs" />
-     <Compile Include="Assets\Tools\TextureGraph\Core\Editor\Nodes\TShapeNodeParamsDrawer.cs" />
-     <Compile Include="Assets\Tools\TextureGraph\Core\Editor\GraphEditor\TScrollable.cs" />
-     <Compile Include="Assets\Tools\TextureGraph\Core\Editor\Nodes\TColorspaceConversionNodeParamsDrawer.cs" />
-     <Compile Include="Assets\Tools\TextureGraph\Core\Editor\Nodes\TBrickNodeParamsDrawer.cs" />
-     <Compile Include="Assets\Tools\TextureGraph\Core\Editor\Nodes\TNormalNodeParamsDrawer.cs" />
-     <Compile Include="Assets\Tools\TextureGraph\Core\Editor\Nodes\TLevelsNodeParamsDrawer.cs" />
-     <Compile Include="Assets\Tools\TextureGraph\Core\Editor\Attributes\TCustomParametersDrawerAttribute.cs" />
-     <Compile Include="Assets\Tools\TextureGraph\Core\Editor\Common\TEditorSettings.cs" />
-     <Compile Include="Assets\Tools\TextureGraph\Core\Editor\Nodes\TGradientMapNodeParamsDrawer.cs" />
-     <Compile Include="Assets\Tools\TextureGraph\Core\Editor\GraphEditor\TDebugWindow.cs" />
-     <Compile Include="Assets\Tools\TextureGraph\Core\Editor\Nodes\TLoadTextureNodeParamsDrawer.cs" />
-     <Compile Include="Assets\Tools\TextureGraph\Core\Editor\GraphEditor\TGraphEditorToolbar.cs" />
-     <Compile Include="Assets\Tools\TextureGraph\Core\Editor\Common\TEditorCommon.cs" />
-     <Compile Include="Assets\Tools\TextureGraph\Core\Editor\Nodes\TValueNoiseNodeParamsDrawer.cs" />
-     <Compile Include="Assets\Tools\TextureGraph\Core\Editor\Common\TGenericMenuExtensions.cs" />
-     <Compile Include="Assets\Tools\TextureGraph\Core\Editor\GraphEditor\TGraphEditor.cs" />
-     <Compile Include="Assets\Tools\TextureGraph\Core\Editor\Nodes\TAlphaSplitNodeParamsDrawer.cs" />
-     <Compile Include="Assets\Tools\TextureGraph\Core\Editor\Parameters\TParamGUI.cs" />
-     <Compile Include="Assets\Tools\TextureGraph\Core\Editor\Common\TMenuTree.cs" />
-     <Compile Include="Assets\Tools\TextureGraph\Core\Editor\GraphEditor\TSubWindowResizer.cs" />
-     <Compile Include="Assets\Tools\TextureGraph\Core\Editor\GraphEditor\TClipboard.cs" />
-     <Compile Include="Assets\Tools\TextureGraph\Core\Editor\GraphEditor\TPreviewSceneData.cs" />
-     <Compile Include="Assets\Tools\TextureGraph\Core\Editor\Nodes\TBlendNodeParamsDrawer.cs" />
-     <Compile Include="Assets\Tools\TextureGraph\Core\Editor\Nodes\TCurveNodeParamsDrawer.cs" />
-     <Compile Include="Assets\Tools\TextureGraph\Core\Editor\Nodes\THslNodeParamsDrawer.cs" />
-     <Compile Include="Assets\Tools\TextureGraph\Core\Editor\GraphEditor\TResizer.cs" />
-     <Compile Include="Assets\Tools\TextureGraph\Core\Editor\Nodes\TOutputNodeParamsDrawer.cs" />
-     <Compile Include="Assets\Tools\TextureGraph\Core\Editor\Nodes\TSplatterNodeParamsDrawer.cs" />
-     <None Include="Assets\Tools\TextureGraph\Core\Editor\Resources\TextureGraph\USS\SubWindow.uss" />
-     <None Include="Assets\Tools\TextureGraph\Core\Editor\Shaders\View2DImage.shader" />
-     <None Include="Assets\Tools\TextureGraph\Core\Editor\Shaders\View3DImage.shader" />
-     <None Include="Assets\Tools\TextureGraph\Core\Editor\Resources\TextureGraph\USS\View2DWindow.uss" />
-     <None Include="Assets\Tools\TextureGraph\Core\Editor\Resources\TextureGraph\USS\TextureGraphStyles.uss" />
-     <None Include="Assets\Tools\TextureGraph\Core\Editor\Shaders\Preview3D.shader" />
-     <None Include="Assets\Tools\TextureGraph\Core\Editor\Resources\TextureGraph\USS\ResizerStyles.uss" />
-     <None Include="Assets\Tools\TextureGraph\Core\Editor\Shaders\CGIncludes\Tessellation.cginc" />
-     <None Include="Assets\Tools\TextureGraph\Core\Editor\Resources\TextureGraph\USS\ToolbarStyles.uss" />
-     <None Include="Assets\Tools\TextureGraph\Core\Editor\Resources\TextureGraph\Shaders\HistogramGraph.shader" />
-     <None Include="Assets\Tools\TextureGraph\Core\Editor\Resources\TextureGraph\USS\View3DWindow.uss" />
-     <None Include="Assets\Tools\TextureGraph\Core\Editor\Resources\TextureGraph\Shaders\HistogramLuminance.compute" />
-     <None Include="Assets\Tools\TextureGraph\Core\Editor\Resources\TextureGraph\USS\NodeStyles.uss" />
+     <Compile Include="Assets\ExplosiveLLC\Editor\SetupInputLayers.cs" />
     <Reference Include="UnityEngine">
         <HintPath>F:\UnityHub\2022.1.0b16\Editor\Data\Managed\UnityEngine\UnityEngine.dll</HintPath>
     </Reference>
@@ -400,19 +299,19 @@
         <HintPath>S:\Projects\Personal\PhysicsLike\Library\PackageCache\com.unity.collab-proxy@1.15.15\Lib\Editor\PlasticSCM\Unity.Plastic.Antlr3.Runtime.dll</HintPath>
     </Reference>
     <Reference Include="Unity.VisualScripting.YamlDotNet">
-        <HintPath>S:\Projects\Personal\PhysicsLike\Library\PackageCache\com.unity.visualscripting@1.7.5\Editor\VisualScripting.Core\Dependencies\YamlDotNet\Unity.VisualScripting.YamlDotNet.dll</HintPath>
+        <HintPath>S:\Projects\Personal\PhysicsLike\Library\PackageCache\com.unity.visualscripting@1.7.8\Editor\VisualScripting.Core\Dependencies\YamlDotNet\Unity.VisualScripting.YamlDotNet.dll</HintPath>
     </Reference>
     <Reference Include="unityplastic">
         <HintPath>S:\Projects\Personal\PhysicsLike\Library\PackageCache\com.unity.collab-proxy@1.15.15\Lib\Editor\PlasticSCM\unityplastic.dll</HintPath>
     </Reference>
-    <Reference Include="Unity.Burst.Cecil.Mdb">
-        <HintPath>S:\Projects\Personal\PhysicsLike\Library\PackageCache\com.unity.burst@1.7.0\Unity.Burst.CodeGen\Unity.Burst.Cecil.Mdb.dll</HintPath>
-    </Reference>
     <Reference Include="Unity.Burst.Unsafe">
         <HintPath>S:\Projects\Personal\PhysicsLike\Library\PackageCache\com.unity.burst@1.7.0\Unity.Burst.Unsafe.dll</HintPath>
     </Reference>
+    <Reference Include="Unity.Burst.Cecil.Mdb">
+        <HintPath>S:\Projects\Personal\PhysicsLike\Library\PackageCache\com.unity.burst@1.7.0\Unity.Burst.CodeGen\Unity.Burst.Cecil.Mdb.dll</HintPath>
+    </Reference>
     <Reference Include="Unity.VisualScripting.IonicZip">
-        <HintPath>S:\Projects\Personal\PhysicsLike\Library\PackageCache\com.unity.visualscripting@1.7.5\Editor\VisualScripting.Core\Dependencies\DotNetZip\Unity.VisualScripting.IonicZip.dll</HintPath>
+        <HintPath>S:\Projects\Personal\PhysicsLike\Library\PackageCache\com.unity.visualscripting@1.7.8\Editor\VisualScripting.Core\Dependencies\DotNetZip\Unity.VisualScripting.IonicZip.dll</HintPath>
     </Reference>
     <Reference Include="Unity.Burst.Cecil.Pdb">
         <HintPath>S:\Projects\Personal\PhysicsLike\Library\PackageCache\com.unity.burst@1.7.0\Unity.Burst.CodeGen\Unity.Burst.Cecil.Pdb.dll</HintPath>
@@ -427,7 +326,10 @@
         <HintPath>S:\Projects\Personal\PhysicsLike\Library\PackageCache\com.unity.burst@1.7.0\Unity.Burst.CodeGen\Unity.Burst.Cecil.Rocks.dll</HintPath>
     </Reference>
     <Reference Include="Unity.VisualScripting.Antlr3.Runtime">
-        <HintPath>S:\Projects\Personal\PhysicsLike\Library\PackageCache\com.unity.visualscripting@1.7.5\Runtime\VisualScripting.Flow\Dependencies\NCalc\Unity.VisualScripting.Antlr3.Runtime.dll</HintPath>
+        <HintPath>S:\Projects\Personal\PhysicsLike\Library\PackageCache\com.unity.visualscripting@1.7.8\Runtime\VisualScripting.Flow\Dependencies\NCalc\Unity.VisualScripting.Antlr3.Runtime.dll</HintPath>
+    </Reference>
+    <Reference Include="Unity.VisualScripting.TextureAssets">
+        <HintPath>S:\Projects\Personal\PhysicsLike\Library\PackageCache\com.unity.visualscripting@1.7.8\Editor\VisualScripting.Core\EditorAssetResources\Unity.VisualScripting.TextureAssets.dll</HintPath>
     </Reference>
     <Reference Include="nunit.framework">
         <HintPath>S:\Projects\Personal\PhysicsLike\Library\PackageCache\com.unity.ext.nunit@1.0.6\net35\unity-custom\nunit.framework.dll</HintPath>
@@ -1071,17 +973,14 @@
     <Reference Include="Unity.VisualScripting.State.Editor">
         <HintPath>S:\Projects\Personal\PhysicsLike\Library\ScriptAssemblies\Unity.VisualScripting.State.Editor.dll</HintPath>
     </Reference>
-    <Reference Include="Unity.Burst.Editor">
-        <HintPath>S:\Projects\Personal\PhysicsLike\Library\ScriptAssemblies\Unity.Burst.Editor.dll</HintPath>
-    </Reference>
     <Reference Include="Unity.Searcher.Editor">
         <HintPath>S:\Projects\Personal\PhysicsLike\Library\ScriptAssemblies\Unity.Searcher.Editor.dll</HintPath>
     </Reference>
+    <Reference Include="Unity.Burst.Editor">
+        <HintPath>S:\Projects\Personal\PhysicsLike\Library\ScriptAssemblies\Unity.Burst.Editor.dll</HintPath>
+    </Reference>
     <Reference Include="Unity.VisualScripting.SettingsProvider.Editor">
         <HintPath>S:\Projects\Personal\PhysicsLike\Library\ScriptAssemblies\Unity.VisualScripting.SettingsProvider.Editor.dll</HintPath>
-    </Reference>
-    <Reference Include="Unity.RenderPipelines.Core.Runtime">
-        <HintPath>S:\Projects\Personal\PhysicsLike\Library\ScriptAssemblies\Unity.RenderPipelines.Core.Runtime.dll</HintPath>
     </Reference>
     <Reference Include="Unity.VisualScripting.Flow">
         <HintPath>S:\Projects\Personal\PhysicsLike\Library\ScriptAssemblies\Unity.VisualScripting.Flow.dll</HintPath>
@@ -1100,6 +999,9 @@
     </Reference>
     <Reference Include="UnityEngine.UI">
         <HintPath>S:\Projects\Personal\PhysicsLike\Library\ScriptAssemblies\UnityEngine.UI.dll</HintPath>
+    </Reference>
+    <Reference Include="Unity.RenderPipelines.Core.Runtime">
+        <HintPath>S:\Projects\Personal\PhysicsLike\Library\ScriptAssemblies\Unity.RenderPipelines.Core.Runtime.dll</HintPath>
     </Reference>
     <Reference Include="Unity.VisualScripting.Core">
         <HintPath>S:\Projects\Personal\PhysicsLike\Library\ScriptAssemblies\Unity.VisualScripting.Core.dll</HintPath>
@@ -1136,6 +1038,12 @@
     </Reference>
     <Reference Include="Unity.VisualScripting.State">
         <HintPath>S:\Projects\Personal\PhysicsLike\Library\ScriptAssemblies\Unity.VisualScripting.State.dll</HintPath>
+    </Reference>
+    <Reference Include="Unity.Animation.Rigging.Editor">
+        <HintPath>S:\Projects\Personal\PhysicsLike\Library\ScriptAssemblies\Unity.Animation.Rigging.Editor.dll</HintPath>
+    </Reference>
+    <Reference Include="Unity.Animation.Rigging">
+        <HintPath>S:\Projects\Personal\PhysicsLike\Library\ScriptAssemblies\Unity.Animation.Rigging.dll</HintPath>
     </Reference>
   </ItemGroup>
   <ItemGroup>

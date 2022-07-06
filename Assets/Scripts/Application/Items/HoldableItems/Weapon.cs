@@ -1,4 +1,5 @@
-﻿using UnityEngine;
+﻿using Assets.Scripts.Application.Items.HoldableItems;
+using UnityEngine;
 
 namespace Assets.Scripts.HoldableItems
 {
@@ -12,13 +13,19 @@ namespace Assets.Scripts.HoldableItems
         [field: SerializeField] public int Damage { get; set; }
         [field: SerializeField] public float Cooldown { get; set; }
         [field: SerializeField] public float NextUse { get; set; }
+        [field: SerializeField] public float Level { get; set; }
+        [field: SerializeField] public WeaponType Type { get; set; }
+        [field: SerializeField] public WeaponRarity Rarity { get; set; }
+
         [field: SerializeField] public Texture2D Icon { get; set; }
         [field: SerializeField] public AudioSource Source { get; set; }
-        [field: SerializeField] public AudioClip UseSound { get; set; }
         [field: SerializeField] public AudioClip EquipSound { get; set; }
         [field: SerializeField] public AudioClip DropSound { get; set; }
         [field: SerializeField] public AudioClip PickupSound { get; set; }
+        [field: SerializeField] public AudioClip HitSound { get; set; }
+        [field: SerializeField] public AudioClip SwingSound { get; set; }
         [field: SerializeField] public AnimationClip UseAnimation { get; set; }
+
         public GameObject GameObject { get; set; }
 
         public void Awake()
@@ -35,12 +42,15 @@ namespace Assets.Scripts.HoldableItems
             if (enemy != null)
             {
                 enemy.TakeDamage(Damage);
+                Source.PlayOneShot(HitSound);
+                GetComponent<Animator>().SetTrigger("Hitstop");
             }
         }
 
         public void OnUse()
         {
-            Source.PlayOneShot(UseSound);
+            Source.PlayOneShot(SwingSound);
+
             GetComponent<Animator>().SetTrigger("Attack");
         }
 

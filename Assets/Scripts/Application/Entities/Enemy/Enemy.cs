@@ -30,6 +30,7 @@ namespace Assets.Scripts
 
         public void TakeDamage(int damage)
         {
+            Health -= damage;
             CreateFloatingTextFor(damage);
         }
 

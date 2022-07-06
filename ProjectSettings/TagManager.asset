@@ -15,6 +15,7 @@ TagManager:
   - WorldItem
   - Structure
   - Skill
+  - Roof
   layers:
   - Default
   - TransparentFX

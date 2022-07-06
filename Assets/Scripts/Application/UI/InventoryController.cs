@@ -2,19 +2,25 @@ using Assets.Scripts.Items;
 using System.Collections.Generic;
 using System.Linq;
 using UnityEngine;
+using UnityEngine.InputSystem;
 using UnityEngine.UIElements;
 
 public class InventoryController : MonoBehaviour
 {
+    public PlayerInput playerInput;
     public List<Inventory> Inventories;
+    
     private IEnumerable<VisualElement> InventoryRoots;
     private VisualElement Root;
     private static VisualElement GhostIcon;
-    private static bool IsDragging;
     private static InventorySlot OriginalSlot;
+    private static bool IsDragging;
 
     public void Start()
     {
+        var toggleInventory = playerInput.currentActionMap.FindAction("Toggle Inventory");
+        toggleInventory.performed += ToggleInventory;
+
         Root = GetComponent<UIDocument>().rootVisualElement;
         GhostIcon = Root.Query<VisualElement>("GhostIcon");
         InventoryRoots = Root.Children().First().Children();
@@ -37,14 +43,11 @@ public class InventoryController : MonoBehaviour
         Root.visible = false;
     }
 
-    public void Update()
+    public void ToggleInventory(InputAction.CallbackContext context)
     {
-        if (Input.GetKeyDown(KeyCode.Tab))
-        {
-            Root.visible = !Root.visible;
-            Time.timeScale = Root.visible ? 0 : 1;
-            UnityEngine.Cursor.lockState = Root.visible ? CursorLockMode.None : CursorLockMode.Locked;
-        }
+        Root.visible = !Root.visible;
+        Time.timeScale = Root.visible ? 0 : 1;
+        UnityEngine.Cursor.lockState = Root.visible ? CursorLockMode.None : CursorLockMode.Locked;
     }
 
     public static void StartDrag(Vector2 position, InventorySlot originalSlot)

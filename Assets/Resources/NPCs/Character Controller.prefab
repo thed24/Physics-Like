@@ -416,17 +416,30 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 0a1e37cf4dd52f54c88aae8015d89d7d, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  playerCamera: {fileID: 3488121660960817584}
+  player: {fileID: 281250432576740591}
+  characterController: {fileID: 1502385450492972594}
   walkingSpeed: 7.5
   runningSpeed: 11.5
   jumpSpeed: 8
   gravity: 20
   lookSpeed: 2
   lookXLimit: 45
-  playerCamera: {fileID: 3488121660960817584}
-  player: {fileID: 281250432576740591}
+  rotationX: 0
+  crouchSpeedReduction: 0.5
+  crouchHeight: 0.75
+  bobSpeed: 10
+  bobAmount: {x: 0.15, y: 0.05, z: 0}
+  movementState: 1
+  joint: {fileID: 0}
   canMove: 1
   curSpeedX: 0
   curSpeedY: 0
+  moveDirection: {x: 0, y: 0, z: 0}
+  originalScale: {x: 0, y: 0, z: 0}
+  isCrouching: 0
+  timer: 0
+  jointOriginalPos: {x: 0, y: 0, z: 0}
 --- !u!114 &6006179245625645961
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -456,21 +469,24 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 9dfc152205d43bd4486e6996bf6174e2, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  <MaxHealth>k__BackingField: 0
-  <MaxMana>k__BackingField: 0
-  <Health>k__BackingField: 0
-  <Mana>k__BackingField: 0
-  <Name>k__BackingField: 
-  <Level>k__BackingField: 0
+  <MaxHealth>k__BackingField: 10
+  <MaxMana>k__BackingField: 10
+  <Health>k__BackingField: 10
+  <Mana>k__BackingField: 10
+  <Name>k__BackingField: Player
+  <Level>k__BackingField: 1
   <Experience>k__BackingField: 0
-  <Dexterity>k__BackingField: 0
-  <Strength>k__BackingField: 0
-  <Intelligence>k__BackingField: 0
-  <Luck>k__BackingField: 0
+  <Dexterity>k__BackingField: 5
+  <Strength>k__BackingField: 5
+  <Intelligence>k__BackingField: 5
+  <Luck>k__BackingField: 5
   Equipped: {fileID: 8531306839877970009}
   Inventory: {fileID: 5527959352449617378}
-  Skills: []
-  Hands: []
+  Skills:
+  - {fileID: 1595854628522715200, guid: 83686495db916a0419edbbec8f2468fa, type: 3}
+  Hands:
+  - {fileID: 3877206481519797556}
+  - {fileID: 3899389279254104017}
 --- !u!114 &8531306839877970009
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -511,7 +527,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: efa6fdef1468a404e8aada78cefd7328, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  player: {fileID: 0}
+  player: {fileID: 281250432576740591}
 --- !u!1 &7417135695132947793
 GameObject:
   m_ObjectHideFlags: 0

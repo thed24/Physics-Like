@@ -1,65 +1,167 @@
 using UnityEngine;
+using UnityEngine.InputSystem;
+using static UnityEngine.InputSystem.InputAction;
 
 [RequireComponent(typeof(CharacterController))]
 public class FirstPersonController : MonoBehaviour
 {
-    CharacterController characterController;
-    Vector3 moveDirection = Vector3.zero;
-    public float walkingSpeed = 7.5f;
-    public float runningSpeed = 11.5f;
-    public float jumpSpeed = 8.0f;
-    public float gravity = 20.0f;
-    public float lookSpeed = 2.0f;
-    public float lookXLimit = 45.0f;
+    public PlayerInput playerInput;
     public Camera playerCamera;
     public Player player;
-    float rotationX = 0;
+    public CharacterController characterController;
+
+    public float jumpPower = 10f;
+    public float gravity = 2.0f;
+    public float crouchSpeedReduction = 0.5f;
+    public float crouchHeight = 0.75f;
+    public float minLookY = -60f;
+    public float maxLookY = 60f;
+    public float cameraSensitivity = 1f;
+    public MovementState movementState = MovementState.Idle;
 
     [HideInInspector]
     public bool canMove = true;
     [HideInInspector]
-    public float curSpeedX;
+    public Vector3 moveDirection = Vector3.zero;
     [HideInInspector]
-    public float curSpeedY;
+    public Vector3 lookDirection = Vector3.zero;
+    [HideInInspector]
+    public Vector3 originalScale;
+    [HideInInspector]
+    public bool isCrouching = false;
+    [HideInInspector]
+    public Vector2 look;
 
     void Start()
     {
         characterController = GetComponent<CharacterController>();
-        Cursor.lockState = CursorLockMode.Locked;
+        originalScale = transform.localScale;
+
+        playerInput = GetComponent<PlayerInput>();
+        playerInput.currentActionMap.FindAction("Jump").performed += Jump;
+        playerInput.currentActionMap.FindAction("Crouch").performed += Crouch;
+        playerInput.currentActionMap.FindAction("MovementHorizontal").performed += e => UpdateMoveHorizontal(e);
+        playerInput.currentActionMap.FindAction("MovementHorizontal").canceled += e => moveDirection.x = 0;
+        playerInput.currentActionMap.FindAction("MovementVertical").performed += e => UpdateMoveVertical(e);
+        playerInput.currentActionMap.FindAction("MovementVertical").canceled += e => moveDirection.z = 0;
+        playerInput.currentActionMap.FindAction("Look").performed += e => UpdateLook(e);
+
+        Cursor.lockState = CursorLockMode.None;
         Cursor.visible = false;
     }
 
     void Update()
     {
-        if (Cursor.lockState == CursorLockMode.None)
+        Look();
+        Move();
+    }
+
+
+    public void Jump(CallbackContext context)
+    {
+        if (!characterController.isGrounded || !canMove)
+        {
             return;
+        }
 
-        Vector3 forward = transform.TransformDirection(Vector3.forward);
-        Vector3 right = transform.TransformDirection(Vector3.right);
+        if (isCrouching)
+        {
+            Crouch(context);
+        }
 
-        bool isRunning = Input.GetKey(KeyCode.LeftShift);
-        curSpeedX = canMove ? (isRunning ? runningSpeed : walkingSpeed) * Input.GetAxis("Vertical") : 0;
-        curSpeedY = canMove ? (isRunning ? runningSpeed : walkingSpeed) * Input.GetAxis("Horizontal") : 0;
+        moveDirection.y = jumpPower;
+    }
 
-        float movementDirectionY = moveDirection.y;
-        moveDirection = (forward * curSpeedX) + (right * curSpeedY);
+    public void Crouch(CallbackContext context)
+    {
+        if (!characterController.isGrounded)
+        {
+            return;
+        }
 
-        if (Input.GetButton("Jump") && canMove && characterController.isGrounded)
-            moveDirection.y = jumpSpeed;
+        if (isCrouching is false)
+        {
+            transform.localScale = new Vector3(originalScale.x, crouchHeight, originalScale.z);
+            isCrouching = true;
+        }
         else
-            moveDirection.y = movementDirectionY;
+        {
+            transform.localScale = new Vector3(originalScale.x, originalScale.y, originalScale.z);
+            isCrouching = false;
+        }
+    }
+
+    private void UpdateMovementState()
+    {
+        var running = Keyboard.current.leftShiftKey.isPressed;
+
+        if (running)
+        {
+            movementState = MovementState.Running;
+        }
+        else if (moveDirection == Vector3.zero)
+        {
+            movementState = MovementState.Idle;
+        }
+        else if (!characterController.isGrounded)
+        {
+            movementState = MovementState.Jumping;
+        }
+        else
+        {
+            movementState = MovementState.Walking;
+        }
+    }
+
+    public void Look()
+    {
+        look.y = Mathf.Clamp(look.y, minLookY, maxLookY);
+
+        var smoothedLook = look;
+
+        transform.eulerAngles = new Vector3(smoothedLook.y, smoothedLook.x, 0);
+        playerCamera.transform.eulerAngles = new Vector3(smoothedLook.y, smoothedLook.x, 0);
+    }
+
+    private void UpdateLook(CallbackContext context)
+    {
+        look.x += context.ReadValue<Vector2>().x;
+        look.y -= context.ReadValue<Vector2>().y;
+    }
+
+    public void Move()
+    {
+        UpdateMovementState();
 
         if (!characterController.isGrounded)
-            moveDirection.y -= gravity * Time.deltaTime;
-
-        characterController.Move(moveDirection * Time.deltaTime);
-
-        if (canMove)
         {
-            rotationX += -Input.GetAxis("Mouse Y") * lookSpeed;
-            rotationX = Mathf.Clamp(rotationX, -lookXLimit, lookXLimit);
-            playerCamera.transform.localRotation = Quaternion.Euler(rotationX, 0, 0);
-            transform.rotation *= Quaternion.Euler(0, Input.GetAxis("Mouse X") * lookSpeed, 0);
+            moveDirection.y -= gravity * Time.deltaTime;
+            characterController.Move(moveDirection * Time.deltaTime);
+        } else
+        {
+            var forward = playerCamera.transform.forward;
+            var right = playerCamera.transform.right;
+
+            forward.y = 0f;
+            right.y = 0f;
+            forward.Normalize();
+            right.Normalize();
+            
+            var desiredMoveDirection = forward * moveDirection.z + right * moveDirection.x;
+            desiredMoveDirection.y = moveDirection.y;
+
+            var modifier = movementState.GetMovementModifier() * (isCrouching ? crouchSpeedReduction : 1);
+            characterController.Move(5 * modifier * Time.deltaTime * desiredMoveDirection);
         }
+    }
+
+    private void UpdateMoveVertical(CallbackContext context)
+    {
+        moveDirection.z = context.ReadValue<Vector2>().y;
+    }
+
+    private void UpdateMoveHorizontal(CallbackContext context)
+    {
+        moveDirection.x = context.ReadValue<Vector2>().x;
     }
 }

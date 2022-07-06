@@ -4,12 +4,12 @@ public class FireBall : MonoBehaviour, ISkill
 {
     public GameObject Explosion;
 
-    [field: SerializeField] public string Name { get; }
-    [field: SerializeField] public string Description { get; }
-    [field: SerializeField] public int Cost { get; }
-    [field: SerializeField] public float Cooldown { get; }
+    [field: SerializeField] public string Name { get; set; }
+    [field: SerializeField] public string Description { get; set; }
+    [field: SerializeField] public int Cost { get; set; }
+    [field: SerializeField] public float Cooldown { get; set; }
     [field: SerializeField] public float NextUse { get; set; }
-    [field: SerializeField] public int Value { get; }
+    [field: SerializeField] public int Value { get; set; }
 
     public AudioSource Source;
     public AudioClip UseSound;

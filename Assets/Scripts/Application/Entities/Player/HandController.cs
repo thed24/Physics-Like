@@ -1,64 +1,72 @@
 ﻿using UnityEngine;
+using UnityEngine.InputSystem;
 
 [RequireComponent(typeof(FirstPersonController))]
 public class HandController : MonoBehaviour
 {
+    public PlayerInput playerInput;
     public Player player;
 
     public void Start()
     {
+        playerInput = GetComponent<PlayerInput>();
+
+        var leftHand = playerInput.currentActionMap.FindAction("Left Hand");
+        leftHand.performed += LeftHand;
+
+        var rightHand = playerInput.currentActionMap.FindAction("Right Hand");
+        rightHand.performed += RightHand;
+
+        var dropLeftHand = playerInput.currentActionMap.FindAction("Drop Left");
+        dropLeftHand.performed += DropLeftHand;
+
+        var dropRightHand = playerInput.currentActionMap.FindAction("Drop Right");
+        dropRightHand.performed += DropRightHand;
+
+        var interact = playerInput.currentActionMap.FindAction("Interact");
+        interact.performed += Interact;
+
         player.Equipped.InventoryChanged += OnEquipmentChanged;
     }
 
-    void Update()
+    public void LeftHand(InputAction.CallbackContext context) => UseHand(Hand.Left, UnityExtensions.GetItemAtCrosshair<IInteractable>());
+    public void RightHand(InputAction.CallbackContext context) => UseHand(Hand.Right, UnityExtensions.GetItemAtCrosshair<IInteractable>());
+    public void DropLeftHand(InputAction.CallbackContext context) => player.DropItem(Hand.Left.GetIndex());
+    public void DropRightHand(InputAction.CallbackContext context) => player.DropItem(Hand.Right.GetIndex());
+
+    public void Interact(InputAction.CallbackContext context)
     {
         var holdableItemUnderCrosshair = UnityExtensions.GetItemAtCrosshair<IHoldable>();
+
+        if (holdableItemUnderCrosshair.HasValue)
+        {
+            player.Inventory.AddItem(holdableItemUnderCrosshair.Value.GetComponent<IHoldable>());
+        }
+
         var interactableItemUnderCrosshair = UnityExtensions.GetItemAtCrosshair<IInteractable>();
 
-        ActionFor(Hand.Left, holdableItemUnderCrosshair);
-        ActionFor(Hand.Right, holdableItemUnderCrosshair);
-        InteractWithWorld(KeyCode.E, holdableItemUnderCrosshair, interactableItemUnderCrosshair);
-    }
-
-    private void ActionFor(Hand hand, Maybe<GameObject> itemAtCrosshair)
-    {
-        var handId = hand.GetIndex();
-        var dropKey = hand.GetDropKey();
-
-        var isPressingActionKey = Input.GetMouseButtonDown(handId);
-        var isPressingDropKey = Input.GetKeyDown(dropKey);
-        var isHoldingItem = player.IsHoldingItemInHand(handId);
-
-        switch (isPressingActionKey, isPressingDropKey, isHoldingItem, itemAtCrosshair.HasValue)
+        if (interactableItemUnderCrosshair.HasValue)
         {
-            case (true, false, true, _):
-                player.UseHeldItem(handId);
-                break;
-            case (true, false, false, false):
-                player.UseSkill(0);
-                break;
-            case (true, false, false, true):
-                player.EquipItem(itemAtCrosshair.Value.GetComponent<IHoldable>(), handId);
-                break;
-            case (false, true, true, _):
-                player.DropItem(handId);
-                break;
+            interactableItemUnderCrosshair.Value.GetComponent<IInteractable>().Interact();
         }
     }
 
-    private void InteractWithWorld(KeyCode keyCode, Maybe<GameObject> itemAtCrosshair, Maybe<GameObject> worldItemAtCrosshair)
+    private void UseHand(Hand hand, Maybe<GameObject> itemAtCrosshair)
     {
-        if (Input.GetKeyDown(KeyCode.E))
-        {
-            if (itemAtCrosshair.HasValue)
-            {
-                player.Inventory.AddItem(itemAtCrosshair.Value.GetComponent<IHoldable>());
-            }
+        var handId = hand.GetIndex();
+        var isHoldingItem = player.IsHoldingItemInHand(handId);
 
-            if (worldItemAtCrosshair.HasValue)
-            {
-                worldItemAtCrosshair.Value.GetComponent<IInteractable>().Interact();
-            }
+        switch (isHoldingItem, itemAtCrosshair.HasValue)
+        {
+            case (true, _):
+                player.UseHeldItem(handId);
+                break;
+            case (false, false):
+                player.UseSkill(0);
+                break;
+            case (false, true):
+                player.EquipItem(itemAtCrosshair.Value.GetComponent<IHoldable>(), handId);
+                break;
         }
     }
 
